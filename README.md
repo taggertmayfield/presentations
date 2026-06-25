@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/29339429/README.md)
 # presentations
 
 **Taggert Mayfield — Interactive Presentations**
@@ -15,8 +14,7 @@ and explore — no slideshows, no frameworks, just a page that runs in any brows
 
 | # | Presentation | Topic | Built with | Link |
 |------|--------------|-------|------------|------|
-| TM-001 | SpaceX Interactive Globe | Aerospace · Data viz | D3.js, HTML5 Canvas | [`/spacex/`](https://taggertmayfield.github.io/spacex/) |
-| TM-002 | Crumb Rubber Molding | Materials · Process | HTML5, SVG, video | [`/crumb-rubber-molding/`](./crumb-rubber-molding/) |
+| TM-001 | Crumb Rubber Molding | Materials · Process | HTML5, SVG, video | [`/crumb-rubber-molding/`](./crumb-rubber-molding/) |
 
 The home page (`index.html`) is the hub: it indexes every presentation in the top
 menu and lays them out as a catalog, newest first.
@@ -30,14 +28,11 @@ presentations/
 ├── index.html                  # Site hub — catalog + menu (start here)
 ├── README.md                   # This file
 ├── .nojekyll                   # Tell GitHub Pages to serve files as-is
-└── crumb-rubber-molding/       # TM-002
+└── crumb-rubber-molding/       # TM-001
     ├── index.html              # The presentation (images embedded as base64)
     ├── process-cycle.mp4       # Short clip: full mix → press → demold cycle
     └── plant-tour.mp4          # Plant tour: every production station
 ```
-
-> The **SpaceX Interactive Globe** (TM-001) lives in its own repository, published at
-> `taggertmayfield.github.io/spacex/`. The hub links out to it; it is not stored here.
 
 ---
 
@@ -49,13 +44,16 @@ The hub is built to grow. To index a new build:
    own `index.html` and any assets. Keep each project self-contained in its folder.
 2. **Add a menu entry** in `index.html` inside `<nav class="menu">`:
    ```html
-   <a href="#my-new-project"><span class="ix">03</span>My New Project</a>
+   <a href="#my-new-project"><span class="ix">02</span>My New Project</a>
    ```
-3. **Add a catalog card** in the `.grid` block. Copy an existing `<article class="card">`,
-   then update the `id`, index code (`TM-003`), title, description, tags, and both the
+3. **Add a catalog card** in the `.grid` block. Copy the existing `<article class="card">`,
+   then update the `id`, index code (`TM-002`), title, description, tags, and both the
    `href` links (the `.card-media` link and the `.stretch` link at the bottom). Use a
    16:9 image for `.card-media img`, or an inline `<svg>` motif if you don't have a shot.
 4. **Bump the counts** — the hero `statline` and the `.count` label in the section header.
+5. **Restore the two-column grid.** With one presentation the grid CSS is
+   `grid-template-columns:minmax(0,560px)`; for two or more cards change it back to
+   `grid-template-columns:repeat(2,1fr)`.
 
 Newest entries go at the top of the grid; the `TM-00x` index code preserves build order.
 
@@ -111,9 +109,6 @@ git push -u origin main
 ```
 
 Then in the repo's **Settings → Pages**, set the source to the `main` branch (root).
-
-> The **SpaceX Interactive Globe** (TM-001) stays in its own `spacex` repository at
-> `taggertmayfield.github.io/spacex/`; the hub just links out to it.
 
 ---
 
