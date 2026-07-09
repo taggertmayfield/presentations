@@ -3,18 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Three-Car Garage Addition — Plan &amp; Elevation</title>
+<title>Garage Addition — Overall Plan &amp; Front Elevation</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
-  :root{
-    --bp-blue:#123B6D; --bp-line:#EAF2FF; --bp-dim:#9FC3F5;
-    --paper:#F6F3EC; --ink:#3B3226;
-    --stucco:#C9BE97; --stucco-sh:#B7AC85;
-    --wood:#A96F3B; --wood-dk:#7C4A22; --wood-lt:#C08A50;
-    --stone:#B3A88F; --stone-dk:#8F856E;
-    --fascia:#4B3621; --glass:#D7E5EC;
-  }
-  body{margin:0;background:#2b2b2b;font-family:'Archivo Narrow',sans-serif;color:var(--ink);}
+  body{margin:0;background:#2b2b2b;font-family:'Archivo Narrow',sans-serif;color:#3B3226;}
   .sheet{max-width:1080px;margin:24px auto;box-shadow:0 8px 30px rgba(0,0,0,.5);}
   .sheet svg{display:block;width:100%;height:auto;}
   .mono{font-family:'IBM Plex Mono',monospace;}
@@ -23,9 +15,12 @@
 </head>
 <body>
 
-<!-- ============ SHEET A-1 : FLOOR PLAN (BLUEPRINT) ============ -->
+<!-- ============ SHEET A-1 : OVERALL PLAN (BLUEPRINT) ============ -->
+<!-- Scale: 10 px = 1 ft. House 80'x40' (x 120-920, y 140-540). Garage 36'x22',
+     right wall flush w/ house right wall, back wall recessed 10' into house (y 440),
+     front wall projects 12' beyond house face (y 660). -->
 <div class="sheet">
-<svg id="plan" viewBox="0 0 1080 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Blueprint floor plan of three-car garage">
+<svg id="plan" viewBox="0 0 1080 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Blueprint overall plan, house with recessed garage addition">
   <defs>
     <marker id="arwB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,1 L10,5 L0,9" fill="none" stroke="#9FC3F5" stroke-width="1.6"/>
@@ -36,130 +31,164 @@
     </pattern>
   </defs>
 
-  <rect width="1080" height="800" fill="#123B6D"/>
-  <rect x="18" y="18" width="1044" height="764" fill="none" stroke="#EAF2FF" stroke-width="2.5"/>
-  <rect x="24" y="24" width="1032" height="752" fill="none" stroke="#EAF2FF" stroke-width="1"/>
+  <rect width="1080" height="900" fill="#123B6D"/>
+  <rect x="18" y="18" width="1044" height="864" fill="none" stroke="#EAF2FF" stroke-width="2.5"/>
+  <rect x="24" y="24" width="1032" height="852" fill="none" stroke="#EAF2FF" stroke-width="1"/>
 
   <!-- title block -->
-  <g font-family="'Archivo Narrow',sans-serif" fill="#EAF2FF">
-    <line x1="24" y1="716" x2="1056" y2="716" stroke="#EAF2FF" stroke-width="1.5"/>
-    <text x="46" y="748" font-size="26" font-weight="700" letter-spacing="2">THREE-CAR GARAGE ADDITION</text>
-    <text x="46" y="766" font-size="13" class="mono" fill="#9FC3F5">FLOOR PLAN — SCALE 3/16" = 1'-0"</text>
-    <text x="760" y="748" font-size="13" class="mono" fill="#9FC3F5">SHEET A-1</text>
-    <text x="760" y="766" font-size="13" class="mono" fill="#9FC3F5">MAYFIELD RESIDENCE · RICHLAND CO, IL</text>
+  <g fill="#EAF2FF">
+    <line x1="24" y1="816" x2="1056" y2="816" stroke="#EAF2FF" stroke-width="1.5"/>
+    <text x="46" y="848" font-size="26" font-weight="700" letter-spacing="2">GARAGE ADDITION — OVERALL PLAN</text>
+    <text x="46" y="866" font-size="13" class="mono" fill="#9FC3F5">SCALE 1/8" = 1'-0" · EXIST. INTERIOR NOT SHOWN — AFFECTED AREA ONLY</text>
+    <text x="770" y="848" font-size="13" class="mono" fill="#9FC3F5">SHEET A-1</text>
+    <text x="770" y="866" font-size="13" class="mono" fill="#9FC3F5">MAYFIELD RESIDENCE · RICHLAND CO, IL</text>
   </g>
 
-  <!-- roof overhang (dashed) -->
-  <rect x="110" y="92" width="780" height="500" fill="none" stroke="#9FC3F5" stroke-width="1" stroke-dasharray="8 6"/>
-  <text x="118" y="86" font-size="11" class="mono" fill="#9FC3F5">ROOF LINE ABOVE (1'-6" OVERHANG)</text>
+  <!-- garage roof overhang + ridge/valley lines -->
+  <rect x="545" y="425" width="390" height="250" fill="none" stroke="#9FC3F5" stroke-width="1" stroke-dasharray="8 6"/>
+  <line x1="740" y1="675" x2="740" y2="540" stroke="#9FC3F5" stroke-width="1" stroke-dasharray="14 6 3 6"/>
+  <line x1="740" y1="540" x2="740" y2="470" stroke="#9FC3F5" stroke-width="1" stroke-dasharray="4 5"/>
+  <line x1="560" y1="540" x2="740" y2="470" stroke="#9FC3F5" stroke-width="1" stroke-dasharray="4 5"/>
+  <line x1="920" y1="540" x2="740" y2="470" stroke="#9FC3F5" stroke-width="1" stroke-dasharray="4 5"/>
+  <text x="756" y="418" font-size="11" class="mono" fill="#9FC3F5">NEW RIDGE — PEAK 17'-0"</text>
+  <text x="756" y="432" font-size="11" class="mono" fill="#9FC3F5">VALLEYS — TIE INTO EXIST. ROOF</text>
+  <!-- existing house ridge -->
+  <line x1="120" y1="340" x2="920" y2="340" stroke="#9FC3F5" stroke-width="1" stroke-dasharray="14 6 3 6"/>
+  <text x="132" y="332" font-size="11" class="mono" fill="#9FC3F5">EXIST. RIDGE ABOVE</text>
 
-  <!-- ridge line -->
-  <line x1="500" y1="92" x2="500" y2="592" stroke="#9FC3F5" stroke-width="1" stroke-dasharray="14 6 3 6"/>
-  <text x="507" y="112" font-size="11" class="mono" fill="#9FC3F5">RIDGE ABOVE — PEAK 17'-0"</text>
+  <!-- ===== EXISTING house walls (plain fill, thin outline) ===== -->
+  <g fill="#2A5CA0" stroke="#9FC3F5" stroke-width="1.2">
+    <rect x="120" y="140" width="800" height="8"/>            <!-- back -->
+    <rect x="120" y="148" width="8" height="392"/>            <!-- left -->
+    <rect x="912" y="148" width="8" height="400"/>            <!-- right, down to house front face -->
+    <rect x="120" y="540" width="440" height="8"/>            <!-- front, remaining left portion -->
+  </g>
+  <text x="300" y="360" font-size="15" class="mono" fill="#9FC3F5" letter-spacing="2">EXISTING RESIDENCE — 80'-0" x 40'-0"</text>
+  <text x="300" y="380" font-size="11" class="mono" fill="#9FC3F5">(INTERIOR LAYOUT NOT SHOWN)</text>
 
-  <!-- ===== walls ===== -->
-  <!-- back wall -->
-  <rect x="140" y="122" width="720" height="14" fill="url(#wallHatch)" stroke="#EAF2FF" stroke-width="1.5"/>
-  <!-- left wall (attaches to house) -->
-  <rect x="140" y="122" width="14" height="440" fill="url(#wallHatch)" stroke="#EAF2FF" stroke-width="1.5"/>
-  <!-- right wall -->
-  <rect x="846" y="122" width="14" height="440" fill="url(#wallHatch)" stroke="#EAF2FF" stroke-width="1.5"/>
-  <!-- front wall segments (between door openings) -->
-  <rect x="140" y="548" width="45"  height="14" fill="url(#wallHatch)" stroke="#EAF2FF" stroke-width="1.5"/>
-  <rect x="365" y="548" width="45"  height="14" fill="url(#wallHatch)" stroke="#EAF2FF" stroke-width="1.5"/>
-  <rect x="590" y="548" width="45"  height="14" fill="url(#wallHatch)" stroke="#EAF2FF" stroke-width="1.5"/>
-  <rect x="815" y="548" width="45"  height="14" fill="url(#wallHatch)" stroke="#EAF2FF" stroke-width="1.5"/>
+  <!-- removed section of existing front wall -->
+  <rect x="568" y="540" width="344" height="8" fill="none" stroke="#9FC3F5" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <line x1="470" y1="628" x2="600" y2="546" stroke="#9FC3F5" stroke-width="1"/>
+  <text x="150" y="634" font-size="11" class="mono" fill="#EAF2FF">EXIST. WALL &amp; ROOF EDGE REMOVED — SHORE &amp; REFRAME</text>
 
-  <!-- connection to house note -->
-  <text x="132" y="342" font-size="11" class="mono" fill="#9FC3F5" transform="rotate(-90 132 342)" text-anchor="middle">CONNECT TO EXISTING RESIDENCE</text>
+  <!-- ===== NEW garage walls (hatched) ===== -->
+  <g fill="url(#wallHatch)" stroke="#EAF2FF" stroke-width="1.5">
+    <rect x="560" y="440" width="360" height="8"/>            <!-- new back wall (inside house) -->
+    <rect x="560" y="448" width="8" height="212"/>            <!-- new left wall -->
+    <rect x="912" y="548" width="8" height="112"/>            <!-- right wall extension -->
+    <rect x="560" y="652" width="22.5" height="8"/>           <!-- front piers -->
+    <rect x="672.5" y="652" width="22.5" height="8"/>
+    <rect x="785" y="652" width="22.5" height="8"/>
+    <rect x="897.5" y="652" width="22.5" height="8"/>
+  </g>
+
+  <!-- affected interior area -->
+  <rect x="568" y="448" width="344" height="92" fill="#1E4E8C" opacity="0.55"/>
+  <text x="636" y="486" font-size="11" class="mono" fill="#EAF2FF" text-anchor="middle">EXIST. FLOOR AREA</text>
+  <text x="636" y="500" font-size="11" class="mono" fill="#EAF2FF" text-anchor="middle">ABSORBED: ±360 SF</text>
 
   <!-- overhead doors: closed panel + tracks -->
   <g stroke="#EAF2FF">
     <g id="ohd1">
-      <line x1="185" y1="555" x2="365" y2="555" stroke-width="3"/>
-      <line x1="190" y1="548" x2="190" y2="408" stroke-width="1" stroke-dasharray="6 5"/>
-      <line x1="360" y1="548" x2="360" y2="408" stroke-width="1" stroke-dasharray="6 5"/>
+      <line x1="582.5" y1="656" x2="672.5" y2="656" stroke-width="3"/>
+      <line x1="586" y1="652" x2="586" y2="582" stroke-width="1" stroke-dasharray="6 5"/>
+      <line x1="669" y1="652" x2="669" y2="582" stroke-width="1" stroke-dasharray="6 5"/>
     </g>
+    <use href="#ohd1" x="112.5"/>
     <use href="#ohd1" x="225"/>
-    <use href="#ohd1" x="450"/>
   </g>
-  <g font-size="11" class="mono" fill="#EAF2FF" text-anchor="middle">
-    <text x="275" y="530">9'-0" x 8'-0" OHD</text>
-    <text x="500" y="530">9'-0" x 8'-0" OHD</text>
-    <text x="725" y="530">9'-0" x 8'-0" OHD</text>
-    <text x="275" y="418" fill="#9FC3F5">TRACK ABV</text>
-    <text x="500" y="418" fill="#9FC3F5">TRACK ABV</text>
-    <text x="725" y="418" fill="#9FC3F5">TRACK ABV</text>
+  <g font-size="10" class="mono" fill="#EAF2FF" text-anchor="middle">
+    <text x="627.5" y="644">9'x8' OHD</text>
+    <text x="740" y="644">9'x8' OHD</text>
+    <text x="852.5" y="644">9'x8' OHD</text>
   </g>
-
-  <!-- slab note -->
-  <text x="182" y="160" font-size="11" class="mono" fill="#9FC3F5">4" CONC. SLAB, SLOPE 1/8"/FT TO DOORS</text>
 
   <!-- Palisade footprint (center bay) -->
   <g>
-    <rect x="435" y="140" width="130" height="328" rx="26" fill="none" stroke="#EAF2FF" stroke-width="1.3" stroke-dasharray="7 5"/>
-    <line x1="452" y1="196" x2="548" y2="196" stroke="#9FC3F5" stroke-width="1" stroke-dasharray="3 4"/>
-    <line x1="452" y1="420" x2="548" y2="420" stroke="#9FC3F5" stroke-width="1" stroke-dasharray="3 4"/>
-    <text x="500" y="300" font-size="12" class="mono" fill="#EAF2FF" text-anchor="middle" transform="rotate(-90 500 300)">HYUNDAI PALISADE — 196.7" (16'-5")</text>
+    <rect x="707.5" y="450" width="65" height="164" rx="14" fill="none" stroke="#EAF2FF" stroke-width="1.2" stroke-dasharray="6 4"/>
+    <text x="740" y="532" font-size="10" class="mono" fill="#EAF2FF" text-anchor="middle" transform="rotate(-90 740 532)">PALISADE 16'-5" +4'-3" CLR</text>
   </g>
-  <!-- clearance dim: vehicle rear to door -->
-  <g stroke="#9FC3F5" stroke-width="1.2">
-    <line x1="588" y1="468" x2="588" y2="548" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
-  </g>
-  <text x="596" y="512" font-size="12" class="mono" fill="#EAF2FF">4'-3" CLR</text>
+
+  <!-- fire separation note -->
+  <text x="552" y="435" font-size="10" class="mono" fill="#9FC3F5" text-anchor="end">GARAGE/DWELLING SEPARATION:</text>
+  <text x="552" y="448" font-size="10" class="mono" fill="#9FC3F5" text-anchor="end">1/2" GWB WALLS, 5/8" TYPE X CLG</text>
+  <line x1="556" y1="443" x2="600" y2="446" stroke="#9FC3F5" stroke-width="1"/>
 
   <!-- ===== dimensions ===== -->
   <g stroke="#9FC3F5" stroke-width="1.2" fill="none">
-    <!-- overall width -->
-    <line x1="140" y1="562" x2="140" y2="672"/><line x1="860" y1="562" x2="860" y2="672"/>
-    <line x1="140" y1="660" x2="860" y2="660" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
-    <!-- segment dims -->
-    <line x1="185" y1="562" x2="185" y2="632"/><line x1="365" y1="562" x2="365" y2="632"/>
-    <line x1="410" y1="562" x2="410" y2="632"/><line x1="590" y1="562" x2="590" y2="632"/>
-    <line x1="635" y1="562" x2="635" y2="632"/><line x1="815" y1="562" x2="815" y2="632"/>
-    <line x1="140" y1="620" x2="860" y2="620" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
-    <!-- exterior depth (right) -->
-    <line x1="860" y1="122" x2="946" y2="122"/><line x1="860" y1="562" x2="946" y2="562"/>
-    <line x1="934" y1="122" x2="934" y2="562" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
-    <!-- interior clear depth (left, inside) -->
-    <line x1="176" y1="136" x2="176" y2="548" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
+    <!-- house width, top -->
+    <line x1="120" y1="140" x2="120" y2="96"/><line x1="920" y1="140" x2="920" y2="96"/>
+    <line x1="120" y1="108" x2="920" y2="108" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
+    <!-- house depth, left -->
+    <line x1="120" y1="140" x2="76" y2="140"/><line x1="120" y1="540" x2="76" y2="540"/>
+    <line x1="88" y1="140" x2="88" y2="540" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
+    <!-- 44' offset along front -->
+    <line x1="120" y1="548" x2="120" y2="600"/><line x1="560" y1="548" x2="560" y2="600"/>
+    <line x1="120" y1="588" x2="560" y2="588" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
+    <!-- garage door segments + width -->
+    <line x1="560" y1="660" x2="560" y2="742"/><line x1="920" y1="660" x2="920" y2="742"/>
+    <line x1="582.5" y1="660" x2="582.5" y2="706"/><line x1="672.5" y1="660" x2="672.5" y2="706"/>
+    <line x1="695" y1="660" x2="695" y2="706"/><line x1="785" y1="660" x2="785" y2="706"/>
+    <line x1="807.5" y1="660" x2="807.5" y2="706"/><line x1="897.5" y1="660" x2="897.5" y2="706"/>
+    <line x1="560" y1="694" x2="920" y2="694" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
+    <line x1="560" y1="730" x2="920" y2="730" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
+    <!-- recess / projection / overall depth, right -->
+    <line x1="920" y1="440" x2="1030" y2="440"/><line x1="920" y1="540" x2="1030" y2="540"/><line x1="920" y1="660" x2="1030" y2="660"/>
+    <line x1="962" y1="440" x2="962" y2="540" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
+    <line x1="962" y1="540" x2="962" y2="660" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
+    <line x1="1012" y1="440" x2="1012" y2="660" marker-start="url(#arwB)" marker-end="url(#arwB)"/>
   </g>
   <g font-size="13" class="mono" fill="#EAF2FF" text-anchor="middle">
-    <text x="500" y="652">36'-0" OVERALL</text>
-    <text x="162" y="612" font-size="11">2'-3"</text>
-    <text x="275" y="612">9'-0"</text>
-    <text x="387" y="612" font-size="11">2'-3"</text>
-    <text x="500" y="612">9'-0"</text>
-    <text x="612" y="612" font-size="11">2'-3"</text>
-    <text x="725" y="612">9'-0"</text>
-    <text x="837" y="612" font-size="11">2'-3"</text>
-    <text x="958" y="346" transform="rotate(-90 958 346)">22'-0" OVERALL</text>
-    <text x="166" y="346" transform="rotate(-90 166 346)" font-size="12">20'-8" CLEAR  (PALISADE 16'-5" + 4'-3")</text>
+    <text x="520" y="100">80'-0" EXIST. HOUSE</text>
+    <text x="76" y="340" transform="rotate(-90 76 340)">40'-0" EXIST.</text>
+    <text x="340" y="580">44'-0"</text>
+    <text x="627.5" y="686" font-size="11">9'-0"</text>
+    <text x="740" y="686" font-size="11">9'-0"</text>
+    <text x="852.5" y="686" font-size="11">9'-0"</text>
+    <text x="571" y="686" font-size="9">2'-3"</text>
+    <text x="684" y="686" font-size="9">2'-3"</text>
+    <text x="796" y="686" font-size="9">2'-3"</text>
+    <text x="909" y="686" font-size="9">2'-3"</text>
+    <text x="740" y="722">36'-0" GARAGE</text>
+    <text x="950" y="490" transform="rotate(-90 950 490)" font-size="12">10'-0" IN</text>
+    <text x="950" y="600" transform="rotate(-90 950 600)" font-size="12">12'-0" OUT</text>
+    <text x="1024" y="550" transform="rotate(-90 1024 550)">22'-0"</text>
   </g>
 
   <!-- north arrow -->
-  <g transform="translate(1002,90)" stroke="#EAF2FF" fill="none">
+  <g transform="translate(1002,80)" stroke="#EAF2FF" fill="none">
     <circle r="22" stroke-width="1.5"/>
     <path d="M0,14 L0,-14 M0,-14 L-6,-2 M0,-14 L6,-2" stroke-width="1.5"/>
     <text y="-30" text-anchor="middle" font-size="13" fill="#EAF2FF" stroke="none" class="mono">N</text>
   </g>
 
-  <!-- general notes -->
+  <!-- legend + notes -->
   <g font-size="11" class="mono" fill="#9FC3F5">
-    <text x="46" y="700">NOTES: 2x6 WALLS @ 16" O.C. W/ STUCCO OVER SHEATHING · STONE VENEER WAINSCOT AT FRONT PIERS · DEPTH SET BY OWNER: PALISADE LENGTH (196.7") + 4'-0" MIN = 20'-5" — 20'-8" PROVIDED</text>
+    <rect x="46" y="770" width="26" height="10" fill="url(#wallHatch)" stroke="#EAF2FF" stroke-width="1"/>
+    <text x="80" y="779" fill="#EAF2FF">NEW CONSTRUCTION</text>
+    <rect x="230" y="770" width="26" height="10" fill="#2A5CA0" stroke="#9FC3F5" stroke-width="1"/>
+    <text x="264" y="779" fill="#EAF2FF">EXISTING</text>
+    <rect x="360" y="770" width="26" height="10" fill="none" stroke="#9FC3F5" stroke-width="1.2" stroke-dasharray="5 4"/>
+    <text x="394" y="779" fill="#EAF2FF">REMOVED</text>
+    <text x="46" y="800">GARAGE 36'-0" x 22'-0" · RECESSED 10'-0" INTO EXIST. HOUSE, 12'-0" PROJECTION · CLEAR DEPTH 20'-8" (PALISADE 196.7" + 4'-3") · GARAGE RIGHT WALL FLUSH W/ EXIST. EAST WALL</text>
   </g>
 </svg>
 </div>
 
-<!-- ============ SHEET A-2 : FRONT ELEVATION ============ -->
+<!-- ============ SHEET A-2 : FRONT ELEVATION, HOUSE + GARAGE ============ -->
+<!-- Scale: 11 px = 1 ft. Grade y=600. House x 100-980 (80'). Garage x 584-980 (36'),
+     eave 10' (y490), peak 17' (y413, x782). House fascia 17' (y413), ridge ~24' (y336). -->
 <div class="sheet">
-<svg id="elev" viewBox="0 0 1080 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Front elevation of three-car garage">
+<svg id="elev" viewBox="0 0 1080 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Front elevation, existing house with garage addition">
   <defs>
     <marker id="arwK" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,1 L10,5 L0,9" fill="none" stroke="#6B5B45" stroke-width="1.6"/>
     </marker>
     <linearGradient id="stuccoG" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#CFC49D"/><stop offset="1" stop-color="#BFB48D"/>
+    </linearGradient>
+    <linearGradient id="houseG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B0AB85"/><stop offset="1" stop-color="#9C9770"/>
     </linearGradient>
     <linearGradient id="woodG" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#A96F3B"/><stop offset=".5" stop-color="#B87E45"/><stop offset="1" stop-color="#9C6534"/>
@@ -173,137 +202,169 @@
   <!-- title block -->
   <g fill="#3B3226">
     <line x1="24" y1="716" x2="1056" y2="716" stroke="#3B3226" stroke-width="1.5"/>
-    <text x="46" y="748" font-size="26" font-weight="700" letter-spacing="2" font-family="'Archivo Narrow',sans-serif">FRONT ELEVATION — CARRIAGE-DOOR STYLE</text>
-    <text x="46" y="766" font-size="13" class="mono" fill="#6B5B45">SCALE 3/16" = 1'-0" · FINISHES MATCHED TO EXISTING GARAGE PHOTO</text>
-    <text x="760" y="748" font-size="13" class="mono" fill="#6B5B45">SHEET A-2</text>
-    <text x="760" y="766" font-size="13" class="mono" fill="#6B5B45">MAYFIELD RESIDENCE · RICHLAND CO, IL</text>
+    <text x="46" y="748" font-size="26" font-weight="700" letter-spacing="2">FRONT ELEVATION — HOUSE &amp; GARAGE ADDITION</text>
+    <text x="46" y="766" font-size="13" class="mono" fill="#6B5B45">SCALE 1/8" = 1'-0" · EXIST. HEIGHTS V.I.F. · FINISHES MATCHED TO EXISTING</text>
+    <text x="770" y="748" font-size="13" class="mono" fill="#6B5B45">SHEET A-2</text>
+    <text x="770" y="766" font-size="13" class="mono" fill="#6B5B45">MAYFIELD RESIDENCE · RICHLAND CO, IL</text>
   </g>
 
-  <!-- grade line -->
-  <line x1="70" y1="620" x2="1010" y2="620" stroke="#3B3226" stroke-width="2.5"/>
+  <!-- ===== EXISTING HOUSE (drawn first, garage overlaps) ===== -->
+  <!-- roof band: side gable, ridge y336, fascia y413 -->
+  <g>
+    <rect x="89" y="336" width="902" height="71" fill="#8A8378" stroke="#5c574f" stroke-width="1"/>
+    <g id="houseSeams" stroke="#6f6a60" stroke-width="1"></g>
+    <rect x="89" y="330" width="902" height="7" rx="2" fill="#75705f" stroke="#5c574f" stroke-width="1"/>
+    <rect x="89" y="407" width="902" height="8" fill="#4B3621"/>
+    <!-- chimney -->
+    <rect x="420" y="292" width="26" height="44" fill="#9C9770" stroke="#7d7860" stroke-width="1"/>
+    <rect x="416" y="286" width="34" height="8" fill="#75705f"/>
+  </g>
+  <!-- house wall -->
+  <rect x="100" y="415" width="880" height="185" fill="url(#houseG)" stroke="#7d7860" stroke-width="1.5"/>
 
-  <!-- wall (gable face) -->
-  <polygon points="140,620 140,420 500,283 860,420 860,620" fill="url(#stuccoG)" stroke="#8a7d5e" stroke-width="1.5"/>
+  <!-- house windows & door (visible left 44') -->
+  <g>
+    <!-- upper story windows w/ shutters -->
+    <g id="win1" transform="translate(150,432)">
+      <rect x="-12" y="0" width="10" height="46" fill="#3a3128"/>
+      <rect x="46" y="0" width="10" height="46" fill="#3a3128"/>
+      <rect x="0" y="0" width="44" height="46" fill="#D7E5EC" stroke="#3a3128" stroke-width="3"/>
+      <line x1="22" y1="0" x2="22" y2="46" stroke="#3a3128" stroke-width="2"/>
+      <line x1="0" y1="23" x2="44" y2="23" stroke="#3a3128" stroke-width="2"/>
+    </g>
+    <use href="#win1" x="200"/>
+    <!-- lower picture window -->
+    <rect x="150" y="512" width="88" height="56" fill="#D7E5EC" stroke="#f2efe6" stroke-width="5"/>
+    <line x1="194" y1="512" x2="194" y2="568" stroke="#f2efe6" stroke-width="4"/>
+    <!-- entry door (dark blue) -->
+    <rect x="460" y="524" width="34" height="76" fill="#2E3A4A" stroke="#20293a" stroke-width="2"/>
+    <circle cx="488" cy="564" r="2.5" fill="#c9b78a"/>
+    <!-- small window near door -->
+    <rect x="392" y="516" width="34" height="30" fill="#D7E5EC" stroke="#f2efe6" stroke-width="4"/>
+  </g>
+  <text x="290" y="466" font-size="12" class="mono" fill="#5c5540" text-anchor="middle" opacity="0"></text>
+
+  <!-- ===== GARAGE ADDITION (in front, 12' projection) ===== -->
+  <!-- side shadow to read projection -->
+  <rect x="577" y="420" width="7" height="180" fill="#000" opacity="0.18"/>
+  <!-- gable wall -->
+  <polygon points="584,600 584,490 782,413 980,490 980,600" fill="url(#stuccoG)" stroke="#8a7d5e" stroke-width="1.5"/>
   <g id="stuccoTexture" opacity="0.35"></g>
-
   <!-- rake fascia / roof edge -->
   <g stroke-linejoin="round">
-    <polygon points="110,432 500,280 890,432 890,444 500,293 110,444" fill="#4B3621" stroke="#33240f" stroke-width="1"/>
-    <polygon points="110,428 500,276 890,428 890,433 500,281 110,433" fill="#8A8378" stroke="none"/>
-    <rect x="486" y="264" width="28" height="14" rx="3" fill="#8A8378" stroke="#5c574f" stroke-width="1"/>
+    <polygon points="567,497 782,413 997,497 997,508 782,424 567,508" fill="#4B3621" stroke="#33240f" stroke-width="1"/>
+    <polygon points="567,493 782,409 997,493 997,498 782,414 567,498" fill="#8A8378" stroke="none"/>
+    <rect x="770" y="398" width="24" height="12" rx="3" fill="#8A8378" stroke="#5c574f" stroke-width="1"/>
   </g>
 
-  <!-- doors (generated by JS) -->
   <g id="doors"></g>
-
-  <!-- stone wainscot on piers (generated by JS) -->
   <g id="stones"></g>
-
-  <!-- carriage lanterns -->
   <g id="lanterns"></g>
+
+  <!-- grade line -->
+  <line x1="60" y1="600" x2="1020" y2="600" stroke="#3B3226" stroke-width="2.5"/>
+
+  <!-- labels -->
+  <text x="300" y="628" font-size="13" class="mono" fill="#6B5B45" text-anchor="middle">EXISTING RESIDENCE</text>
+  <text x="782" y="628" font-size="13" class="mono" fill="#6B5B45" text-anchor="middle">GARAGE ADDITION — PROJECTS 12'-0"</text>
 
   <!-- dimensions -->
   <g stroke="#6B5B45" stroke-width="1.2" fill="none">
-    <line x1="860" y1="420" x2="1000" y2="420"/><line x1="500" y1="280" x2="1000" y2="280"/><line x1="898" y1="620" x2="1000" y2="620"/>
-    <line x1="946" y1="420" x2="946" y2="620" marker-start="url(#arwK)" marker-end="url(#arwK)"/>
-    <line x1="988" y1="280" x2="988" y2="620" marker-start="url(#arwK)" marker-end="url(#arwK)"/>
-    <line x1="185" y1="460" x2="120" y2="460"/><line x1="185" y1="628" x2="120" y2="628"/>
-    <line x1="132" y1="460" x2="132" y2="620" marker-start="url(#arwK)" marker-end="url(#arwK)"/>
-    <line x1="185" y1="628" x2="185" y2="668"/><line x1="365" y1="628" x2="365" y2="668"/>
-    <line x1="185" y1="656" x2="365" y2="656" marker-start="url(#arwK)" marker-end="url(#arwK)"/>
-    <line x1="140" y1="628" x2="140" y2="700"/><line x1="860" y1="628" x2="860" y2="700"/>
-    <line x1="140" y1="690" x2="860" y2="690" marker-start="url(#arwK)" marker-end="url(#arwK)"/>
+    <!-- garage eave / peak, right -->
+    <line x1="980" y1="490" x2="1040" y2="490"/><line x1="782" y1="413" x2="1040" y2="413"/><line x1="1002" y1="600" x2="1040" y2="600"/>
+    <line x1="1008" y1="490" x2="1008" y2="600" marker-start="url(#arwK)" marker-end="url(#arwK)"/>
+    <line x1="1032" y1="413" x2="1032" y2="600" marker-start="url(#arwK)" marker-end="url(#arwK)"/>
+    <!-- house ridge, left -->
+    <line x1="89" y1="336" x2="48" y2="336"/><line x1="80" y1="600" x2="48" y2="600"/>
+    <line x1="58" y1="336" x2="58" y2="600" marker-start="url(#arwK)" marker-end="url(#arwK)"/>
+    <!-- door height -->
+    <line x1="608.75" y1="512" x2="545" y2="512"/>
+    <line x1="556" y1="512" x2="556" y2="600" marker-start="url(#arwK)" marker-end="url(#arwK)"/>
+    <!-- widths below grade -->
+    <line x1="100" y1="606" x2="100" y2="694"/><line x1="584" y1="606" x2="584" y2="672"/><line x1="980" y1="606" x2="980" y2="694"/>
+    <line x1="584" y1="660" x2="980" y2="660" marker-start="url(#arwK)" marker-end="url(#arwK)"/>
+    <line x1="100" y1="684" x2="980" y2="684" marker-start="url(#arwK)" marker-end="url(#arwK)"/>
   </g>
   <g font-size="13" class="mono" fill="#3B3226" text-anchor="middle">
-    <text x="958" y="516" transform="rotate(-90 958 516)">10'-0" EAVE</text>
-    <text x="1000" y="446" transform="rotate(-90 1000 446)">17'-0" PEAK</text>
-    <text x="120" y="544" transform="rotate(-90 120 544)">8'-0"</text>
-    <text x="275" y="648">9'-0"</text>
-    <text x="500" y="682">36'-0"</text>
-  </g>
-
-  <!-- finish keynotes -->
-  <g font-size="11" class="mono" fill="#6B5B45">
-    <text x="46" y="700">1. STANDING-SEAM METAL ROOF, ~4.7:12 PITCH   2. STUCCO FINISH TO MATCH HOUSE   3. STAINED WOOD CARRIAGE OHDs W/ X-BRACE &amp; TOP LITES   4. STONE VENEER WAINSCOT   5. BLACK CARRIAGE LANTERNS</text>
+    <text x="1020" y="546" transform="rotate(-90 1020 546)">10'-0" EAVE</text>
+    <text x="1044" y="508" transform="rotate(-90 1044 508)">17'-0" PEAK</text>
+    <text x="46" y="470" transform="rotate(-90 46 470)">EXIST. RIDGE ±24'-0" V.I.F.</text>
+    <text x="546" y="558" transform="rotate(-90 546 558)" font-size="12">8'-0"</text>
+    <text x="782" y="654" font-size="12">36'-0" ADDITION</text>
+    <text x="540" y="700" font-size="12">80'-0" EXIST. HOUSE</text>
   </g>
 
   <script><![CDATA[
   (function(){
-    const svg = document.getElementById('elev');
-    const NS = 'http://www.w3.org/2000/svg';
-    const el = (t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+    const NS='http://www.w3.org/2000/svg';
+    const el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+    let seed=7; const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};
 
-    // ---- carriage doors ----
-    const doors = document.getElementById('doors');
-    [185,410,635].forEach(x=>{
-      const g = el('g',{});
-      // frame + slab
-      g.appendChild(el('rect',{x:x-6,y:450,width:192,height:170,fill:'#7C4A22'}));
-      g.appendChild(el('rect',{x:x,y:456,width:180,height:164,fill:'url(#woodG)',stroke:'#6e4520','stroke-width':1.5}));
-      // vertical plank lines
-      for(let px=x+15;px<x+180;px+=15){
-        g.appendChild(el('line',{x1:px,y1:456,x2:px,y2:620,stroke:'#8a5a2c','stroke-width':0.8,opacity:0.6}));
-      }
-      // top lite band: 4 windows
-      g.appendChild(el('rect',{x:x+8,y:464,width:164,height:34,fill:'#6e4520'}));
-      for(let i=0;i<4;i++){
-        g.appendChild(el('rect',{x:x+13+i*41,y:468,width:32,height:26,fill:'#D7E5EC',stroke:'#43301c','stroke-width':1.5}));
-      }
+    // house roof standing seams
+    const seams=document.getElementById('houseSeams');
+    for(let x=110;x<985;x+=22) seams.appendChild(el('line',{x1:x,y1:337,x2:x,y2:406}));
+
+    // ---- carriage doors (9'x8' @ 11px/ft): x positions of openings ----
+    const doors=document.getElementById('doors');
+    [608.75,732.5,856.25].forEach(x=>{
+      const g=el('g',{}), w=99, top=512, bot=600;
+      g.appendChild(el('rect',{x:x-4,y:top-4,width:w+8,height:bot-top+4,fill:'#7C4A22'}));
+      g.appendChild(el('rect',{x:x,y:top,width:w,height:bot-top,fill:'url(#woodG)',stroke:'#6e4520','stroke-width':1.2}));
+      for(let px=x+8;px<x+w;px+=8) g.appendChild(el('line',{x1:px,y1:top,x2:px,y2:bot,stroke:'#8a5a2c','stroke-width':0.6,opacity:0.6}));
+      // top lite band, 4 panes
+      g.appendChild(el('rect',{x:x+4,y:top+4,width:w-8,height:20,fill:'#6e4520'}));
+      for(let i=0;i<4;i++) g.appendChild(el('rect',{x:x+7+i*22.5,y:top+6.5,width:17,height:15,fill:'#D7E5EC',stroke:'#43301c','stroke-width':1.2}));
       // mid rail
-      g.appendChild(el('rect',{x:x+2,y:504,width:176,height:7,fill:'#8a5a2c',opacity:0.9}));
+      g.appendChild(el('rect',{x:x+1,y:top+27,width:w-2,height:4,fill:'#8a5a2c'}));
       // X braces on each half
-      [[x+6,x+88],[x+92,x+174]].forEach(([a,b])=>{
-        g.appendChild(el('line',{x1:a,y1:518,x2:b,y2:612,stroke:'#7C4A22','stroke-width':7,'stroke-linecap':'round'}));
-        g.appendChild(el('line',{x1:b,y1:518,x2:a,y2:612,stroke:'#7C4A22','stroke-width':7,'stroke-linecap':'round'}));
+      const y1=top+34, y2=bot-4;
+      [[x+3,x+w/2-2],[x+w/2+2,x+w-3]].forEach(([a,b])=>{
+        g.appendChild(el('line',{x1:a,y1:y1,x2:b,y2:y2,stroke:'#7C4A22','stroke-width':4.5,'stroke-linecap':'round'}));
+        g.appendChild(el('line',{x1:b,y1:y1,x2:a,y2:y2,stroke:'#7C4A22','stroke-width':4.5,'stroke-linecap':'round'}));
       });
-      // center stile + handles
-      g.appendChild(el('rect',{x:x+87,y:504,width:6,height:116,fill:'#6e4520'}));
-      g.appendChild(el('rect',{x:x+74,y:552,width:9,height:26,rx:3,fill:'#1d1d1d'}));
-      g.appendChild(el('rect',{x:x+97,y:552,width:9,height:26,rx:3,fill:'#1d1d1d'}));
+      g.appendChild(el('rect',{x:x+w/2-2,y:top+27,width:4,height:bot-top-27,fill:'#6e4520'}));
+      g.appendChild(el('rect',{x:x+w/2-11,y:top+44,width:5.5,height:15,rx:2,fill:'#1d1d1d'}));
+      g.appendChild(el('rect',{x:x+w/2+5.5,y:top+44,width:5.5,height:15,rx:2,fill:'#1d1d1d'}));
       doors.appendChild(g);
     });
 
-    // ---- stone wainscot on wall segments ----
-    const stones = document.getElementById('stones');
-    const segs = [[140,45],[365,45],[590,45],[815,45]]; // x,width — grade 620 up to 550
-    let seed = 7;
-    const rnd = ()=>{seed=(seed*16807)%2147483647;return seed/2147483647;};
-    segs.forEach(([sx,sw])=>{
-      stones.appendChild(el('rect',{x:sx,y:548,width:sw,height:72,fill:'#A79C82',stroke:'#8F856E','stroke-width':1}));
-      stones.appendChild(el('rect',{x:sx-3,y:542,width:sw+6,height:7,fill:'#9a8f76',stroke:'#7d7460','stroke-width':1})); // cap
-      for(let row=0;row<4;row++){
-        let cx = sx+2;
-        while(cx < sx+sw-4){
-          const w = 10+rnd()*14, h = 12+rnd()*5;
-          const shade = ['#B3A88F','#A89C80','#BCB199','#9E9378'][Math.floor(rnd()*4)];
-          stones.appendChild(el('rect',{x:cx,y:551+row*17,width:Math.min(w,sx+sw-2-cx),height:h,rx:4,fill:shade,stroke:'#7d7460','stroke-width':0.8}));
-          cx += w+2.5;
+    // ---- stone wainscot on garage piers (grade 600 up to ~560) ----
+    const stones=document.getElementById('stones');
+    [[584,24.75],[707.75,24.75],[831.5,24.75],[955.25,24.75]].forEach(([sx,sw])=>{
+      stones.appendChild(el('rect',{x:sx,y:558,width:sw,height:42,fill:'#A79C82',stroke:'#8F856E','stroke-width':1}));
+      stones.appendChild(el('rect',{x:sx-2,y:553,width:sw+4,height:6,fill:'#9a8f76',stroke:'#7d7460','stroke-width':1}));
+      for(let row=0;row<3;row++){
+        let cx=sx+1.5;
+        while(cx<sx+sw-3){
+          const w=6+rnd()*9, h=9+rnd()*4;
+          const shade=['#B3A88F','#A89C80','#BCB199','#9E9378'][Math.floor(rnd()*4)];
+          stones.appendChild(el('rect',{x:cx,y:561+row*13,width:Math.min(w,sx+sw-1.5-cx),height:h,rx:3,fill:shade,stroke:'#7d7460','stroke-width':0.7}));
+          cx+=w+2;
         }
       }
     });
 
     // ---- lanterns on outer piers ----
-    const lan = document.getElementById('lanterns');
-    [162,838].forEach(cx=>{
-      const g = el('g',{});
-      g.appendChild(el('line',{x1:cx,y1:436,x2:cx,y2:444,stroke:'#111','stroke-width':3}));
-      g.appendChild(el('polygon',{points:`${cx-11},452 ${cx+11},452 ${cx+7},444 ${cx-7},444`,fill:'#111'}));
-      g.appendChild(el('rect',{x:cx-8,y:452,width:16,height:22,fill:'#F2DFA7',stroke:'#111','stroke-width':2.5}));
-      g.appendChild(el('line',{x1:cx,y1:452,x2:cx,y2:474,stroke:'#111','stroke-width':1.5}));
-      g.appendChild(el('circle',{cx:cx,cy:478,r:3,fill:'#111'}));
+    const lan=document.getElementById('lanterns');
+    [596.5,967.5].forEach(cx=>{
+      const g=el('g',{});
+      g.appendChild(el('line',{x1:cx,y1:478,x2:cx,y2:484,stroke:'#111','stroke-width':2.5}));
+      g.appendChild(el('polygon',{points:`${cx-8},490 ${cx+8},490 ${cx+5},484 ${cx-5},484`,fill:'#111'}));
+      g.appendChild(el('rect',{x:cx-6,y:490,width:12,height:17,fill:'#F2DFA7',stroke:'#111','stroke-width':2}));
+      g.appendChild(el('line',{x1:cx,y1:490,x2:cx,y2:507,stroke:'#111','stroke-width':1.2}));
+      g.appendChild(el('circle',{cx:cx,cy:510,r:2.2,fill:'#111'}));
       lan.appendChild(g);
     });
 
-    // ---- light stucco texture dots ----
-    const tex = document.getElementById('stuccoTexture');
-    for(let i=0;i<260;i++){
-      const px = 145+rnd()*710, py = 300+rnd()*315;
-      // keep inside gable triangle-ish region and off the doors
-      const roofY = 283 + Math.abs(px-500)*(137/360);
-      if(py < roofY+8) continue;
-      const overDoor = (px>179&&px<371&&py>444)||(px>404&&px<596&&py>444)||(px>629&&px<821&&py>444);
+    // ---- stucco texture on garage gable ----
+    const tex=document.getElementById('stuccoTexture');
+    for(let i=0;i<220;i++){
+      const px=588+rnd()*388, py=425+rnd()*172;
+      const roofY=413+Math.abs(px-782)*(77/198);
+      if(py<roofY+6) continue;
+      const overDoor=(px>604&&px<712&&py>506)||(px>728&&px<836&&py>506)||(px>852&&px<960&&py>506);
       if(overDoor) continue;
-      tex.appendChild(el('circle',{cx:px,cy:py,r:0.9,fill:'#9d9170'}));
+      tex.appendChild(el('circle',{cx:px,cy:py,r:0.8,fill:'#9d9170'}));
     }
   })();
   ]]></script>
