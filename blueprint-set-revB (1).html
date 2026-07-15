@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM-RES-01 · Blueprint Set Rev B · Building Views + Panel Shop Drawings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bp:#14304C; --bp2:#0F2740; --ln:#DCE9F4; --ln2:#8FAAC4; --amber:#F2A860; --paperln:#EAF3FB;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bp);color:var(--ln);font-family:'Archivo',sans-serif;font-size:15px;line-height:1.55;padding:28px 20px 80px}
+  .set{max-width:1060px;margin:0 auto}
+  .mono{font-family:'IBM Plex Mono',monospace}
+
+  nav.setnav{display:flex;border:2px solid var(--ln);margin-bottom:14px}
+  nav.setnav a{flex:1;text-align:center;padding:10px 8px;font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ln);text-decoration:none;border-right:1.5px solid var(--ln)}
+  nav.setnav a:last-child{border-right:none}
+  nav.setnav a:hover{background:var(--bp2)}
+  nav.setnav a.here{background:var(--ln);color:var(--bp)}
+  nav.setnav a span{display:block;font-size:9px;color:var(--ln2);letter-spacing:.14em}
+  nav.setnav a.here span{color:var(--bp);opacity:.6}
+
+  header.tblock{border:2px solid var(--ln);margin-bottom:26px}
+  .tblock-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;padding:26px 26px 18px;border-bottom:1.5px solid var(--ln)}
+  .tblock h1{font-weight:800;font-size:clamp(26px,4.4vw,44px);letter-spacing:-0.02em;line-height:1.05;text-transform:uppercase}
+  .tblock h1 span{color:var(--amber)}
+  .tblock .sub{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ln2);margin-top:10px}
+  .tblock-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+  .tblock-meta div{padding:10px 14px;border-right:1px solid var(--ln);font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+  .tblock-meta div:last-child{border-right:none}
+  .tblock-meta b{display:block;font-size:10px;color:var(--ln2);letter-spacing:.16em;text-transform:uppercase;margin-bottom:2px;font-weight:500}
+
+  .sheet{border:1.5px solid var(--ln);margin-bottom:26px}
+  .sheet-tag{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;border-bottom:1.5px solid var(--ln);padding:10px 18px}
+  .sheet-tag .no{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;background:var(--ln);color:var(--bp);padding:2px 9px}
+  .sheet-tag h2{font-size:15px;font-weight:700;letter-spacing:.10em;text-transform:uppercase}
+  .sheet-tag .scale{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ln2)}
+  .sheet-body{padding:22px 18px}
+  .sheet-note{font-size:13.5px;color:var(--ln2);max-width:74ch;margin:0 0 16px}
+  .sheet-note em{color:var(--ln);font-style:normal;font-weight:600}
+  svg{display:block;width:100%;height:auto}
+  svg text{font-family:'IBM Plex Mono',monospace;fill:var(--ln)}
+
+  .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:16px}
+  @media(max-width:520px){.pgrid{grid-template-columns:1fr}}
+  .pcard{border:1.5px solid var(--ln);background:var(--bp2)}
+  .pcard-head{display:flex;align-items:baseline;gap:12px;border-bottom:1.5px solid var(--ln);padding:9px 14px}
+  .pcard-head .pno{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;background:var(--amber);color:var(--bp);padding:1px 8px}
+  .pcard-head h3{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  .pcard-head .qty{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ln2)}
+  .pcard .draw{padding:16px 14px 6px}
+  .pcard .specs{border-top:1px dashed var(--ln2);padding:10px 14px 12px;font-family:'IBM Plex Mono',monospace;font-size:10.8px;line-height:1.75;color:var(--ln2);letter-spacing:.02em}
+  .pcard .specs b{color:var(--ln);font-weight:600}
+  footer{max-width:1060px;margin:10px auto 0;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ln2);letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<div class="set">
+
+  <nav class="setnav">
+    <a href="stepped-shed-house-revB.html"><span>01</span>DESIGN · A-SET</a>
+    <a class="here" href="blueprint-set-revB.html"><span>02</span>BLUEPRINTS · S/P</a>
+    <a href="materials-takeoff-revB.html"><span>03</span>TAKEOFF · M1</a>
+    <a href="garage-revB.html"><span>04</span>GARAGE · G-SET</a>
+    <a href="rendering-revB.html"><span>05</span>RENDERING</a>
+  </nav>
+
+  <header class="tblock">
+    <div class="tblock-top">
+      <div>
+        <h1>Blueprint Set <span>/ REV B</span></h1>
+        <div class="sub">Stepped shed house · 1,232 SF · building views S1–S4 · panel drawings P1–P10 · garage + walk included</div>
+      </div>
+      <div class="mono" style="font-size:11.5px;text-align:right;line-height:1.7;color:var(--ln2)">
+        THREE 2:12 PLANES · B RAISED 2' + PROUD 4'<br>
+        A/C 13'-0" → 8'-4" · B 15'-0" → 9'-8"<br>
+        CLERESTORY BAND BOTH SIDES OF ZONE B
+      </div>
+    </div>
+    <div class="tblock-meta">
+      <div><b>Project No.</b>TM-RES-01</div>
+      <div><b>Rev</b>B · 07 · 12 · 2026</div>
+      <div><b>Sheets</b>S1–S4 · P1–P10</div>
+      <div><b>Grid</b>1–7 @ 7'-0"</div>
+      <div><b>Supersedes</b>Rev A blueprint set</div>
+    </div>
+  </header>
+
+  <!-- ============ S1 PLAN ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">S1</span><h2>Plan · Grid, Bearing &amp; Panel Keys</h2><span class="scale">A/C BEARING @ 0/14/28 · B @ 0/16/32</span></div>
+    <div class="sheet-body">
+      <p class="sheet-note">
+        The 7'-0" column grid survives Rev B untouched; the change is in the rows — zones A/C carry
+        bearing lines at 0/14/28 while B, four feet deeper, carries its own at 0/16/32. The zone walls
+        at grid 3 and 5 are now the hardest-working elements in the building: bearing for two roof
+        planes, both beams, and the clerestory band.
+      </p>
+      <svg viewBox="0 0 700 512" role="img" aria-label="Rev B framing plan with grid and panel keys">
+        <!-- grid columns -->
+        <g stroke="var(--amber)" stroke-width="0.9" opacity="0.5" stroke-dasharray="10 5 2 5">
+          <line x1="80" y1="42" x2="80" y2="430"/><line x1="157" y1="42" x2="157" y2="430"/>
+          <line x1="234" y1="42" x2="234" y2="430"/><line x1="311" y1="42" x2="311" y2="430"/>
+          <line x1="388" y1="42" x2="388" y2="430"/><line x1="465" y1="42" x2="465" y2="430"/>
+          <line x1="542" y1="42" x2="542" y2="430"/>
+        </g>
+        <g font-size="10" text-anchor="middle">
+          <g fill="none" stroke="var(--amber)" stroke-width="1.2">
+            <circle cx="80" cy="30" r="11"/><circle cx="157" cy="30" r="11"/><circle cx="234" cy="30" r="11"/>
+            <circle cx="311" cy="30" r="11"/><circle cx="388" cy="30" r="11"/><circle cx="465" cy="30" r="11"/>
+            <circle cx="542" cy="30" r="11"/>
+          </g>
+          <g fill="var(--amber)">
+            <text x="80" y="34">1</text><text x="157" y="34">2</text><text x="234" y="34">3</text>
+            <text x="311" y="34">4</text><text x="388" y="34">5</text><text x="465" y="34">6</text><text x="542" y="34">7</text>
+          </g>
+        </g>
+
+        <!-- bearing lines -->
+        <g stroke="var(--amber)" stroke-width="1.4" stroke-dasharray="14 4 3 4" opacity="0.9">
+          <line x1="74" y1="60" x2="548" y2="60"/>
+          <line x1="74" y1="214" x2="234" y2="214"/><line x1="388" y1="214" x2="548" y2="214"/>
+          <line x1="234" y1="236" x2="388" y2="236"/>
+          <line x1="74" y1="368" x2="234" y2="368"/><line x1="388" y1="368" x2="548" y2="368"/>
+          <line x1="234" y1="412" x2="388" y2="412"/>
+        </g>
+        <g font-size="8" fill="var(--amber)">
+          <text x="556" y="63">BRG · REAR</text>
+          <text x="556" y="217">A/C BRG + GLULAM @ 14'</text>
+          <text x="242" y="231">B GLULAM @ 16'</text>
+          <text x="556" y="371">A/C FRONT</text>
+          <text x="394" y="425">B FRONT · +4'</text>
+        </g>
+
+        <!-- interior walls -->
+        <g stroke="var(--ln)" stroke-width="3">
+          <line x1="80" y1="159" x2="135" y2="159"/><line x1="162.5" y1="159" x2="190" y2="159"/><line x1="217.5" y1="159" x2="234" y2="159"/>
+          <line x1="179" y1="60" x2="179" y2="159"/>
+          <line x1="388" y1="126" x2="454" y2="126"/><line x1="481.5" y1="126" x2="542" y2="126"/>
+          <line x1="443" y1="60" x2="443" y2="126"/>
+          <line x1="492.5" y1="60" x2="492.5" y2="126"/>
+          <line x1="432" y1="126" x2="432" y2="148"/><line x1="432" y1="175.5" x2="432" y2="203"/>
+          <line x1="388" y1="203" x2="393.5" y2="203"/><line x1="421" y1="203" x2="542" y2="203"/>
+        </g>
+        <!-- zone bearing walls -->
+        <g stroke="var(--ln)" stroke-width="5.5">
+          <line x1="234" y1="60" x2="234" y2="170"/><line x1="234" y1="203" x2="234" y2="412"/>
+          <line x1="388" y1="60" x2="388" y2="76.5"/><line x1="388" y1="104" x2="388" y2="137"/>
+          <line x1="388" y1="181" x2="388" y2="373.5"/><line x1="388" y1="406.5" x2="388" y2="412"/>
+        </g>
+        <!-- exterior walls -->
+        <g stroke="var(--ln)" stroke-width="6" fill="none">
+          <line x1="80" y1="60" x2="107.5" y2="60"/><line x1="140.5" y1="60" x2="267" y2="60"/><line x1="344" y1="60" x2="542" y2="60"/>
+          <line x1="80" y1="60" x2="80" y2="214"/><line x1="80" y1="280" x2="80" y2="368"/>
+          <line x1="542" y1="60" x2="542" y2="76.5"/><line x1="542" y1="104" x2="542" y2="148"/>
+          <line x1="542" y1="181" x2="542" y2="236"/><line x1="542" y1="302" x2="542" y2="368"/>
+          <line x1="80" y1="368" x2="102" y2="368"/><line x1="212" y1="368" x2="234" y2="368"/>
+          <line x1="388" y1="368" x2="443" y2="368"/><line x1="520" y1="368" x2="542" y2="368"/>
+          <line x1="234" y1="412" x2="245" y2="412"/><line x1="377" y1="412" x2="388" y2="412"/>
+        </g>
+        <!-- window sills thin -->
+        <g stroke="var(--ln2)" stroke-width="1.2">
+          <line x1="107.5" y1="60" x2="140.5" y2="60"/><line x1="267" y1="60" x2="344" y2="60"/>
+          <line x1="80" y1="214" x2="80" y2="280"/>
+          <line x1="542" y1="104" x2="542" y2="148"/><line x1="542" y1="236" x2="542" y2="302"/>
+          <line x1="102" y1="368" x2="212" y2="368"/><line x1="443" y1="368" x2="520" y2="368"/>
+          <line x1="245" y1="412" x2="377" y2="412"/>
+        </g>
+
+        <!-- room labels -->
+        <g font-size="9.5" fill="var(--ln2)" text-anchor="middle">
+          <text x="157" y="266">PRIMARY BED</text>
+          <text x="122" y="112">BATH 1 · 9×9</text><text x="207" y="112">W.I.C.</text>
+          <text x="311" y="110">KITCHEN</text><text x="311" y="290">LIVING · 15' CLG</text>
+          <text x="465" y="290">BEDROOM 2</text><text x="487" y="170">BATH 2 · 10×7</text>
+          <text x="410" y="170">HALL</text><text x="415" y="96">PNTRY</text>
+          <text x="468" y="96">LNDRY</text><text x="517" y="96">MECH</text>
+        </g>
+
+        <!-- panel keys -->
+        <g font-size="8.5" fill="var(--amber)" text-anchor="middle">
+          <text x="118" y="386">WF-A1</text><text x="196" y="386">WF-A2</text>
+          <text x="272" y="430">WF-B1</text><text x="350" y="430">WF-B2</text>
+          <text x="426" y="386">WF-C1</text><text x="504" y="386">WF-C2</text>
+          <text x="118" y="50">WR1</text><text x="196" y="50">WR2</text><text x="272" y="50">WR3</text>
+          <text x="350" y="50">WR4</text><text x="426" y="50">WR5</text><text x="504" y="50">WR6</text>
+          <text x="66" y="118" transform="rotate(-90 66 118)">WS1–4 →</text>
+          <text x="558" y="330" transform="rotate(90 558 330)">← WS5–8</text>
+          <text x="228" y="398" transform="rotate(-90 228 398)">PR-W</text>
+          <text x="396" y="398" transform="rotate(90 396 398)">PR-E · ENTRY</text>
+          <text x="311" y="466">CL1–8 CLERESTORY STRIPS EACH SIDE OF ZONE B, ABOVE A/C ROOFS</text>
+        </g>
+
+        <text x="311" y="448" text-anchor="middle" font-size="9.5" letter-spacing="2" fill="var(--ln2)">FRONT · ZONE B PROJECTS 4'-0"</text>
+        <g transform="translate(648,452)">
+          <circle r="15" fill="none" stroke="var(--ln2)" stroke-width="1.2"/>
+          <path d="M0,9 L0,-9 M0,-9 L-4,-2 M0,-9 L4,-2" stroke="var(--ln)" stroke-width="1.6" fill="none"/>
+          <text y="-21" text-anchor="middle" font-size="9">N</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ S2 ELEVATIONS ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">S2</span><h2>Elevations · All Four Faces</h2><span class="scale">SCALE ~1/16" = 1'-0"</span></div>
+    <div class="sheet-body">
+      <svg viewBox="0 0 760 460" role="img" aria-label="Rev B elevations">
+        <!-- FRONT -->
+        <text x="30" y="22" font-size="10.5" font-weight="600" letter-spacing="1.5">FRONT (SOUTH) · STEPPED</text>
+        <g transform="translate(40,36)">
+          <rect x="0" y="78" width="84" height="78" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.8"/>
+          <rect x="168" y="78" width="84" height="78" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.8"/>
+          <rect x="-7" y="73" width="98" height="5" fill="var(--ln)"/>
+          <rect x="161" y="73" width="98" height="5" fill="var(--ln)"/>
+          <rect x="12" y="90" width="60" height="54" fill="none" stroke="var(--ln)" stroke-width="1.2"/>
+          <line x1="32" y1="90" x2="32" y2="144" stroke="var(--ln)" stroke-width="0.7"/>
+          <line x1="52" y1="90" x2="52" y2="144" stroke="var(--ln)" stroke-width="0.7"/>
+          <rect x="198" y="90" width="42" height="54" fill="none" stroke="var(--ln)" stroke-width="1.2"/>
+          <line x1="219" y1="90" x2="219" y2="144" stroke="var(--ln)" stroke-width="0.7"/>
+          <rect x="84" y="66" width="84" height="90" fill="var(--bp2)" stroke="var(--ln)" stroke-width="2.4"/>
+          <rect x="76" y="61" width="100" height="5" fill="var(--ln)"/>
+          <rect x="90" y="78" width="72" height="78" fill="none" stroke="var(--ln)" stroke-width="1.3"/>
+          <line x1="114" y1="78" x2="114" y2="156" stroke="var(--ln)" stroke-width="0.7"/>
+          <line x1="138" y1="78" x2="138" y2="156" stroke="var(--ln)" stroke-width="0.7"/>
+          <line x1="90" y1="108" x2="162" y2="108" stroke="var(--ln)" stroke-width="0.7"/>
+          <line x1="-14" y1="156" x2="266" y2="156" stroke="var(--ln)" stroke-width="2.4"/>
+          <g font-size="8" fill="var(--ln2)" text-anchor="middle">
+            <text x="42" y="172">A · 13'-0"</text><text x="126" y="172">B · 15'-0" · +4' PROUD</text><text x="210" y="172">C · 13'-0"</text>
+          </g>
+        </g>
+
+        <!-- REAR -->
+        <text x="430" y="22" font-size="10.5" font-weight="600" letter-spacing="1.5">REAR (NORTH) · FLUSH, B TALLER</text>
+        <g transform="translate(440,36)">
+          <rect x="0" y="106" width="252" height="50" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.8"/>
+          <rect x="84" y="98" width="84" height="58" fill="var(--bp2)" stroke="var(--ln)" stroke-width="2.2"/>
+          <rect x="-6" y="101" width="92" height="5" fill="var(--ln)"/>
+          <rect x="166" y="101" width="92" height="5" fill="var(--ln)"/>
+          <rect x="78" y="93" width="96" height="5" fill="var(--ln)"/>
+          <!-- kitchen window mirrored x'=18-25 -> 108-150 -->
+          <rect x="108" y="108" width="42" height="22" fill="none" stroke="var(--ln)" stroke-width="1.2"/>
+          <!-- bath1 window mirrored x'=36.5-39.5 -> 219-237 -->
+          <rect x="219" y="112" width="18" height="13" fill="none" stroke="var(--ln)" stroke-width="1.2"/>
+          <circle cx="30" cy="116" r="4" fill="none" stroke="var(--ln)" stroke-width="1"/>
+          <circle cx="44" cy="116" r="4" fill="none" stroke="var(--ln)" stroke-width="1"/>
+          <line x1="-10" y1="156" x2="262" y2="156" stroke="var(--ln)" stroke-width="2.4"/>
+          <g font-size="8" fill="var(--ln2)" text-anchor="middle">
+            <text x="42" y="172">C REAR · 8'-4"</text><text x="126" y="172">B REAR · 9'-8"</text><text x="210" y="172">A REAR · 8'-4"</text>
+          </g>
+        </g>
+
+        <!-- EAST -->
+        <text x="30" y="228" font-size="10.5" font-weight="600" letter-spacing="1.5">EAST · ENTRY IN THE NOTCH</text>
+        <g transform="translate(50,244)">
+          <line x1="-14" y1="95.6" x2="204" y2="134" stroke="var(--ln)" stroke-width="3.4"/>
+          <polygon points="24,112 192,140 192,190 24,190" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.8"/>
+          <polygon points="12,108 200,139.4 200,143.4 12,112" fill="var(--ln)"/>
+          <polygon points="24,100 192,133.5 192,138 24,109.5" fill="var(--paperln)" opacity="0.25" stroke="var(--amber)" stroke-width="1"/>
+          <g stroke="var(--ln2)" stroke-width="0.6"><line x1="52" y1="105" x2="52" y2="135"/><line x1="80" y1="110" x2="80" y2="136"/><line x1="108" y1="115" x2="108" y2="136.5"/><line x1="136" y1="120" x2="136" y2="137"/><line x1="164" y1="125" x2="164" y2="137.5"/></g>
+          <rect x="0" y="100" width="24" height="90" fill="var(--bp2)" stroke="var(--ln)" stroke-width="2.2"/>
+          <rect x="4" y="148" width="18" height="42" fill="none" stroke="var(--ln)" stroke-width="1.3"/>
+          <circle cx="19" cy="170" r="1.6" fill="var(--ln)"/>
+          <rect x="60" y="130" width="36" height="46" fill="none" stroke="var(--ln)" stroke-width="1.2"/>
+          <rect x="126" y="134" width="18" height="14" fill="none" stroke="var(--ln)" stroke-width="1.2"/>
+          <rect x="166" y="150" width="18" height="40" fill="none" stroke="var(--ln)" stroke-width="1.2"/>
+          <line x1="-20" y1="190" x2="230" y2="190" stroke="var(--ln)" stroke-width="2.4"/>
+          <g font-size="8" fill="var(--ln2)"><text x="12" y="206" text-anchor="middle">ENTRY</text><text x="108" y="206" text-anchor="middle">C · 13' → 8'-4" · B ROOF + CLERESTORY ABOVE (AMBER)</text></g>
+        </g>
+
+        <!-- WEST -->
+        <text x="430" y="228" font-size="10.5" font-weight="600" letter-spacing="1.5">WEST · MIRRORED</text>
+        <g transform="translate(450,244)">
+          <line x1="216" y1="95.6" x2="-2" y2="134" stroke="var(--ln)" stroke-width="3.4"/>
+          <polygon points="178,112 10,140 10,190 178,190" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.8"/>
+          <polygon points="190,108 2,139.4 2,143.4 190,112" fill="var(--ln)"/>
+          <polygon points="178,100 10,133.5 10,138 178,109.5" fill="var(--paperln)" opacity="0.25" stroke="var(--amber)" stroke-width="1"/>
+          <rect x="178" y="100" width="24" height="90" fill="var(--bp2)" stroke="var(--ln)" stroke-width="2.2"/>
+          <!-- primary window plan y14-20 from rear: x = 10 + (planY)*6 : 94-130 -->
+          <rect x="94" y="132" width="36" height="44" fill="none" stroke="var(--ln)" stroke-width="1.2"/>
+          <line x1="112" y1="132" x2="112" y2="176" stroke="var(--ln)" stroke-width="0.7"/>
+          <line x1="-8" y1="190" x2="212" y2="190" stroke="var(--ln)" stroke-width="2.4"/>
+          <g font-size="8" fill="var(--ln2)"><text x="94" y="206" text-anchor="middle">A · 13' → 8'-4" · PROJECTION RETURN AT RIGHT</text></g>
+        </g>
+
+        <text x="30" y="446" font-size="8.5" fill="var(--ln2)">AMBER STRIPS = CLERESTORY BAND · STEP FLASHING RUNS THE FULL 28 LF WHERE B'S WALLS PASS THE A/C ROOF PLANES, BOTH SIDES</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ S3 SECTION ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">S3</span><h2>Section Through Zone B · Living / Kitchen</h2><span class="scale">LOOKING WEST · A/C PROFILE DASHED</span></div>
+    <div class="sheet-body">
+      <p class="sheet-note">
+        Fifteen feet of glass at the front, compressing along one clean plane to a 9'-8" kitchen — and
+        where zone A's roof sits below (dashed), the <em>clerestory band</em> rides between the two
+        planes for the full 28-foot depth of the flanking zones.
+      </p>
+      <svg viewBox="0 0 760 340" role="img" aria-label="Section through zone B">
+        <line x1="20" y1="262" x2="500" y2="262" stroke="var(--ln)" stroke-width="2.5"/>
+        <g stroke="var(--ln2)" stroke-width="1"><line x1="34" y1="268" x2="24" y2="276"/><line x1="54" y1="268" x2="44" y2="276"/><line x1="454" y1="268" x2="444" y2="276"/><line x1="474" y1="268" x2="464" y2="276"/></g>
+        <!-- piers -->
+        <g fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.5">
+          <rect x="54" y="246" width="12" height="16"/><rect x="246" y="246" width="12" height="16"/><rect x="438" y="246" width="12" height="16"/>
+        </g>
+        <!-- floor cassette (2x12 zone B) -->
+        <rect x="54" y="234" width="396" height="12" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.5"/>
+        <!-- walls: front x=60 15'(180) -> y54 ; rear x=444 9'-8"(116) -> y118 -->
+        <g stroke="var(--ln)" stroke-width="2" fill="var(--bp2)">
+          <rect x="54" y="54" width="7" height="180"/>
+          <rect x="443" y="118" width="7" height="116"/>
+        </g>
+        <!-- roof plane w/ overhangs: front tip x=36, rear x=462 -->
+        <polygon points="36,37 462,108 462,121 36,50" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.8"/>
+        <line x1="61" y1="54" x2="443" y2="117.7" stroke="var(--ln)" stroke-width="1.2"/>
+        <!-- glulam at 16' from rear: x=252 -->
+        <rect x="248" y="86" width="8" height="16.5" fill="var(--amber)" stroke="var(--ln)" stroke-width="1.2"/>
+        <!-- A/C dashed profile: front x=108 top y78 -> rear x=444 y134 -->
+        <line x1="108" y1="78" x2="444" y2="134" stroke="var(--ln2)" stroke-width="1.4" stroke-dasharray="6 4"/>
+        <line x1="108" y1="78" x2="108" y2="234" stroke="var(--ln2)" stroke-width="1.2" stroke-dasharray="6 4"/>
+        <!-- clerestory band between planes x108->444 -->
+        <g stroke="var(--amber)" stroke-width="0.8" opacity="0.9">
+          <line x1="130" y1="65.5" x2="130" y2="81.7"/><line x1="170" y1="72.2" x2="170" y2="88.3"/>
+          <line x1="210" y1="78.8" x2="210" y2="95"/><line x1="250" y1="85.5" x2="250" y2="101.7"/>
+          <line x1="290" y1="92.2" x2="290" y2="108.3"/><line x1="330" y1="98.8" x2="330" y2="115"/>
+          <line x1="370" y1="105.5" x2="370" y2="121.6"/><line x1="410" y1="112.2" x2="410" y2="128.3"/>
+        </g>
+        <!-- glazing front -->
+        <line x1="57.5" y1="78" x2="57.5" y2="234" stroke="var(--ln)" stroke-width="1" stroke-dasharray="2 3"/>
+        <!-- island x330-372, rear counter -->
+        <g fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.4">
+          <rect x="330" y="198" width="42" height="36"/><rect x="324" y="195" width="52" height="3"/>
+          <rect x="420" y="198" width="23" height="36"/>
+        </g>
+        <g stroke="var(--ln)" stroke-width="1.2" fill="none"><line x1="314" y1="234" x2="314" y2="208"/><line x1="307" y1="208" x2="321" y2="208"/></g>
+        <!-- callouts -->
+        <g font-size="8.5" fill="var(--ln2)">
+          <line x1="252" y1="102.5" x2="252" y2="150" stroke="var(--ln2)" stroke-width="0.8"/>
+          <text x="252" y="162" text-anchor="middle" fill="var(--amber)">GLULAM @ 16' · GRID B-MID</text>
+          <line x1="270" y1="90" x2="270" y2="46" stroke="var(--ln2)" stroke-width="0.8" opacity="0"/>
+          <text x="150" y="30" text-anchor="middle">B ROOF · 11⅞" I-JOIST PANELS</text>
+          <text x="330" y="150" text-anchor="middle" fill="var(--amber)">CLERESTORY BAND ↑ (A/C ROOF DASHED)</text>
+          <text x="57" y="290" text-anchor="middle">15'-0" GLASS WALL</text>
+          <line x1="57" y1="280" x2="57" y2="240" stroke="var(--ln2)" stroke-width="0.8"/>
+          <text x="446" y="290" text-anchor="middle">REAR 9'-8"</text>
+          <line x1="446" y1="280" x2="446" y2="240" stroke="var(--ln2)" stroke-width="0.8"/>
+          <text x="351" y="188" text-anchor="middle">BAR ISLAND</text>
+        </g>
+        <g font-size="9" fill="var(--ln)">
+          <line x1="40" y1="54" x2="40" y2="234" stroke="var(--ln2)" stroke-width="0.9"/>
+          <text x="33" y="146" text-anchor="middle" transform="rotate(-90 33 146)">15'-0"</text>
+          <text x="252" y="22" text-anchor="middle" letter-spacing="1.5">2:12 →</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ S4 GARAGE + WALK ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">S4</span><h2>Garage + Covered Walk</h2><span class="scale">12' × 25' · 2:12 ACROSS WIDTH · WALK @ 7'-0" BAYS</span></div>
+    <div class="sheet-body">
+      <p class="sheet-note">
+        The garage slopes across its 12' width (10'-0" west wall facing the house, 8'-0" east) so it
+        keeps the house's 2:12 pitch without burying its rear wall. The covered walk runs 35' from
+        the man door to the entry notch on five 7'-0" post bays — canopy held <em>5'-6" clear of the
+        Zone C facade</em>, keeping the Bedroom 2 window unblocked.
+      </p>
+      <svg viewBox="0 0 760 440" role="img" aria-label="Garage plan and elevations, blueprint style">
+        <!-- GARAGE PLAN 12px/ft: 144x300 at (70,60) rear top -->
+        <text x="30" y="24" font-size="10.5" font-weight="600" letter-spacing="1.5">GARAGE PLAN</text>
+        <g transform="translate(70,60)">
+          <rect x="0" y="0" width="144" height="300" fill="var(--bp2)" opacity="0.5"/>
+          <!-- walls -->
+          <g stroke="var(--ln)" stroke-width="5" fill="none">
+            <line x1="0" y1="0" x2="144" y2="0"/>
+            <line x1="0" y1="0" x2="0" y2="180"/><line x1="0" y1="216" x2="0" y2="300"/>
+            <line x1="144" y1="0" x2="144" y2="300"/>
+            <line x1="0" y1="300" x2="24" y2="300"/><line x1="132" y1="300" x2="144" y2="300"/>
+          </g>
+          <!-- OH door -->
+          <rect x="24" y="297" width="108" height="6" fill="var(--bp)" stroke="var(--ln)" stroke-width="1.2"/>
+          <!-- man door leaf -->
+          <line x1="0" y1="180" x2="28" y2="180" stroke="var(--ln)" stroke-width="1.4"/>
+          <path d="M28,180 A28,28 0 0 1 0,208" stroke="var(--ln2)" stroke-width="1.1" fill="none" stroke-dasharray="2 3"/>
+          <!-- trench drain -->
+          <line x1="26" y1="286" x2="130" y2="286" stroke="var(--amber)" stroke-width="2.5" stroke-dasharray="6 3"/>
+          <!-- EVSE / panel / sink / bench -->
+          <g stroke="var(--ln2)" stroke-width="1.2" fill="none">
+            <rect x="50" y="4" width="88" height="22"/>
+            <rect x="6" y="4" width="36" height="26"/>
+          </g>
+          <rect x="120" y="30" width="14" height="18" fill="none" stroke="var(--amber)" stroke-width="1.5"/>
+          <rect x="98" y="30" width="12" height="16" fill="none" stroke="var(--ln)" stroke-width="1.3"/>
+          <g font-size="8" fill="var(--ln2)">
+            <text x="94" y="19" text-anchor="middle">BENCH</text>
+            <text x="24" y="20" text-anchor="middle">SINK</text>
+            <text x="127" y="60" text-anchor="middle" fill="var(--amber)">EVSE</text>
+            <text x="104" y="60" text-anchor="middle">60A</text>
+            <text x="78" y="280" text-anchor="middle" fill="var(--amber)">TRENCH DRAIN</text>
+            <text x="78" y="322" text-anchor="middle" fill="var(--ln)">9'×7' OH DOOR</text>
+          </g>
+          <!-- bibs exterior rear -->
+          <circle cx="36" cy="-8" r="3.5" fill="none" stroke="var(--amber)" stroke-width="1.4"/>
+          <circle cx="60" cy="-8" r="3.5" fill="none" stroke="var(--amber)" stroke-width="1.4"/>
+          <text x="48" y="-18" font-size="8" fill="var(--amber)" text-anchor="middle">BIBS ×2 · FEEDERS FROM HOUSE</text>
+          <!-- panel joints on 6'-3" grid -->
+          <g stroke="var(--amber)" stroke-width="0.9" stroke-dasharray="6 4" opacity="0.7">
+            <line x1="-8" y1="75" x2="-8" y2="75"/>
+            <line x1="0" y1="75" x2="-14" y2="75"/><line x1="0" y1="150" x2="-14" y2="150"/><line x1="0" y1="225" x2="-14" y2="225"/>
+            <line x1="144" y1="75" x2="158" y2="75"/><line x1="144" y1="150" x2="158" y2="150"/><line x1="144" y1="225" x2="158" y2="225"/>
+          </g>
+          <text x="-22" y="154" font-size="7.5" fill="var(--amber)" text-anchor="middle" transform="rotate(-90 -22 154)">GW1–4 · JOINTS @ 6'-3"</text>
+          <text x="166" y="154" font-size="7.5" fill="var(--amber)" text-anchor="middle" transform="rotate(90 166 154)">GE1–4</text>
+          <!-- dims -->
+          <g font-size="9" fill="var(--ln)">
+            <line x1="0" y1="346" x2="144" y2="346" stroke="var(--ln2)" stroke-width="0.9"/>
+            <text x="72" y="362" text-anchor="middle">12'-0"</text>
+            <line x1="196" y1="0" x2="196" y2="300" stroke="var(--ln2)" stroke-width="0.9"/>
+            <text x="208" y="154" text-anchor="middle" transform="rotate(-90 208 154)">25'-0"</text>
+          </g>
+        </g>
+
+        <!-- WEST ELEVATION w/ walk 6px/ft -->
+        <text x="360" y="24" font-size="10.5" font-weight="600" letter-spacing="1.5">WEST FACE + WALK BAY</text>
+        <g transform="translate(370,60)">
+          <rect x="0" y="20" width="150" height="60" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.8"/>
+          <rect x="-8" y="15" width="166" height="5" fill="var(--ln)"/>
+          <rect x="6" y="22.5" width="138" height="7.5" fill="var(--paperln)" opacity="0.25" stroke="var(--amber)" stroke-width="1"/>
+          <rect x="24" y="38" width="18" height="42" fill="none" stroke="var(--ln)" stroke-width="1.3"/>
+          <circle cx="39" cy="61" r="1.5" fill="var(--ln)"/>
+          <line x1="-12" y1="80" x2="162" y2="80" stroke="var(--ln)" stroke-width="2.2"/>
+          <text x="75" y="96" font-size="8" fill="var(--ln2)" text-anchor="middle">10'-0" EAVE · GLAZING STRIP · MAN DOOR ON WALK AXIS</text>
+        </g>
+        <!-- WALK CROSS SECTION 10px/ft -->
+        <g transform="translate(392,180)">
+          <text x="40" y="0" font-size="9.5" font-weight="600" letter-spacing="1">WALK SECTION</text>
+          <line x1="-40" y1="120" x2="150" y2="120" stroke="var(--ln)" stroke-width="2.2"/>
+          <rect x="-4" y="116" width="64" height="4" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1"/>
+          <rect x="-2" y="29" width="4" height="91" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.4"/>
+          <rect x="53" y="20" width="4" height="100" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.4"/>
+          <polygon points="-9,27.5 66,15 66,19 -9,31.5" fill="var(--ln)"/>
+          <circle cx="-11" cy="34" r="3" fill="none" stroke="var(--ln)" stroke-width="1.2"/>
+          <line x1="-40" y1="120" x2="-40" y2="18" stroke="var(--ln2)" stroke-width="1.6" stroke-dasharray="5 4"/>
+          <g stroke="var(--amber)" stroke-width="0.9"><line x1="-40" y1="106" x2="-11" y2="106"/><line x1="-40" y1="102" x2="-40" y2="110"/><line x1="-11" y1="102" x2="-11" y2="110"/></g>
+          <text x="-26" y="98" font-size="7.5" fill="var(--amber)" text-anchor="middle">5'-6"</text>
+          <g font-size="7.5" fill="var(--ln2)">
+            <text x="80" y="24">10'-0" HIGH SIDE = GARAGE EAVE · 2:12 → GUTTER</text>
+            <text x="80" y="48">6×6 POSTS · 2×8 BEAMS · 2×6 PURLINS</text>
+            <text x="80" y="62">5'-0" SLAB · LED SOFFIT</text>
+            <text x="-40" y="136" text-anchor="start">C FACADE (DASHED) — WINDOW CLEAR</text>
+          </g>
+        </g>
+
+        <!-- WALK PLAN STRIP 5px/ft -->
+        <g transform="translate(370,330)">
+          <text x="0" y="0" font-size="9.5" font-weight="600" letter-spacing="1">WALK PLAN · 35 LF</text>
+          <line x1="0" y1="14" x2="200" y2="14" stroke="var(--ln)" stroke-width="3"/>
+          <rect x="20" y="10.7" width="35" height="6.6" fill="var(--bp)" stroke="var(--amber)" stroke-width="1.2"/>
+          <text x="37" y="8" font-size="7" fill="var(--amber)" text-anchor="middle">BR2 WIN — CLEAR</text>
+          <rect x="0" y="41.5" width="175" height="27.5" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.2" stroke-dasharray="5 3"/>
+          <g fill="var(--ln)">
+            <circle cx="0" cy="41.5" r="2"/><circle cx="35" cy="41.5" r="2"/><circle cx="70" cy="41.5" r="2"/><circle cx="105" cy="41.5" r="2"/><circle cx="140" cy="41.5" r="2"/><circle cx="175" cy="41.5" r="2"/>
+            <circle cx="0" cy="69" r="2"/><circle cx="35" cy="69" r="2"/><circle cx="70" cy="69" r="2"/><circle cx="105" cy="69" r="2"/><circle cx="140" cy="69" r="2"/><circle cx="175" cy="69" r="2"/>
+          </g>
+          <line x1="175" y1="24" x2="175" y2="86" stroke="var(--ln)" stroke-width="4"/>
+          <text x="188" y="58" font-size="7.5" fill="var(--ln2)">GARAGE</text>
+          <text x="88" y="86" font-size="7.5" fill="var(--ln2)" text-anchor="middle">POSTS @ 7'-0" · CANOPY 5'-6" OFF FACADE · ENTERS NOTCH AT WEST END</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ PANEL DRAWINGS ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">P1–P8</span><h2>Panel Shop Drawings · Rev B</h2><span class="scale">ONE PER FAMILY</span></div>
+    <div class="sheet-body">
+      <div class="pgrid">
+
+        <!-- P1 FLOOR -->
+        <div class="pcard">
+          <div class="pcard-head"><span class="pno">P1</span><h3>Floor Cassettes · Two Types</h3><span class="qty">8 + 4 · ~700 / ~950 LB</span></div>
+          <div class="draw">
+            <svg viewBox="0 0 400 240" role="img" aria-label="Floor cassette framing plan, 7 by 14 shown">
+              <g transform="translate(30,30)">
+                <rect x="0" y="0" width="336" height="168" fill="none" stroke="var(--ln)" stroke-width="3"/>
+                <g stroke="var(--ln)" stroke-width="1.6">
+                  <line x1="0" y1="32" x2="336" y2="32"/><line x1="0" y1="64" x2="336" y2="64"/>
+                  <line x1="0" y1="96" x2="336" y2="96"/><line x1="0" y1="128" x2="336" y2="128"/><line x1="0" y1="160" x2="336" y2="160"/>
+                </g>
+                <g stroke="var(--ln2)" stroke-width="1.6">
+                  <line x1="168" y1="2" x2="168" y2="30"/><line x1="168" y1="34" x2="168" y2="62"/><line x1="168" y1="66" x2="168" y2="94"/>
+                  <line x1="168" y1="98" x2="168" y2="126"/><line x1="168" y1="130" x2="168" y2="158"/><line x1="168" y1="162" x2="168" y2="166"/>
+                </g>
+                <g fill="none" stroke="var(--amber)" stroke-width="1.2">
+                  <circle cx="48" cy="0" r="3"/><circle cx="96" cy="0" r="3"/><circle cx="144" cy="0" r="3"/><circle cx="192" cy="0" r="3"/><circle cx="240" cy="0" r="3"/><circle cx="288" cy="0" r="3"/>
+                  <circle cx="48" cy="168" r="3"/><circle cx="96" cy="168" r="3"/><circle cx="144" cy="168" r="3"/><circle cx="192" cy="168" r="3"/><circle cx="240" cy="168" r="3"/><circle cx="288" cy="168" r="3"/>
+                </g>
+                <g font-size="9" fill="var(--ln2)">
+                  <line x1="0" y1="192" x2="336" y2="192" stroke="var(--ln2)" stroke-width="0.8"/>
+                  <text x="168" y="206" text-anchor="middle" fill="var(--ln)">F-A/C SHOWN · 14'-0" SPAN (2×10 @ 16")</text>
+                  <line x1="352" y1="0" x2="352" y2="168" stroke="var(--ln2)" stroke-width="0.8"/>
+                  <text x="364" y="88" text-anchor="middle" transform="rotate(-90 364 88)" fill="var(--ln)">7'-0"</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="specs">
+            <b>F-A/C (×8):</b> 7'×14' · 2×10 @ 16" o.c. · ~700 lb<br>
+            <b>F-B (×4):</b> 7'×16' · <b>2×12 @ 16" o.c.</b> for the longer span · ~950 lb<br>
+            <b>Common:</b> ¾" T&G glued+screwed · ⌀¾" rim bolts @ 24" (amber) · mid blocking · lift straps at ¼ points
+          </div>
+        </div>
+
+        <!-- P2 FRONT WALL B -->
+        <div class="pcard">
+          <div class="pcard-head"><span class="pno">P2</span><h3>Front Wall · WF-B (tallest)</h3><span class="qty">QTY 2 · ~1,400 LB</span></div>
+          <div class="draw">
+            <svg viewBox="0 0 400 250" role="img" aria-label="Zone B front wall panel, 7 by 15">
+              <g transform="translate(140,10) scale(0.62)">
+                <rect x="0" y="0" width="168" height="360" fill="none" stroke="var(--ln)" stroke-width="2.5"/>
+                <line x1="0" y1="6" x2="168" y2="6" stroke="var(--ln)" stroke-width="1.4"/>
+                <line x1="0" y1="354" x2="168" y2="354" stroke="var(--ln)" stroke-width="1.4"/>
+                <g stroke="var(--ln)" stroke-width="2"><line x1="24" y1="6" x2="24" y2="354"/><line x1="144" y1="6" x2="144" y2="354"/></g>
+                <rect x="24" y="48" width="120" height="22.5" fill="var(--bp)" stroke="var(--ln)" stroke-width="1.8"/>
+                <g stroke="var(--ln)" stroke-width="1.6"><line x1="29" y1="70.5" x2="29" y2="354"/><line x1="139" y1="70.5" x2="139" y2="354"/></g>
+                <g stroke="var(--ln2)" stroke-width="1.3">
+                  <line x1="64" y1="6" x2="64" y2="48"/><line x1="96" y1="6" x2="96" y2="48"/><line x1="128" y1="6" x2="128" y2="48"/>
+                </g>
+                <text x="84" y="200" font-size="12" text-anchor="middle" fill="var(--amber)">R.O. 60" × 156"</text>
+                <text x="84" y="218" font-size="9" text-anchor="middle" fill="var(--amber)">FLOOR-TO-13' GLASS</text>
+                <g font-size="11" fill="var(--ln2)">
+                  <line x1="-16" y1="0" x2="-16" y2="360" stroke="var(--ln2)" stroke-width="0.9"/>
+                  <text x="-28" y="184" text-anchor="middle" transform="rotate(-90 -28 184)" fill="var(--ln)">15'-0"</text>
+                  <line x1="0" y1="378" x2="168" y2="378" stroke="var(--ln2)" stroke-width="0.9"/>
+                  <text x="84" y="396" text-anchor="middle" fill="var(--ln)">7'-0"</text>
+                  <text x="196" y="62" text-anchor="start">HDR (2) LVL</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="specs">
+            <b>WF-B (×2):</b> 2×6 × 16' studs @ 16" · glass head @ 13'-0" · <b>heaviest tilt-up ≈ 1,400 lb</b> — telehandler + wall jacks<br>
+            <b>WF-A/C (×4):</b> same drawing at 13'-0" tall, window head @ 11'-0", sill @ 2'-0"<br>
+            <b>WR (×6):</b> rear walls at 8'-4" (A/C) and 9'-8" (B) — per Rev A P3 pattern
+          </div>
+        </div>
+
+        <!-- P4 SIDE WALL -->
+        <div class="pcard">
+          <div class="pcard-head"><span class="pno">P4</span><h3>Side Walls · WS-TYP (raked)</h3><span class="qty">QTY 8 · ~1,050 LB</span></div>
+          <div class="draw">
+            <svg viewBox="0 0 400 240" role="img" aria-label="Raked side wall panel">
+              <g transform="translate(120,14) scale(0.72)">
+                <polygon points="0,0 168,28 168,268 0,268" fill="none" stroke="var(--ln)" stroke-width="2.5"/>
+                <line x1="0" y1="7" x2="168" y2="35" stroke="var(--ln)" stroke-width="1.4"/>
+                <line x1="0" y1="262" x2="168" y2="262" stroke="var(--ln)" stroke-width="1.4"/>
+                <g stroke="var(--ln)" stroke-width="1.6">
+                  <line x1="32" y1="5.3" x2="32" y2="262"/><line x1="64" y1="10.7" x2="64" y2="262"/>
+                  <line x1="96" y1="16" x2="96" y2="262"/><line x1="128" y1="21.3" x2="128" y2="262"/>
+                </g>
+                <text x="84" y="150" font-size="11" text-anchor="middle" fill="var(--amber)" transform="rotate(9.5 84 150)">RAKE 2:12 · 14" DROP PER PANEL</text>
+                <g font-size="10" fill="var(--ln2)">
+                  <line x1="0" y1="286" x2="168" y2="286" stroke="var(--ln2)" stroke-width="0.9"/>
+                  <text x="84" y="302" text-anchor="middle" fill="var(--ln)">7'-0" (WS2 SHOWN)</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="specs">
+            <b>Family (4 per side, west WS1–4 / east WS5–8):</b> 13'-0"→11'-10" · 11'-10"→10'-8" · 10'-8"→9'-6" · 9'-6"→8'-4"<br>
+            <b>Members:</b> 2×6 @ 16", raked double top plate, plumb-cut stud tops<br>
+            <b>Bonus:</b> panels now match the 7' grid exactly — no odd 8' module
+          </div>
+        </div>
+
+        <!-- P5 ROOF A/C -->
+        <div class="pcard">
+          <div class="pcard-head"><span class="pno">P5</span><h3>Roof Panels · A/C Zones</h3><span class="qty">QTY 8 · ~950 LB</span></div>
+          <div class="draw">
+            <svg viewBox="0 0 400 220" role="img" aria-label="A/C roof panel framing plan">
+              <g transform="translate(20,34)">
+                <rect x="0" y="0" width="360" height="158" fill="none" stroke="var(--ln)" stroke-width="3"/>
+                <g stroke="var(--ln)" stroke-width="1.2">
+                  <line x1="0" y1="43" x2="360" y2="43"/><line x1="0" y1="47" x2="360" y2="47"/>
+                  <line x1="0" y1="88" x2="360" y2="88"/><line x1="0" y1="92" x2="360" y2="92"/>
+                  <line x1="0" y1="133" x2="360" y2="133"/><line x1="0" y1="137" x2="360" y2="137"/>
+                </g>
+                <g stroke="var(--ln2)" stroke-width="0.8">
+                  <line x1="4" y1="0" x2="44" y2="40"/><line x1="4" y1="40" x2="44" y2="80"/><line x1="4" y1="80" x2="44" y2="120"/><line x1="4" y1="118" x2="44" y2="158"/>
+                </g>
+                <g stroke="var(--amber)" stroke-width="2">
+                  <line x1="44" y1="2" x2="44" y2="156"/><line x1="354" y1="2" x2="354" y2="156"/>
+                </g>
+                <g font-size="9" fill="var(--ln2)">
+                  <text x="46" y="-8" text-anchor="middle" fill="var(--amber)">BRG · WALL</text>
+                  <text x="330" y="-8" text-anchor="middle" fill="var(--amber)">BRG · GLULAM</text>
+                  <line x1="0" y1="180" x2="360" y2="180" stroke="var(--ln2)" stroke-width="0.8"/>
+                  <text x="180" y="194" text-anchor="middle" fill="var(--ln)">16'-0" (FRONT ROW SHOWN · REAR ROW 15'-6")</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="specs">
+            <b>Members:</b> 11⅞" I-joist @ 24" · LVL rims · full-depth bearing blocking (amber)<br>
+            <b>Rows per zone:</b> rear 7'×15'-6" (1'-6" OH) · front 7'×16'-0" (2'-0" OH + fascia bkg)
+          </div>
+        </div>
+
+        <!-- P6 ROOF B -->
+        <div class="pcard">
+          <div class="pcard-head"><span class="pno">P6</span><h3>Roof Panels · Zone B (longest)</h3><span class="qty">QTY 4 · ~1,150 LB</span></div>
+          <div class="draw">
+            <svg viewBox="0 0 400 220" role="img" aria-label="Zone B roof panel framing plan">
+              <g transform="translate(14,34)">
+                <rect x="0" y="0" width="372" height="150" fill="none" stroke="var(--ln)" stroke-width="3"/>
+                <g stroke="var(--ln)" stroke-width="1.2">
+                  <line x1="0" y1="41" x2="372" y2="41"/><line x1="0" y1="45" x2="372" y2="45"/>
+                  <line x1="0" y1="84" x2="372" y2="84"/><line x1="0" y1="88" x2="372" y2="88"/>
+                  <line x1="0" y1="127" x2="372" y2="127"/><line x1="0" y1="131" x2="372" y2="131"/>
+                </g>
+                <g stroke="var(--ln2)" stroke-width="0.8">
+                  <line x1="4" y1="0" x2="42" y2="38"/><line x1="4" y1="38" x2="42" y2="76"/><line x1="4" y1="76" x2="42" y2="114"/><line x1="4" y1="112" x2="42" y2="150"/>
+                </g>
+                <g stroke="var(--amber)" stroke-width="2">
+                  <line x1="42" y1="2" x2="42" y2="148"/><line x1="366" y1="2" x2="366" y2="148"/>
+                </g>
+                <g font-size="9" fill="var(--ln2)">
+                  <text x="46" y="-8" text-anchor="middle" fill="var(--amber)">BRG · 15' WALL</text>
+                  <text x="340" y="-8" text-anchor="middle" fill="var(--amber)">BRG · GLULAM</text>
+                  <line x1="0" y1="172" x2="372" y2="172" stroke="var(--ln2)" stroke-width="0.8"/>
+                  <text x="186" y="186" text-anchor="middle" fill="var(--ln)">18'-0" (FRONT ROW · REAR ROW 17'-6")</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="specs">
+            <b>The project's heaviest high lift:</b> ~1,150 lb placed at ~16' — verify the telehandler
+            chart at that reach <em>before</em> committing to single-piece B panels; fallback is splitting
+            each into two 3'-6" halves<br>
+            <b>Members:</b> 11⅞" I-joist × 18' @ 24" · doubled bearing blocking at the 15' wall
+          </div>
+        </div>
+
+        <!-- P8 CLERESTORY -->
+        <div class="pcard">
+          <div class="pcard-head"><span class="pno">P8</span><h3>Clerestory Strip Panel · NEW</h3><span class="qty">QTY 16 · ~140 LB</span></div>
+          <div class="draw">
+            <svg viewBox="0 0 400 150" role="img" aria-label="Clerestory strip panel">
+              <g transform="translate(30,34)">
+                <!-- 7' wide, raked 24"->22" (front-most panel shown): 336 x 48->44 @2px/in -->
+                <polygon points="0,0 336,4 336,48 0,48" fill="none" stroke="var(--ln)" stroke-width="2.5"/>
+                <rect x="10" y="9" width="150" height="31" fill="var(--paperln)" opacity="0.2" stroke="var(--amber)" stroke-width="1.4"/>
+                <rect x="176" y="10" width="150" height="30" fill="var(--paperln)" opacity="0.2" stroke="var(--amber)" stroke-width="1.4"/>
+                <line x1="168" y1="2" x2="168" y2="46" stroke="var(--ln)" stroke-width="1.6"/>
+                <g font-size="9" fill="var(--ln2)">
+                  <line x1="0" y1="66" x2="336" y2="66" stroke="var(--ln2)" stroke-width="0.8"/>
+                  <text x="168" y="80" text-anchor="middle" fill="var(--ln)">7'-0" · TWO FIXED IGUs PER PANEL</text>
+                  <text x="356" y="28" text-anchor="start" fill="var(--ln)">~2'-0"</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="specs">
+            <b>Frame:</b> 2×4 shop frame, raked to the A/C roof plane + curb, head at B eave<br>
+            <b>Glazing:</b> fixed insulated units — quote a local glass shop, these are the cheapest daylight in the house<br>
+            <b>Family:</b> heights taper 2'-0" (front) → 1'-4" (rear) · 8 per side · sit on step-flashed curb
+          </div>
+        </div>
+
+        <!-- P7 GLULAM -->
+        <div class="pcard">
+          <div class="pcard-head"><span class="pno">P7</span><h3>Glulams · One Per Zone</h3><span class="qty">QTY 3 · ~500 LB EA</span></div>
+          <div class="draw">
+            <svg viewBox="0 0 400 150" role="img" aria-label="Glulam beam side view">
+              <g transform="translate(32,40)">
+                <rect x="0" y="0" width="336" height="33" fill="var(--bp2)" stroke="var(--ln)" stroke-width="2.5"/>
+                <g stroke="var(--ln2)" stroke-width="0.6">
+                  <line x1="0" y1="5.5" x2="336" y2="5.5"/><line x1="0" y1="11" x2="336" y2="11"/><line x1="0" y1="16.5" x2="336" y2="16.5"/><line x1="0" y1="22" x2="336" y2="22"/><line x1="0" y1="27.5" x2="336" y2="27.5"/>
+                </g>
+                <g fill="none" stroke="var(--amber)" stroke-width="2">
+                  <rect x="-2" y="33" width="16" height="36"/><rect x="322" y="33" width="16" height="36"/>
+                </g>
+                <g font-size="9" fill="var(--ln2)">
+                  <text x="6" y="84" text-anchor="middle" fill="var(--amber)">ZONE WALL</text>
+                  <text x="330" y="84" text-anchor="middle" fill="var(--amber)">ZONE WALL</text>
+                  <line x1="0" y1="100" x2="336" y2="100" stroke="var(--ln2)" stroke-width="0.8"/>
+                  <text x="168" y="114" text-anchor="middle" fill="var(--ln)">14'-0" CLEAR · A/C @ MID-DEPTH 14' · B @ 16'</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="specs">
+            <b>Section:</b> 5⅛" × 16½" 24F-V4, architectural (exposed) · one simple span per zone, no splices<br>
+            <b>Bearing:</b> solid-stud packs in zone walls at beam lines — locations differ per zone (14' vs 16')<br>
+            <b>Verify:</b> placeholder size — final section &amp; hardware by your engineer
+          </div>
+        </div>
+
+
+        <!-- P9 GARAGE PANELS -->
+        <div class="pcard">
+          <div class="pcard-head"><span class="pno">P9</span><h3>Garage Panels</h3><span class="qty">16 PANELS · MAX ~810 LB</span></div>
+          <div class="draw">
+            <svg viewBox="0 0 400 190" role="img" aria-label="Garage roof panel framing plan">
+              <g transform="translate(30,34)">
+                <rect x="0" y="0" width="348" height="125" fill="none" stroke="var(--ln)" stroke-width="3"/>
+                <g stroke="var(--ln)" stroke-width="1.2">
+                  <line x1="0" y1="40" x2="348" y2="40"/><line x1="0" y1="44" x2="348" y2="44"/>
+                  <line x1="0" y1="82" x2="348" y2="82"/><line x1="0" y1="86" x2="348" y2="86"/>
+                </g>
+                <g stroke="var(--amber)" stroke-width="2">
+                  <line x1="30" y1="2" x2="30" y2="123"/><line x1="318" y1="2" x2="318" y2="123"/>
+                </g>
+                <g font-size="8.5" fill="var(--ln2)">
+                  <text x="32" y="-8" text-anchor="middle" fill="var(--amber)">BRG · 10' WALL</text>
+                  <text x="296" y="-8" text-anchor="middle" fill="var(--amber)">BRG · 8' WALL</text>
+                  <line x1="0" y1="146" x2="348" y2="146" stroke="var(--ln2)" stroke-width="0.8"/>
+                  <text x="174" y="160" text-anchor="middle" fill="var(--ln)">GRF ROOF PANEL · 6'-3" × ~14'-6" · 2×10 @ 24"</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="specs">
+            <b>Roof GRF ×4:</b> 2×10 @ 24" over the 12' clear span — <b>no beam</b> · ~700 lb<br>
+            <b>Walls:</b> GW ×4 (6'-3"×10'), GE ×4 (6'-3"×8'), GF/GR ×4 raked, CL-G ×4 glazing strips<br>
+            <b>Same jig table,</b> same skin build-up as the house panels, on slab anchor bolts
+          </div>
+        </div>
+
+        <!-- P10 WALK BAY -->
+        <div class="pcard">
+          <div class="pcard-head"><span class="pno">P10</span><h3>Walk Bay · Typ. of 5</h3><span class="qty">10 POSTS · 35 LF</span></div>
+          <div class="draw">
+            <svg viewBox="0 0 400 190" role="img" aria-label="Covered walk bay elevation">
+              <g transform="translate(90,26)">
+                <!-- bay elevation 16px/ft: 7' bay = 112 wide, post h 9' = 144 -->
+                <line x1="-40" y1="144" x2="260" y2="144" stroke="var(--ln)" stroke-width="2.2"/>
+                <rect x="-3" y="10" width="6" height="134" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.5"/>
+                <rect x="109" y="10" width="6" height="134" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.5"/>
+                <rect x="221" y="10" width="6" height="134" fill="var(--bp2)" stroke="var(--ln)" stroke-width="1.5"/>
+                <rect x="-14" y="0" width="252" height="10" fill="var(--ln)"/>
+                <g stroke="var(--ln2)" stroke-width="1"><line x1="14" y1="0" x2="14" y2="10"/><line x1="42" y1="0" x2="42" y2="10"/><line x1="70" y1="0" x2="70" y2="10"/><line x1="86" y1="0" x2="86" y2="10"/><line x1="140" y1="0" x2="140" y2="10"/><line x1="168" y1="0" x2="168" y2="10"/><line x1="196" y1="0" x2="196" y2="10"/></g>
+                <g stroke="var(--ln2)" stroke-width="1" stroke-dasharray="4 3">
+                  <rect x="-9" y="144" width="18" height="24" fill="none"/><rect x="103" y="144" width="18" height="24" fill="none"/><rect x="215" y="144" width="18" height="24" fill="none"/>
+                </g>
+                <g font-size="8.5" fill="var(--ln2)">
+                  <line x1="0" y1="126" x2="112" y2="126" stroke="var(--ln2)" stroke-width="0.8"/>
+                  <text x="56" y="120" text-anchor="middle" fill="var(--ln)">7'-0" BAY</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="specs">
+            <b>Structure:</b> 6×6 cedar on standoffs over 12" sonotubes @ 36" frost · doubled 2×8 beams · 2×6 purlins @ 24" · <b>high side 10'-0" = garage west eave</b><br>
+            <b>Roof:</b> house-match mech-seam steel, 2:12 to the house side, gutter + DS at posts<br>
+            <b>Rule:</b> canopy edge never closer than 5'-6" to the Zone C facade
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+<footer>
+  <span>TM-RES-01 · BLUEPRINT SET REV B · S1–S4 + P1–P10</span>
+  <span>SHOP DRAWINGS — SCHEMATIC · NOT FOR CONSTRUCTION</span>
+</footer>
+</body>
+</html>

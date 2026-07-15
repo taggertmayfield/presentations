@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM-RES-01 · M1-B · Rev B Takeoff & Vendor Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0EFE9; --paper2:#E7E5DB; --ink:#232620; --line:#4A4D45; --faint:#9A9C92;
+    --seam:#B23A24; --hd:#B85C16; --men:#3E6B44; --low:#2E5A78; --best:#B23A24;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;font-size:15px;line-height:1.5;padding:28px 16px 90px}
+  .set{max-width:1120px;margin:0 auto}
+  .mono{font-family:'IBM Plex Mono',monospace}
+
+  nav.setnav{display:flex;border:2px solid var(--ink);margin-bottom:14px;background:var(--paper)}
+  nav.setnav a{flex:1;text-align:center;padding:10px 8px;font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-right:1.5px solid var(--ink)}
+  nav.setnav a:last-child{border-right:none}
+  nav.setnav a:hover{background:var(--paper2)}
+  nav.setnav a.here{background:var(--ink);color:var(--paper)}
+  nav.setnav a span{display:block;font-size:9px;color:var(--faint);letter-spacing:.14em}
+  nav.setnav a.here span{color:var(--paper);opacity:.65}
+
+  header.tblock{border:2px solid var(--ink);margin-bottom:24px;background:var(--paper)}
+  .tblock-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;padding:24px 24px 16px;border-bottom:1.5px solid var(--ink)}
+  .tblock h1{font-weight:800;font-size:clamp(24px,4vw,40px);letter-spacing:-0.02em;line-height:1.05;text-transform:uppercase}
+  .tblock h1 span{color:var(--seam)}
+  .tblock .sub{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--line);margin-top:8px}
+  .tblock-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+  .tblock-meta div{padding:9px 14px;border-right:1px solid var(--ink);font-family:'IBM Plex Mono',monospace;font-size:11px}
+  .tblock-meta div:last-child{border-right:none}
+  .tblock-meta b{display:block;font-size:9.5px;color:var(--faint);letter-spacing:.15em;text-transform:uppercase;margin-bottom:2px;font-weight:500}
+
+  .note{border:1.5px solid var(--ink);background:var(--paper2);padding:14px 16px;font-size:13.5px;margin-bottom:22px}
+  .note b{color:var(--seam)}
+
+  .sheet{border:1.5px solid var(--ink);margin-bottom:24px;background:var(--paper)}
+  .sheet-tag{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;border-bottom:1.5px solid var(--ink);padding:9px 16px}
+  .sheet-tag .no{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12.5px;background:var(--ink);color:var(--paper);padding:2px 8px}
+  .sheet-tag h2{font-size:14px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+  .sheet-tag .scale{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--line)}
+  .sheet-body{padding:14px 12px 18px}
+
+  table{width:100%;border-collapse:collapse;font-size:12.8px}
+  th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:9.8px;letter-spacing:.1em;text-transform:uppercase;color:var(--line);font-weight:600;border-bottom:1.5px solid var(--ink);padding:7px 6px;white-space:nowrap}
+  th.v{text-align:right}
+  td{border-bottom:1px solid var(--paper2);padding:6px;vertical-align:middle}
+  td.qty,td.unit{font-family:'IBM Plex Mono',monospace;font-size:11.5px;white-space:nowrap}
+  td.num{font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-align:right;white-space:nowrap}
+  tr.sect td{background:var(--ink);color:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:6px 8px}
+  tr.allow td{color:var(--line);font-style:italic}
+  td .it{font-weight:600}
+  td .desc{display:block;font-size:11px;color:var(--faint)}
+  input.price{width:74px;padding:3px 5px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-align:right;border:1px solid var(--faint);background:#fff;color:var(--ink)}
+  input.price:focus{outline:2px solid var(--seam);border-color:var(--seam)}
+  td.best{font-weight:700;color:var(--best)}
+
+  .totbar{position:sticky;bottom:0;border:2px solid var(--ink);background:var(--ink);color:var(--paper);display:flex;flex-wrap:wrap;margin-top:-2px;z-index:5}
+  .totbar div{flex:1;min-width:150px;padding:10px 14px;border-right:1px solid var(--paper)}
+  .totbar div:last-child{border-right:none}
+  .totbar b{display:block;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-bottom:2px}
+  .totbar .amt{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:600}
+  .totbar .bestcell{background:var(--seam)}
+  .btnrow{display:flex;gap:10px;margin:14px 0 4px;flex-wrap:wrap}
+  button{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);padding:8px 14px;cursor:pointer}
+  button:hover{background:var(--paper2)}
+  .vhd{color:var(--hd)} .vmen{color:var(--men)} .vlow{color:var(--low)}
+  footer{max-width:1120px;margin:14px auto 0;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--faint);letter-spacing:.07em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  @media(max-width:720px){th.hidem,td.hidem{display:none} input.price{width:62px}}
+</style>
+</head>
+<body>
+<div class="set">
+
+  <nav class="setnav">
+    <a href="stepped-shed-house-revB.html"><span>01</span>DESIGN · A-SET</a>
+    <a href="blueprint-set-revB.html"><span>02</span>BLUEPRINTS · S/P</a>
+    <a class="here" href="materials-takeoff-revB.html"><span>03</span>TAKEOFF · M1</a>
+    <a href="garage-revB.html"><span>04</span>GARAGE · G-SET</a>
+    <a href="rendering-revB.html"><span>05</span>RENDERING</a>
+  </nav>
+
+  <header class="tblock">
+    <div class="tblock-top">
+      <div>
+        <h1>Material Takeoff <span>/ M1 · Rev B</span></h1>
+        <div class="sub">House + garage + covered walk · complete compound · vendor price worksheet</div>
+      </div>
+      <div class="mono" style="font-size:11px;text-align:right;line-height:1.7;color:var(--line)">
+        QUANTITIES RECALCULATED FOR REV B<br>
+        PRICES = JULY 2026 PLANNING ESTIMATES<br>
+        EVERY PRICE FIELD IS EDITABLE
+      </div>
+    </div>
+    <div class="tblock-meta">
+      <div><b>Project No.</b>TM-RES-01</div>
+      <div><b>Sheet</b>M1 · Rev B</div>
+      <div><b>Scope</b>House shell + garage + walk</div>
+      <div><b>Waste factor</b>Included (~7%)</div>
+      <div><b>Supersedes</b>M1 Rev A (1,008 SF)</div>
+    </div>
+  </header>
+
+  <div class="note">
+    <b>Rev B deltas vs Rev A:</b> 25 piers (was 21) on split bearing grids · floor cassettes now two
+    types (7'×14' in 2×10 and 7'×16' in 2×12) · wall stock steps up to 14' and 16' lengths for the
+    13' and 15' walls · roof I-joists lengthen to 16' and 18' · roofing grows to ~1,410 SF across
+    three planes plus 56 LF of step flashing · clerestory glazing is a new allowance line — and the <b>garage, its services, and the covered walk</b> are now fully itemized below (superseding the static G4 estimate). Prices are
+    <b>estimates</b> — tap any cell, type your local quote, totals recalc live.
+  </div>
+
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">M1.1-B</span><h2>Bill of Materials · Editable Pricing</h2><span class="scale">TAP ANY PRICE TO EDIT</span></div>
+    <div class="sheet-body">
+      <div style="overflow-x:auto">
+      <table id="bom">
+        <thead>
+          <tr>
+            <th style="min-width:190px">Item</th><th>Qty</th><th class="hidem">Unit</th>
+            <th class="v vhd">Home Depot $</th><th class="v vmen">Menards $</th><th class="v vlow">Lowe's $</th>
+            <th class="v vhd">HD Total</th><th class="v vmen">MEN Total</th><th class="v vlow">LOW Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      </div>
+      <div class="btnrow">
+        <button id="csvbtn">Copy takeoff as CSV</button>
+        <button id="resetbtn">Reset to estimates</button>
+      </div>
+      <p class="mono" style="font-size:10.5px;color:var(--faint);margin-top:6px">
+        EDITS LIVE IN THIS BROWSER SESSION ONLY — COPY THE CSV TO SAVE YOUR NUMBERS.
+      </p>
+    </div>
+  </section>
+
+  <div class="totbar">
+    <div><b>Home Depot · all lines</b><span class="amt" id="tHD">$0</span></div>
+    <div><b>Menards · all lines</b><span class="amt" id="tMEN">$0</span></div>
+    <div><b>Lowe's · all lines</b><span class="amt" id="tLOW">$0</span></div>
+    <div class="bestcell"><b>Best-mix cart (cheapest per line)</b><span class="amt" id="tBEST">$0</span></div>
+  </div>
+
+  <section class="sheet" style="margin-top:24px">
+    <div class="sheet-tag"><span class="no">M1.2</span><h2>Vendor Strategy · Unchanged From Rev A</h2><span class="scale">OLNEY IL MARKET</span></div>
+    <div class="sheet-body">
+      <p style="font-size:13.5px;color:var(--line);max-width:80ch">
+        Same playbook: Menards typically takes commodity lumber, OSB, and the concealed-fastener steel
+        roof (their cut-to-length program handles the three shorter planes and step flashing cleanly,
+        and 11% rebate timing matters more now that the package is bigger). Home Depot and Lowe's earn
+        their spot through Pro Desk package bids — always get both, on a ~$75K list they will move.
+        Rev B adds two items worth a specialty quote: the <b>clerestory glazing</b> (16 fixed units —
+        a local glass shop may beat window-brand pricing on simple fixed IGUs) and the now-larger
+        <b>living glazing wall</b>. Glulams still go to the yard desk or an independent lumberyard.
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <span>TM-RES-01 · M1 REV B TAKEOFF · 1,232 SF</span>
+  <span>ESTIMATES ONLY — CONFIRM LOCAL PRICING · NOT FOR CONSTRUCTION</span>
+</footer>
+
+<script>
+const DATA = [
+  {sect:"Foundation · 25 piers on split bearing grids"},
+  {n:"Concrete form tube 12\" × 48\"", d:"A/C rows @ 0/14/28 · B rows @ 0/16/32", q:25, u:"EA", p:[15.50,13.90,15.00]},
+  {n:"Ready-mix concrete, short load", d:"~5 yd³ incl. bases — local batch plant", q:1, u:"LOT", p:[980,980,980]},
+  {n:"#4 rebar × 20'", d:"2 verticals per pier, cut in half", q:13, u:"EA", p:[13.00,11.50,12.50]},
+  {n:"Pier saddle / post base, standoff", d:"Simpson or eq., anchor-set", q:25, u:"EA", p:[32.00,28.50,31.00]},
+  {sect:"Floor · 8 cassettes @ 7'×14' (A/C) + 4 @ 7'×16' (B)"},
+  {n:"2×10 × 14' #2", d:"A/C joists + rims (two 7' per stick)", q:68, u:"EA", p:[19.50,17.75,19.75]},
+  {n:"2×10 × 8' #2", d:"A/C mid-span blocking", q:8, u:"EA", p:[11.25,10.25,11.50]},
+  {n:"2×12 × 16' #2", d:"B cassette joists — 16' span", q:30, u:"EA", p:[28.50,26.00,29.00]},
+  {n:"2×12 × 14' #2", d:"B rims, two 7' per stick", q:4, u:"EA", p:[25.00,22.75,25.50]},
+  {n:"2×12 × 8' #2", d:"B blocking", q:4, u:"EA", p:[14.50,13.25,14.75]},
+  {n:"23/32\" T&G OSB subfloor 4×8", d:"1,232 SF + waste", q:42, u:"SHT", p:[36.00,32.50,35.50]},
+  {n:"Subfloor adhesive 28 oz", d:"", q:16, u:"TUBE", p:[7.50,6.75,7.25]},
+  {n:"½\" × 4\" hex bolt + nut + 2 washers", d:"cassette rim bolt-up @ 24\" o.c.", q:110, u:"SET", p:[2.60,2.30,2.55]},
+  {n:"R-30 floor insulation batts", d:"~1,232 SF", q:16, u:"BAG", p:[89.00,82.00,84.00]},
+  {sect:"Exterior walls · 13' / 15' fronts, raked sides, clerestory band"},
+  {n:"2×6 × 16' #2", d:"B front + zone bearing walls + projection returns", q:74, u:"EA", p:[12.50,11.25,12.75]},
+  {n:"2×6 × 14' #2", d:"A/C front studs/plates, tall side studs, plate stock", q:82, u:"EA", p:[10.75,9.65,10.90]},
+  {n:"2×6 × 12' #2", d:"mid side-wall studs", q:20, u:"EA", p:[9.25,8.35,9.30]},
+  {n:"2×6 × 10' #2", d:"rear wall studs (8'-4\" and 9'-8\" walls)", q:58, u:"EA", p:[7.75,7.10,7.80]},
+  {n:"2×4 × 8' (clerestory strip frames)", d:"8 shop frames per side", q:60, u:"EA", p:[4.35,3.90,4.40]},
+  {n:"LVL 1¾\" × 11⅞\" × 16'", d:"window/door headers, 2-ply", q:7, u:"EA", p:[98.00,102.00,105.00]},
+  {n:"7/16\" OSB wall sheathing 4×8", d:"~1,770 SF incl. clerestory band + returns", q:62, u:"SHT", p:[13.25,11.75,13.00]},
+  {n:"Housewrap 9' × 100'", d:"", q:3, u:"ROLL", p:[165,155,160]},
+  {n:"1\" polyiso foam 4×8", d:"continuous exterior R-6", q:58, u:"SHT", p:[27.50,25.00,26.50]},
+  {n:"R-21 wall batts (2×6 cavity)", d:"~1,600 SF net", q:20, u:"BAG", p:[78.00,72.00,71.00]},
+  {sect:"Interior partitions (non-bearing)"},
+  {n:"2×4 precut studs 92⅝\"", d:"", q:75, u:"EA", p:[3.85,3.40,3.90]},
+  {n:"2×4 × 12' plates", d:"", q:16, u:"EA", p:[5.75,5.20,5.80]},
+  {sect:"Roof · three 2:12 planes, one glulam per zone"},
+  {n:"11⅞\" I-joist × 16'", d:"A/C roof panels (8 panels) + blocking stock", q:42, u:"EA", p:[56.00,59.00,58.00]},
+  {n:"11⅞\" I-joist × 18'", d:"B roof panels (4 panels) + blocking stock", q:22, u:"EA", p:[63.00,66.00,65.00]},
+  {n:"1⅛\" × 11⅞\" rim board × 14'", d:"panel end closures", q:12, u:"EA", p:[46.00,48.00,47.50]},
+  {n:"Glulam 5⅛\" × 16½\" × 14', arch. grade", d:"one per zone · special order · quote a lumberyard too", q:3, u:"EA", p:[465,440,480]},
+  {n:"19/32\" OSB roof sheathing 4×8", d:"~1,380 SF + waste", q:48, u:"SHT", p:[25.50,23.00,25.00]},
+  {n:"HT self-adhered underlayment 2 SQ", d:"full coverage at 2:12", q:7, u:"ROLL", p:[98.00,92.00,95.00]},
+  {n:"Hurricane ties (H2.5A or eq.)", d:"", q:90, u:"EA", p:[1.10,0.95,1.05]},
+  {n:"Glulam bearing clips / straps", d:"", q:70, u:"EA", p:[6.50,5.90,6.40]},
+  {n:"Structural screws 6\" (SDWS, 50 ct)", d:"", q:5, u:"BOX", p:[110,102,108]},
+  {n:"Framing nails, collated", d:"", q:1, u:"LOT", p:[300,270,295]},
+  {n:"Mech-seam steel roof pkg, 3 planes", d:"~1,410 SF + 56 LF step flashing + trim — double-lock seam req'd at 2:12", q:1, u:"LOT", p:[6600,5600,6400], a:1},
+  {sect:"Openings · allowances — get real quotes"},
+  {n:"Living-wall glazing package", d:"12' × 13' mulled wall, alu or fiberglass", q:1, u:"LOT", p:[8200,7800,7700], a:1},
+  {n:"Clerestory glazing, 16 fixed IGUs", d:"8 per side in shop frames — quote a local glass shop", q:1, u:"LOT", p:[3600,3300,3400], a:1},
+  {n:"Primary bedroom window band", d:"10' × 9', 3-lite mulled", q:1, u:"LOT", p:[3300,3100,3050], a:1},
+  {n:"Bedroom 2 window band", d:"7' × 9', 2-lite mulled", q:1, u:"LOT", p:[2300,2200,2150], a:1},
+  {n:"Rear + side windows (5 units)", d:"", q:1, u:"LOT", p:[1900,1750,1800], a:1},
+  {n:"Entry door + sidelite (east return)", d:"sheltered under B overhang", q:1, u:"EA", p:[1750,1600,1650], a:1},
+  {n:"Mechanical room steel door", d:"", q:1, u:"EA", p:[480,430,460], a:1},
+  {sect:"Garage · 12'×25' slab, panelized shell (G-Set)"},
+  {n:"Garage slab ready-mix + footings", d:"~5 yd³, thickened edges, vapor barrier", q:1, u:"LOT", p:[1250,1250,1250]},
+  {n:"Slab accessories", d:"mesh/fiber, expansion, anchor bolts", q:1, u:"LOT", p:[320,290,310]},
+  {n:"Trench drain at door, 12'", d:"", q:1, u:"EA", p:[340,310,330]},
+  {n:"2×6 × 10' #2", d:"tall-wall studs", q:34, u:"EA", p:[7.75,7.10,7.80]},
+  {n:"2×6 precut studs 92⅝\"", d:"low wall", q:26, u:"EA", p:[5.60,5.10,5.65]},
+  {n:"2×6 × 12' #2", d:"raked front/rear studs", q:16, u:"EA", p:[9.25,8.35,9.30]},
+  {n:"2×6 × 14' #2", d:"plates", q:12, u:"EA", p:[10.75,9.65,10.90]},
+  {n:"LVL 1¾\" × 11⅞\" × 12'", d:"OH door header, 2-ply", q:2, u:"EA", p:[78.00,81.00,83.00]},
+  {n:"2×10 × 16' #2", d:"roof panels, 12' clear span @ 24\" — no beam", q:22, u:"EA", p:[23.00,21.00,23.50]},
+  {n:"7/16\" OSB wall sheathing 4×8", d:"~665 SF", q:22, u:"SHT", p:[13.25,11.75,13.00]},
+  {n:"19/32\" OSB roof sheathing 4×8", d:"~365 SF", q:13, u:"SHT", p:[25.50,23.00,25.00]},
+  {n:"HT self-adhered underlayment 2 SQ", d:"", q:2, u:"ROLL", p:[98.00,92.00,95.00]},
+  {n:"R-21 + R-30 batts", d:"insulated for winter charging/washing", q:9, u:"BAG", p:[80.00,74.00,74.00]},
+  {n:"Mech-seam steel roof pkg (garage)", d:"~365 SF + trim — cut from the same order as the house", q:1, u:"LOT", p:[1750,1500,1700], a:1},
+  {n:"9'×7' insulated overhead door", d:"", q:1, u:"EA", p:[1450,1250,1350], a:1},
+  {n:"OH door opener", d:"", q:1, u:"EA", p:[320,280,300]},
+  {n:"Insulated man door", d:"west wall, on the walk axis", q:1, u:"EA", p:[420,380,400]},
+  {n:"Glazing strip, 4 fixed IGUs", d:"under the tall eave — glass shop quote", q:1, u:"LOT", p:[680,620,640], a:1},
+  {n:"Garage siding pkg, board & batten", d:"~665 SF to match house", q:1, u:"LOT", p:[1900,1700,1800], a:1},
+  {sect:"Garage services · trench, power, water"},
+  {n:"Trench conduit + fittings, 2\" PVC ~50 LF", d:"", q:1, u:"LOT", p:[150,135,145]},
+  {n:"60A feeder cable, ~90 LF", d:"panel-to-subpanel run", q:1, u:"LOT", p:[360,325,345]},
+  {n:"60A subpanel + breakers", d:"", q:1, u:"LOT", p:[260,235,250]},
+  {n:"EVSE, 48A hardwired", d:"50A circuit", q:1, u:"EA", p:[560,520,540]},
+  {n:"Branch wiring, devices, lighting", d:"GFCIs in/out, wash + exterior LED", q:1, u:"LOT", p:[480,430,460]},
+  {n:"1\" PEX ~100 LF + fittings", d:"below frost from house", q:1, u:"LOT", p:[110,95,105]},
+  {n:"Frost-proof sillcocks", d:"rear wall", q:2, u:"EA", p:[48.00,42.00,45.00]},
+  {n:"Utility sink + faucet", d:"", q:1, u:"EA", p:[240,210,220]},
+  {n:"Point-of-use water heater (opt.)", d:"warm wash water", q:1, u:"EA", p:[260,240,250]},
+  {sect:"Covered walk · 35 LF on 7-ft post bays"},
+  {n:"6×6 × 10' cedar posts", d:"", q:10, u:"EA", p:[62.00,56.00,60.00]},
+  {n:"Post standoff bases + hardware", d:"", q:10, u:"EA", p:[28.00,25.00,27.00]},
+  {n:"Concrete form tube 12\" × 48\"", d:"post footings", q:10, u:"EA", p:[15.50,13.90,15.00]},
+  {n:"Footing concrete, 80 lb bags", d:"~3 bags per footing", q:30, u:"BAG", p:[6.50,5.90,6.30]},
+  {n:"2×8 × 14' #2", d:"doubled beams both sides", q:10, u:"EA", p:[14.00,12.75,14.25]},
+  {n:"2×6 × 12' #2", d:"purlins @ 24\"", q:20, u:"EA", p:[9.25,8.35,9.30]},
+  {n:"Walk steel roof + gutter + DS", d:"~200 SF, slopes to house side", q:1, u:"LOT", p:[1050,900,1000], a:1},
+  {n:"Walk slab 5' × 35', broom finish", d:"~2.2 yd³, doweled to garage apron", q:1, u:"LOT", p:[620,620,620]},
+  {n:"Soffit LED lighting, 3-way switched", d:"fed from garage subpanel", q:1, u:"LOT", p:[340,310,330]},
+  {sect:"Beyond the shell · placeholders only"},
+  {n:"Siding pkg (board & batten over rainscreen)", d:"~1,770 SF", q:1, u:"LOT", p:[7400,6700,7100], a:1},
+  {n:"Drywall + finish pkg", d:"~130 sheets + mud/tape/corner", q:1, u:"LOT", p:[2500,2300,2250], a:1},
+  {n:"MEP rough packages (elec / plumb / HVAC-ERV)", d:"tub adds plumbing scope", q:1, u:"LOT", p:[15500,15000,15200], a:1},
+];
+
+const fmt = n => '$' + n.toLocaleString('en-US',{maximumFractionDigits:0});
+const tbody = document.querySelector('#bom tbody');
+let rows = [];
+
+function build(){
+  tbody.innerHTML=''; rows=[];
+  DATA.forEach((it,idx)=>{
+    if(it.sect){
+      const tr=document.createElement('tr'); tr.className='sect';
+      tr.innerHTML=`<td colspan="9">${it.sect}</td>`;
+      tbody.appendChild(tr); return;
+    }
+    const tr=document.createElement('tr');
+    if(it.a) tr.className='allow';
+    tr.innerHTML = `
+      <td><span class="it">${it.n}</span>${it.d?`<span class="desc">${it.d}</span>`:''}</td>
+      <td class="qty">${it.q}</td><td class="unit hidem">${it.u}</td>
+      <td class="num"><input class="price" value="${it.p[0]}"></td>
+      <td class="num"><input class="price" value="${it.p[1]}"></td>
+      <td class="num"><input class="price" value="${it.p[2]}"></td>
+      <td class="num tHD"></td><td class="num tMEN"></td><td class="num tLOW"></td>`;
+    tbody.appendChild(tr);
+    rows.push({it,tr});
+  });
+  recalc();
+}
+
+function recalc(){
+  let T=[0,0,0], B=0;
+  rows.forEach(r=>{
+    const tots=[...r.tr.querySelectorAll('input.price')].map(inp=>(parseFloat(inp.value)||0)*r.it.q);
+    const cells=[r.tr.querySelector('.tHD'),r.tr.querySelector('.tMEN'),r.tr.querySelector('.tLOW')];
+    const min=Math.min(...tots);
+    cells.forEach((c,i)=>{
+      c.textContent=fmt(tots[i]);
+      c.classList.toggle('best', tots[i]===min && min>0);
+      T[i]+=tots[i];
+    });
+    B+=min;
+  });
+  document.getElementById('tHD').textContent=fmt(T[0]);
+  document.getElementById('tMEN').textContent=fmt(T[1]);
+  document.getElementById('tLOW').textContent=fmt(T[2]);
+  document.getElementById('tBEST').textContent=fmt(B);
+}
+
+tbody.addEventListener('input',e=>{ if(e.target.classList.contains('price')) recalc(); });
+document.getElementById('resetbtn').addEventListener('click',build);
+document.getElementById('csvbtn').addEventListener('click',()=>{
+  let csv='Item,Qty,Unit,HomeDepot $,Menards $,Lowes $,HD Total,MEN Total,LOW Total\n';
+  rows.forEach(r=>{
+    const ins=[...r.tr.querySelectorAll('input.price')].map(i=>parseFloat(i.value)||0);
+    const t=ins.map(p=>(p*r.it.q).toFixed(2));
+    csv+=`"${r.it.n}",${r.it.q},${r.it.u},${ins[0]},${ins[1]},${ins[2]},${t[0]},${t[1]},${t[2]}\n`;
+  });
+  navigator.clipboard.writeText(csv).then(()=>{
+    const b=document.getElementById('csvbtn'); const t=b.textContent;
+    b.textContent='Copied ✓'; setTimeout(()=>b.textContent=t,1600);
+  });
+});
+build();
+</script>
+</body>
+</html>

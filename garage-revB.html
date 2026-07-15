@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM-RES-01 · G-Set · Garage + Covered Walk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0EFE9; --paper2:#E7E5DB; --ink:#232620; --line:#4A4D45; --faint:#9A9C92;
+    --seam:#B23A24; --modA:#5E7263; --modB:#B07A4A; --modC:#5A6E7F; --modG:#7A6A8C;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;font-size:15px;line-height:1.55;padding:28px 20px 80px}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .set{max-width:1060px;margin:0 auto}
+  nav.setnav{display:flex;border:2px solid var(--ink);margin-bottom:14px;background:var(--paper)}
+  nav.setnav a{flex:1;text-align:center;padding:10px 6px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-right:1.5px solid var(--ink)}
+  nav.setnav a:last-child{border-right:none}
+  nav.setnav a:hover{background:var(--paper2)}
+  nav.setnav a.here{background:var(--ink);color:var(--paper)}
+  nav.setnav a span{display:block;font-size:9px;color:var(--faint)}
+  nav.setnav a.here span{color:var(--paper);opacity:.65}
+  header.tblock{border:2px solid var(--ink);margin-bottom:26px;background:var(--paper)}
+  .tblock-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;padding:26px 26px 18px;border-bottom:1.5px solid var(--ink)}
+  .tblock h1{font-weight:800;font-size:clamp(26px,4.4vw,44px);letter-spacing:-0.02em;line-height:1.04;text-transform:uppercase}
+  .tblock h1 span{color:var(--seam)}
+  .tblock .sub{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--line);margin-top:10px}
+  .tblock-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+  .tblock-meta div{padding:10px 14px;border-right:1px solid var(--ink);font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+  .tblock-meta div:last-child{border-right:none}
+  .tblock-meta b{display:block;font-size:10px;color:var(--faint);letter-spacing:.16em;text-transform:uppercase;margin-bottom:2px;font-weight:500}
+  .sheet{border:1.5px solid var(--ink);margin-bottom:26px;background:var(--paper)}
+  .sheet-tag{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;border-bottom:1.5px solid var(--ink);padding:10px 18px}
+  .sheet-tag .no{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;background:var(--ink);color:var(--paper);padding:2px 9px}
+  .sheet-tag h2{font-size:15px;font-weight:700;letter-spacing:.10em;text-transform:uppercase}
+  .sheet-tag .scale{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--line)}
+  .sheet-body{padding:22px 18px}
+  .sheet-note{font-size:13.5px;color:var(--line);max-width:72ch;margin:0 0 16px}
+  .sheet-note em{color:var(--ink);font-style:normal;font-weight:600}
+  svg{display:block;width:100%;height:auto}
+  svg text{font-family:'IBM Plex Mono',monospace;fill:var(--ink)}
+  .rmlabel{font-weight:600;letter-spacing:.05em}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--line);font-weight:600;border-bottom:1.5px solid var(--ink);padding:8px 10px}
+  td{border-bottom:1px solid var(--paper2);padding:9px 10px;vertical-align:top}
+  td.mono{font-size:12.5px}
+  tr:last-child td{border-bottom:none}
+  tr.tot td{border-top:1.5px solid var(--ink);font-weight:700;background:var(--paper2)}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.twocol{grid-template-columns:1fr}}
+  footer{max-width:1060px;margin:10px auto 0;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--faint);letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<div class="set">
+
+  <nav class="setnav">
+    <a href="stepped-shed-house-revB.html"><span>01</span>DESIGN</a>
+    <a href="blueprint-set-revB.html"><span>02</span>BLUEPRINTS</a>
+    <a href="materials-takeoff-revB.html"><span>03</span>TAKEOFF</a>
+    <a class="here" href="garage-revB.html"><span>04</span>GARAGE</a>
+    <a href="rendering-revB.html"><span>05</span>RENDERING</a>
+  </nav>
+
+  <header class="tblock">
+    <div class="tblock-top">
+      <div>
+        <h1>Garage + Covered Walk <span>/ G-SET</span></h1>
+        <div class="sub">12' × 25' garage · wash + charge bay · 35 LF covered walk to the entry notch</div>
+      </div>
+      <div class="mono" style="font-size:11.5px;text-align:right;line-height:1.7;color:var(--line)">
+        SHED ROOF 2:12 ACROSS THE WIDTH<br>
+        10'-0" WEST WALL → 8'-0" EAST WALL<br>
+        POWER + WATER SERVICE AT REAR WALL
+      </div>
+    </div>
+    <div class="tblock-meta">
+      <div><b>Project No.</b>TM-RES-01</div>
+      <div><b>Set</b>G1–G5</div>
+      <div><b>Area</b>300 SF + 193 SF WALK</div>
+      <div><b>Structure</b>Panelized walls/roof on slab</div>
+      <div><b>Status</b>Schematic</div>
+    </div>
+  </header>
+
+  <div class="sheet-note" style="border:1.5px solid var(--seam);background:#F5E9E4;padding:14px 16px;max-width:100%;margin-bottom:24px">
+    <em style="color:var(--seam)">Design logic:</em> the house's 2:12 shed can't run down a 25' depth
+    and stay 10' tall (it would land below 6' at the rear), so the garage slopes <em>across its 12'
+    width</em> instead — same 2:12 pitch, same steel, same board-and-batten, with the 10' high side
+    facing the house and a fixed <em>glazing strip under the tall eave</em> that echoes the house's
+    clerestory band. It reads as a little sibling of Zone B. Floors switch from cassettes to a
+    <em>slab</em> — you can't wash a truck on a wood floor.
+  </div>
+
+  <!-- ============ G1 PLAN ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">G1</span><h2>Plan · Wash + Charge Bay</h2><span class="scale">12'-0" × 25'-0"</span></div>
+    <div class="sheet-body">
+      <svg viewBox="0 0 560 480" role="img" aria-label="Garage floor plan">
+        <!-- 14px/ft, ox=180 oy=50 ; x0=180 x12=348 ; y0(rear)=50 y25=400 -->
+        <rect x="180" y="50" width="168" height="350" fill="var(--modG)" opacity="0.10"/>
+
+        <!-- vehicle -->
+        <g stroke="var(--line)" stroke-width="1.2" fill="none" opacity="0.6" stroke-dasharray="5 4">
+          <rect x="216" y="150" width="98" height="224" rx="14"/>
+        </g>
+        <text x="265" y="270" font-size="9" fill="var(--faint)" text-anchor="middle">VEHICLE BAY</text>
+
+        <!-- workbench along rear -->
+        <g stroke="var(--line)" stroke-width="1.2" fill="none" opacity="0.8">
+          <rect x="240" y="54" width="104" height="28"/>
+          <rect x="188" y="54" width="42" height="34"/>
+        </g>
+        <text x="292" y="72" font-size="8" fill="var(--line)" text-anchor="middle">BENCH</text>
+        <text x="209" y="74" font-size="8" fill="var(--line)" text-anchor="middle">SINK</text>
+
+        <!-- EVSE + subpanel on rear wall interior -->
+        <g fill="none" stroke="var(--seam)" stroke-width="1.6">
+          <rect x="322" y="56" width="16" height="22"/>
+          <rect x="352" y="88" width="0" height="0"/>
+        </g>
+        <text x="330" y="94" font-size="8" fill="var(--seam)" text-anchor="middle">EVSE</text>
+        <rect x="296" y="56" width="14" height="20" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+        <text x="303" y="90" font-size="8" text-anchor="middle">60A PNL</text>
+
+        <!-- trench drain at door -->
+        <line x1="212" y1="382" x2="340" y2="382" stroke="var(--seam)" stroke-width="3" stroke-dasharray="6 3"/>
+        <text x="276" y="374" font-size="8" fill="var(--seam)" text-anchor="middle">TRENCH DRAIN · SLAB SLOPES 1% TO IT</text>
+
+        <!-- walls -->
+        <g stroke="var(--ink)" stroke-width="6" fill="none">
+          <!-- rear y=0: solid w/ small window x4-8? keep solid + penetrations -->
+          <line x1="180" y1="50" x2="348" y2="50"/>
+          <!-- west tall x=0: man door gap y3-6 (92-134), glazing strip is high (drawn thin) -->
+          <line x1="180" y1="50" x2="180" y2="260"/><line x1="180" y1="302" x2="180" y2="400"/>
+          <!-- east low x=12 -->
+          <line x1="348" y1="50" x2="348" y2="400"/>
+          <!-- front y=25: OH door RO x2-11 (208-334) -->
+          <line x1="180" y1="400" x2="208" y2="400"/><line x1="334" y1="400" x2="348" y2="400"/>
+        </g>
+
+        <!-- OH door symbol -->
+        <g stroke="var(--ink)" stroke-width="1.4">
+          <rect x="208" y="396.7" width="126" height="6.6" fill="var(--paper)"/>
+          <line x1="208" y1="400" x2="334" y2="400" stroke-width="0.8"/>
+        </g>
+        <text x="271" y="422" font-size="9" text-anchor="middle">9'-0" × 7'-0" INSULATED OVERHEAD DOOR</text>
+
+        <!-- man door leaf -->
+        <g stroke="var(--ink)" stroke-width="1.6" fill="none">
+          <line x1="180" y1="260" x2="212.5" y2="260"/>
+          <path d="M212.5,260 A32.5,32.5 0 0 1 180,292.5" stroke="var(--line)" stroke-width="1.2" stroke-dasharray="2 3"/>
+        </g>
+        <text x="150" y="280" font-size="8.5" text-anchor="end">MAN DOOR</text>
+        <text x="150" y="292" font-size="7.5" text-anchor="end" fill="var(--seam)">→ COVERED WALK</text>
+
+        <!-- glazing strip along west wall (high) -->
+        <line x1="174" y1="90" x2="174" y2="250" stroke="var(--seam)" stroke-width="2" stroke-dasharray="8 4"/>
+        <text x="166" y="170" font-size="8" fill="var(--seam)" text-anchor="middle" transform="rotate(-90 166 170)">GLAZING STRIP ABOVE · 8'-6" SILL</text>
+
+        <!-- rear exterior services -->
+        <g fill="var(--seam)">
+          <circle cx="222" cy="42" r="4"/><circle cx="252" cy="42" r="4"/>
+        </g>
+        <text x="237" y="30" font-size="8.5" fill="var(--seam)" text-anchor="middle">FROST-PROOF BIBS ×2</text>
+        <rect x="316" y="36" width="12" height="10" fill="none" stroke="var(--seam)" stroke-width="1.4"/>
+        <text x="322" y="28" font-size="8.5" fill="var(--seam)" text-anchor="middle">EXT. GFCI + LIGHT</text>
+        <line x1="303" y1="36" x2="303" y2="14" stroke="var(--seam)" stroke-width="1.6" stroke-dasharray="4 3"/>
+        <text x="303" y="8" font-size="8.5" fill="var(--seam)" text-anchor="middle">FEEDERS FROM HOUSE MECH ROOM (TRENCH)</text>
+
+        <!-- dims -->
+        <g stroke="var(--line)" stroke-width="1">
+          <line x1="180" y1="446" x2="348" y2="446"/><line x1="180" y1="440" x2="180" y2="452"/><line x1="348" y1="440" x2="348" y2="452"/>
+          <line x1="120" y1="50" x2="120" y2="400"/><line x1="114" y1="50" x2="126" y2="50"/><line x1="114" y1="400" x2="126" y2="400"/>
+        </g>
+        <g font-size="10">
+          <text x="264" y="440" text-anchor="middle" font-weight="600">12'-0"</text>
+          <text x="108" y="225" text-anchor="middle" transform="rotate(-90 108 225)" font-weight="600">25'-0"</text>
+        </g>
+        <g font-size="9" fill="var(--line)">
+          <text x="380" y="120" text-anchor="start">← EAST WALL 8'-0"</text>
+          <text x="380" y="140" text-anchor="start">   (LOW EAVE)</text>
+          <text x="60" y="200" text-anchor="start">WEST WALL 10'-0"</text>
+          <text x="60" y="216" text-anchor="start">(FACES HOUSE)</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ G2 ELEVATIONS ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">G2</span><h2>Elevations</h2><span class="scale">2:12 ACROSS WIDTH · MATCHES HOUSE MATERIALS</span></div>
+    <div class="sheet-body">
+      <svg viewBox="0 0 760 400" role="img" aria-label="Garage elevations">
+        <!-- FRONT (12' raked face w/ OH door) 6px/ft -->
+        <text x="30" y="22" font-size="10.5" font-weight="600" letter-spacing="1.5">FRONT (SOUTH) · RAKED FACE</text>
+        <g transform="translate(60,40)">
+          <!-- west (left) 10'=60, east 8'=48; width 72 -->
+          <polygon points="0,60 72,72 72,120 0,120" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.8"/>
+          <polygon points="-8,54.7 80,69.3 80,73.3 -8,58.7" fill="var(--ink)"/>
+          <!-- OH door 9x7: x2-11 -> 12-66, head 7'=42 -> y120-42=78 -->
+          <rect x="12" y="78" width="54" height="42" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.4"/>
+          <line x1="12" y1="88.5" x2="66" y2="88.5" stroke="var(--ink)" stroke-width="0.6"/>
+          <line x1="12" y1="99" x2="66" y2="99" stroke="var(--ink)" stroke-width="0.6"/>
+          <line x1="12" y1="109.5" x2="66" y2="109.5" stroke="var(--ink)" stroke-width="0.6"/>
+          <line x1="-14" y1="120" x2="86" y2="120" stroke="var(--ink)" stroke-width="2.2"/>
+          <text x="36" y="138" font-size="8" fill="var(--line)" text-anchor="middle">10'-0" → 8'-0" · 2:12</text>
+        </g>
+
+        <!-- WEST tall side, 25' w/ glazing strip + man door -->
+        <text x="240" y="22" font-size="10.5" font-weight="600" letter-spacing="1.5">WEST · TALL SIDE (FACES HOUSE)</text>
+        <g transform="translate(250,40)">
+          <rect x="0" y="60" width="150" height="60" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.8"/>
+          <rect x="-8" y="55" width="166" height="5" fill="var(--ink)"/>
+          <!-- glazing strip under eave: sill 8'-6"=51 -> y120-57=63? strip from y=63 to 60+? draw y61.5-69 -->
+          <rect x="6" y="62.5" width="138" height="7.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>
+          <g stroke="var(--ink)" stroke-width="0.6"><line x1="40.5" y1="62.5" x2="40.5" y2="70"/><line x1="75" y1="62.5" x2="75" y2="70"/><line x1="109.5" y1="62.5" x2="109.5" y2="70"/></g>
+          <!-- man door near rear (right side = rear): plan y3-6 from rear -> x from right: 132-114 -->
+          <rect x="114" y="78" width="18" height="42" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.3"/>
+          <circle cx="129" cy="101" r="1.5" fill="var(--ink)"/>
+          <!-- batten rhythm -->
+          <g stroke="var(--faint)" stroke-width="0.7"><line x1="37.5" y1="60" x2="37.5" y2="120"/><line x1="75" y1="60" x2="75" y2="120"/><line x1="112.5" y1="60" x2="112.5" y2="120"/></g>
+          <line x1="-12" y1="120" x2="162" y2="120" stroke="var(--ink)" stroke-width="2.2"/>
+          <text x="75" y="138" font-size="8" fill="var(--line)" text-anchor="middle">GLAZING STRIP @ 8'-6" SILL · BATTENS ON 6'-3" PANEL JOINTS</text>
+        </g>
+
+        <!-- REAR utility wall -->
+        <text x="30" y="212" font-size="10.5" font-weight="600" letter-spacing="1.5">REAR (NORTH) · UTILITY WALL</text>
+        <g transform="translate(60,232)">
+          <!-- mirrored: east (low) at left now: heights 48 left, 60 right -->
+          <polygon points="0,72 72,60 72,120 0,120" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.8"/>
+          <polygon points="-8,73.3 80,58.7 80,54.7 -8,69.3" fill="var(--ink)" transform="translate(0,0)"/>
+          <!-- bibs, receptacle, light -->
+          <circle cx="22" cy="104" r="2.5" fill="none" stroke="var(--seam)" stroke-width="1.4"/>
+          <circle cx="34" cy="104" r="2.5" fill="none" stroke="var(--seam)" stroke-width="1.4"/>
+          <rect x="52" y="96" width="7" height="10" fill="none" stroke="var(--seam)" stroke-width="1.4"/>
+          <circle cx="62" cy="78" r="3" fill="none" stroke="var(--seam)" stroke-width="1.2"/>
+          <line x1="-14" y1="120" x2="86" y2="120" stroke="var(--ink)" stroke-width="2.2"/>
+          <g font-size="7.5" fill="var(--seam)">
+            <text x="28" y="132" text-anchor="middle">BIBS ×2</text>
+            <text x="58" y="142" text-anchor="middle">GFCI + LIGHT</text>
+          </g>
+        </g>
+
+        <!-- EAST low side -->
+        <text x="240" y="212" font-size="10.5" font-weight="600" letter-spacing="1.5">EAST · LOW SIDE</text>
+        <g transform="translate(250,232)">
+          <rect x="0" y="72" width="150" height="48" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.8"/>
+          <rect x="-8" y="67" width="166" height="5" fill="var(--ink)"/>
+          <g stroke="var(--faint)" stroke-width="0.7"><line x1="37.5" y1="72" x2="37.5" y2="120"/><line x1="75" y1="72" x2="75" y2="120"/><line x1="112.5" y1="72" x2="112.5" y2="120"/></g>
+          <line x1="-12" y1="120" x2="162" y2="120" stroke="var(--ink)" stroke-width="2.2"/>
+          <text x="75" y="138" font-size="8" fill="var(--line)" text-anchor="middle">8'-0" EAVE · SOLID (STORAGE WALL INSIDE)</text>
+        </g>
+
+        <text x="470" y="22" font-size="10.5" font-weight="600" letter-spacing="1.5">KINSHIP</text>
+        <g transform="translate(470,40)" font-size="9" >
+          <text x="0" y="14" fill="var(--line)">SAME 2:12 PITCH + MECH-SEAM STEEL</text>
+          <text x="0" y="34" fill="var(--line)">SAME BOARD &amp; BATTEN, JOINTS ON GRID</text>
+          <text x="0" y="54" fill="var(--line)">GLAZING STRIP ≈ HOUSE CLERESTORY</text>
+          <text x="0" y="74" fill="var(--line)">SAME FASCIA + TRIM PROFILES</text>
+          <text x="0" y="94" fill="var(--line)">TALL FACE ADDRESSES THE HOUSE,</text>
+          <text x="0" y="108" fill="var(--line)">LOW FACE TURNS ITS BACK TO WEATHER</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ G3 SITE + UTILITIES ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">G3</span><h2>Siting &amp; Utility Run</h2><span class="scale">TRENCH FROM HOUSE MECH ROOM</span></div>
+    <div class="sheet-body">
+      <p class="sheet-note">
+        The garage sits east of the house, shifted forward so its man door lines up dead-on with the
+        covered walk to the entry notch. The mechanical room at the house's rear east corner feeds a
+        single ~45' trench carrying everything:
+        <em>power</em> (60A feeder in 2" conduit — sized so a 48A EVSE and the wash gear can run
+        together) and <em>water</em> (1" PEX below frost, ~36" cover in Richland County) to the rear
+        utility wall. One trench, one inspection, both services.
+      </p>
+      <svg viewBox="0 0 720 320" role="img" aria-label="Site diagram with covered walk and trench run">
+        <!-- 4px/ft: house at (80,60) -->
+        <g>
+          <rect x="80" y="60" width="56" height="112" fill="var(--modA)" opacity="0.25" stroke="var(--ink)" stroke-width="1.6"/>
+          <rect x="136" y="60" width="56" height="128" fill="var(--modB)" opacity="0.25" stroke="var(--ink)" stroke-width="1.8"/>
+          <rect x="192" y="60" width="56" height="112" fill="var(--modC)" opacity="0.25" stroke="var(--ink)" stroke-width="1.6"/>
+          <text x="164" y="120" font-size="10" text-anchor="middle" font-weight="600">HOUSE</text>
+          <rect x="230" y="64" width="16" height="20" fill="none" stroke="var(--seam)" stroke-width="1.6"/>
+          <text x="238" y="56" font-size="8" fill="var(--seam)" text-anchor="middle">MECH</text>
+          <!-- entry door on B east return -->
+          <line x1="192" y1="174" x2="192" y2="186" stroke="var(--seam)" stroke-width="3"/>
+          <text x="186" y="200" font-size="8" fill="var(--seam)" text-anchor="end">ENTRY (NOTCH)</text>
+          <!-- BR2 window on C front, x33-40 -> 212-240 -->
+          <line x1="212" y1="172" x2="240" y2="172" stroke="var(--seam)" stroke-width="3.5"/>
+          <text x="226" y="164" font-size="8" fill="var(--seam)" text-anchor="middle">BR2 WINDOW — KEPT CLEAR</text>
+        </g>
+        <!-- garage shifted south: plan y19-44 -> y136-236, x336-384 -->
+        <rect x="336" y="136" width="48" height="100" fill="var(--modG)" opacity="0.3" stroke="var(--ink)" stroke-width="1.8"/>
+        <text x="360" y="186" font-size="9" text-anchor="middle" font-weight="600">GARAGE</text>
+        <text x="360" y="198" font-size="7.5" text-anchor="middle" fill="var(--line)">12×25</text>
+        <line x1="336" y1="136" x2="336" y2="236" stroke="var(--seam)" stroke-width="2.5"/>
+        <text x="328" y="186" font-size="7.5" fill="var(--seam)" text-anchor="middle" transform="rotate(-90 328 186)">10' TALL SIDE</text>
+        <!-- man door on west wall at walk axis -->
+        <line x1="336" y1="196" x2="336" y2="208" stroke="var(--paper)" stroke-width="4"/>
+        <!-- covered walk: canopy y194-216 from x196 to x336, posts @ 7' -->
+        <rect x="196" y="194" width="140" height="22" fill="var(--modG)" opacity="0.18" stroke="var(--ink)" stroke-width="1.4" stroke-dasharray="6 3"/>
+        <g fill="var(--ink)">
+          <circle cx="196" cy="194" r="2.2"/><circle cx="224" cy="194" r="2.2"/><circle cx="252" cy="194" r="2.2"/><circle cx="280" cy="194" r="2.2"/><circle cx="308" cy="194" r="2.2"/>
+          <circle cx="196" cy="216" r="2.2"/><circle cx="224" cy="216" r="2.2"/><circle cx="252" cy="216" r="2.2"/><circle cx="280" cy="216" r="2.2"/><circle cx="308" cy="216" r="2.2"/>
+        </g>
+        <text x="266" y="232" font-size="8.5" fill="var(--line)" text-anchor="middle">COVERED WALK · 35 LF · POSTS @ 7'-0"</text>
+        <!-- clear offset dimension between C facade (y172) and canopy north edge (y194) -->
+        <g stroke="var(--seam)" stroke-width="1">
+          <line x1="256" y1="172" x2="256" y2="194"/>
+          <line x1="252" y1="172" x2="260" y2="172"/><line x1="252" y1="194" x2="260" y2="194"/>
+        </g>
+        <text x="262" y="186" font-size="8" fill="var(--seam)">5'-6" CLEAR</text>
+        <!-- walker path hook into notch -->
+        <path d="M200,205 L196,205 Q188,205 188,196 L188,182" fill="none" stroke="var(--line)" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <!-- trench -->
+        <path d="M246,74 L360,74 L360,136" fill="none" stroke="var(--seam)" stroke-width="2" stroke-dasharray="7 4"/>
+        <text x="330" y="64" font-size="8.5" fill="var(--seam)" text-anchor="middle">TRENCH ~45 LF · 2" PVC (60A FEEDER) + 1" PEX @ 36" COVER</text>
+        <!-- driveway -->
+        <g stroke="var(--faint)" stroke-width="1.2" fill="none"><path d="M340,236 L340,300 M380,236 L380,300"/></g>
+        <text x="360" y="314" font-size="8.5" fill="var(--line)" text-anchor="middle">DRIVE / APRON</text>
+        <text x="164" y="216" font-size="8.5" fill="var(--faint)" text-anchor="middle">HOUSE FRONT (SOUTH)</text>
+        <g transform="translate(660,270)">
+          <circle r="14" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+          <path d="M0,8 L0,-8 M0,-8 L-4,-2 M0,-8 L4,-2" stroke="var(--ink)" stroke-width="1.5" fill="none"/>
+          <text y="-20" text-anchor="middle" font-size="9">N</text>
+        </g>
+        <text x="80" y="308" font-size="8.5" fill="var(--faint)">SITING SCHEMATIC — VERIFY ACCESSORY SETBACKS + SEPARATION LOCALLY</text>
+      </svg>
+      <div class="twocol" style="margin-top:16px">
+        <div>
+          <table>
+            <thead><tr><th colspan="2">Rear Wall Services</th></tr></thead>
+            <tbody>
+              <tr><td><b>Power</b></td><td>60A subpanel · 50A EVSE circuit (14-50 or hardwired 48A unit) · GFCI convenience circuits in + out · LED wash lighting + exterior fixture</td></tr>
+              <tr><td><b>Water</b></td><td>Two frost-proof sillcocks on the exterior rear wall + utility sink inside; optional point-of-use water heater under the sink for warm wash water</td></tr>
+              <tr><td><b>Drainage</b></td><td>Slab slopes ~1% to a trench drain at the door — cleaner code path than an interior floor drain; drain daylights or ties to a gravel gallery per local rules</td></tr>
+              <tr><td><b>Heat (opt.)</b></td><td>Wall-mount electric unit heater on its own circuit keeps winter charging + washing comfortable</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <table>
+            <thead><tr><th colspan="2">Panel Schedule (same jig table)</th></tr></thead>
+            <tbody>
+              <tr><td class="mono">SLAB</td><td>12' × 25' × 4", thickened edges, ~5 yd³, anchor bolts on panel layout</td></tr>
+              <tr><td class="mono">GW ×4</td><td>West wall 6'-3" × 10'-0" panels (~810 lb) — glazing strip head in top plate zone</td></tr>
+              <tr><td class="mono">GE ×4</td><td>East wall 6'-3" × 8'-0" (~650 lb)</td></tr>
+              <tr><td class="mono">GF/GR ×4</td><td>Front + rear raked 6'-0" panels; front pair carries the 9' door RO + LVL header</td></tr>
+              <tr><td class="mono">GRF ×4</td><td>Roof 6'-3" × ~14'-6", 2×10 @ 24" — 12' clear span, <b>no beam needed</b> (~700 lb)</td></tr>
+              <tr><td class="mono">CL-G ×4</td><td>Glazing strip frames, 6'-3" × 18", fixed IGUs — same shop detail as house clerestory</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ G5 COVERED WALK ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">G5</span><h2>Covered Walk · Garage → Entry Notch</h2><span class="scale">35 LF · 5'-6" ROOF · POSTS @ 7'-0"</span></div>
+    <div class="sheet-body">
+      <p class="sheet-note">
+        The walk runs dead straight from the garage man door to the entry notch — but its roof is
+        <em>held 5'-6" clear of Zone C's facade</em>, a detached canopy on its own posts, so the
+        Bedroom 2 window keeps its full light and view corridor. At the house end the canopy noses up
+        to Zone B's 2'-0" overhang line; you step off the walk and you're already under the house's
+        own roof at the door. Post spacing is the project's 7'-0" grid, and the canopy eave sits at <em>10'-0", matching the garage's west eave</em> — one continuous datum from garage to house that also lifts the roof band to the window head and keeps the whole eye-level view open.
+      </p>
+      <div class="twocol">
+        <div>
+          <svg viewBox="0 0 560 270" role="img" aria-label="Covered walk plan">
+            <text x="18" y="20" font-size="10.5" font-weight="600" letter-spacing="1.5">PLAN · 10PX = 1'-0"</text>
+            <!-- C facade line at y=44; window x 4'-11' from walk west end -->
+            <line x1="30" y1="44" x2="420" y2="44" stroke="var(--ink)" stroke-width="4"/>
+            <rect x="70" y="40.7" width="70" height="6.6" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+            <text x="105" y="34" font-size="8.5" fill="var(--seam)" text-anchor="middle">BR2 WINDOW — UNBLOCKED</text>
+            <text x="300" y="34" font-size="8.5" fill="var(--line)" text-anchor="middle">ZONE C FACADE</text>
+            <!-- B projection corner at west: B front proud 4' -> its face at y=44-? B is forward (south) of C: draw B return -->
+            <rect x="0" y="44" width="30" height="40" fill="var(--modB)" opacity="0.2" stroke="var(--ink)" stroke-width="1.6"/>
+            <text x="15" y="66" font-size="7.5" text-anchor="middle">ZONE B</text>
+            <line x1="30" y1="49" x2="30" y2="79" stroke="var(--seam)" stroke-width="3"/>
+            <text x="36" y="76" font-size="7.5" fill="var(--seam)">ENTRY DOOR</text>
+            <!-- B overhang dashed to y=84+? B front y at plan 32 = 44+40=84; overhang 2' -> y104?? scale: C facade y44 = plan y28; +10px/ft: B face y=84, OH edge y=104? no: 2' = 20px -> y104. Hmm keep simple: OH dash at y104 -->
+            <line x1="0" y1="104" x2="30" y2="104" stroke="var(--line)" stroke-width="1" stroke-dasharray="4 3"/>
+            <!-- canopy: north edge 5'-6" off facade: y44+55=99 -> y99-154 (5.5') ; from x=30 to x=380 (35') -->
+            <rect x="30" y="99" width="350" height="55" fill="var(--modG)" opacity="0.15" stroke="var(--ink)" stroke-width="1.6" stroke-dasharray="7 4"/>
+            <!-- posts @70px -->
+            <g fill="var(--ink)">
+              <circle cx="30" cy="99" r="3"/><circle cx="100" cy="99" r="3"/><circle cx="170" cy="99" r="3"/><circle cx="240" cy="99" r="3"/><circle cx="310" cy="99" r="3"/>
+              <circle cx="30" cy="154" r="3"/><circle cx="100" cy="154" r="3"/><circle cx="170" cy="154" r="3"/><circle cx="240" cy="154" r="3"/><circle cx="310" cy="154" r="3"/>
+            </g>
+            <!-- concrete path -->
+            <rect x="30" y="104" width="350" height="45" fill="var(--paper2)" stroke="var(--faint)" stroke-width="1"/>
+            <!-- garage west wall at x=380 -->
+            <line x1="380" y1="70" x2="380" y2="200" stroke="var(--ink)" stroke-width="5"/>
+            <rect x="376.7" y="112" width="6.6" height="30" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+            <text x="396" y="130" font-size="8.5">MAN</text><text x="396" y="141" font-size="8.5">DOOR</text>
+            <text x="430" y="100" font-size="9" font-weight="600">GARAGE</text>
+            <!-- clear offset dim -->
+            <g stroke="var(--seam)" stroke-width="1">
+              <line x1="210" y1="44" x2="210" y2="99"/>
+              <line x1="205" y1="44" x2="215" y2="44"/><line x1="205" y1="99" x2="215" y2="99"/>
+            </g>
+            <text x="218" y="76" font-size="8.5" fill="var(--seam)">5'-6" CLEAR</text>
+            <!-- length dim -->
+            <g stroke="var(--line)" stroke-width="0.9">
+              <line x1="30" y1="230" x2="380" y2="230"/><line x1="30" y1="224" x2="30" y2="236"/><line x1="380" y1="224" x2="380" y2="236"/>
+            </g>
+            <text x="205" y="224" font-size="9" text-anchor="middle" font-weight="600">35'-0" · 5 BAYS @ 7'-0"</text>
+            <text x="205" y="252" font-size="8" fill="var(--line)" text-anchor="middle">WALKER PATH: DOOR → STRAIGHT RUN → STEP NORTH INTO NOTCH UNDER B'S OVERHANG</text>
+          </svg>
+        </div>
+        <div>
+          <svg viewBox="0 0 460 270" role="img" aria-label="Covered walk cross section">
+            <text x="18" y="20" font-size="10.5" font-weight="600" letter-spacing="1.5">CROSS SECTION · LOOKING WEST</text>
+            <g transform="translate(120,36)">
+              <!-- 16px/ft: roof width 5.5' = 88; posts inset; north (house side) at left -->
+              <line x1="-70" y1="192" x2="240" y2="192" stroke="var(--ink)" stroke-width="2.4"/>
+              <!-- path slab -->
+              <rect x="-6" y="186" width="100" height="6" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.2"/>
+              <!-- posts: north at x=0 h 8'-1"=129 -> top y63; south x=88 h 9'=144 -> y48 -->
+              <rect x="-3" y="47" width="6" height="145" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.6"/>
+              <rect x="85" y="32" width="6" height="160" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.6"/>
+              <!-- doubled 2x8 beams at post tops -->
+              <rect x="-8" y="47" width="16" height="12" fill="var(--ink)"/>
+              <rect x="80" y="32" width="16" height="12" fill="var(--ink)"/>
+              <!-- roof plane 2:12 sloping north(left): south high; overhangs 6" each -->
+              <polygon points="-14,44.7 102,25.3 102,32 -14,51.3" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+              <polygon points="-14,44.7 102,25.3 102,30 -14,49.4" fill="var(--ink)"/>
+              <!-- gutter north edge -->
+              <circle cx="-16" cy="54" r="4" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+              <!-- house side context: C facade far left -->
+              <line x1="-70" y1="192" x2="-70" y2="36" stroke="var(--line)" stroke-width="2" stroke-dasharray="6 4"/>
+              <text x="-76" y="110" font-size="8" fill="var(--line)" text-anchor="middle" transform="rotate(-90 -76 110)">ZONE C FACADE</text>
+              <!-- clear gap arrows -->
+              <g stroke="var(--seam)" stroke-width="1"><line x1="-70" y1="176" x2="-16" y2="176"/><line x1="-70" y1="171" x2="-70" y2="181"/><line x1="-16" y1="171" x2="-16" y2="181"/></g>
+              <text x="-43" y="168" font-size="8" fill="var(--seam)" text-anchor="middle">5'-6"</text>
+              <!-- dims -->
+              <g font-size="8.5" fill="var(--line)">
+                <text x="118" y="40">HIGH SIDE 10'-0" = GARAGE EAVE</text>
+                <text x="118" y="54">2:12 → SLOPES TO HOUSE SIDE</text>
+                <text x="118" y="68">GUTTER + DS AT POSTS · LOW SIDE 9'-1"</text>
+                <text x="44" y="210" text-anchor="middle">5'-0" WALK · BROOM FINISH</text>
+                <text x="44" y="226" text-anchor="middle">POSTS: 6×6 CEDAR ON STANDOFFS</text>
+                <text x="44" y="242" text-anchor="middle">12" SONOTUBES @ 36" FROST</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <table style="margin-top:16px">
+        <thead><tr><th>Element</th><th>Spec</th></tr></thead>
+        <tbody>
+          <tr><td><b>Structure</b></td><td>6×6 cedar posts on standoff bases, 10 total (5 lines @ 7'-0"), 12" sonotube footings @ 36"; doubled 2×8 beams both sides; 2×6 purlins @ 24" across the 5'-6" roof; eave datum 10'-0" (= garage west eave), low side 9'-1"</td></tr>
+          <tr><td><b>Roof</b></td><td>Same mech-seam steel as house + garage, 2:12 sloping toward the house side into a gutter with downspouts at posts — the walk side stays drip-free when you're carrying groceries</td></tr>
+          <tr><td><b>Path</b></td><td>5'-0" × 35' broom-finish slab, 4", doweled to the garage apron; step-off pad into the entry notch</td></tr>
+          <tr><td><b>Light</b></td><td>Low-output LED downlights in the canopy soffit at alternating bays, switched 3-way from garage man door + house entry, on the garage subpanel</td></tr>
+          <tr><td><b>Ends</b></td><td>East end ledger-tied to the garage west wall; west end post pair lands beside Zone B's projection corner, canopy edge meeting B's overhang line — continuous cover door to door</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ G4 ESTIMATE ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">G4</span><h2>Budget Estimate</h2><span class="scale">JULY 2026 PLANNING NUMBERS — SAME VENDOR PLAYBOOK AS M1</span></div>
+    <div class="sheet-body">
+      <table>
+        <thead><tr><th>Package</th><th>Contents</th><th>Est.</th></tr></thead>
+        <tbody>
+          <tr><td><b>Slab + earthwork</b></td><td>~5 yd³ w/ mesh, thickened edges, trench drain, vapor barrier, anchors</td><td class="mono">$1,900</td></tr>
+          <tr><td><b>Wall framing pkg</b></td><td>2×6 studs/plates 10' &amp; 8' walls, raked ends, LVL door header</td><td class="mono">$2,300</td></tr>
+          <tr><td><b>Sheathing + envelope</b></td><td>7/16" OSB, wrap, 1" polyiso, tapes</td><td class="mono">$1,250</td></tr>
+          <tr><td><b>Roof pkg</b></td><td>4 panels 2×10 @ 24", 19/32" deck, HT underlayment, mech-seam steel ~365 SF + trim</td><td class="mono">$2,700</td></tr>
+          <tr><td><b>Doors + glazing</b></td><td>9×7 insulated OH door + opener, insulated man door, 4 fixed strip IGUs</td><td class="mono">$3,100</td></tr>
+          <tr><td><b>Electrical</b></td><td>Trench share, 60A feeder ~90 LF, subpanel, EVSE circuit + unit, GFCIs, lighting</td><td class="mono">$3,200</td></tr>
+          <tr><td><b>Water</b></td><td>1" PEX run, 2 frost-proof bibs, utility sink, opt. POU heater</td><td class="mono">$950</td></tr>
+          <tr><td><b>Siding + trim</b></td><td>Board &amp; batten ~640 SF to match house, fascia/soffit</td><td class="mono">$2,100</td></tr>
+          <tr><td><b>Covered walk</b></td><td>10 posts + footings, beams/purlins, ~200 SF steel + gutter, 5'×35' slab, soffit lighting</td><td class="mono">$3,700</td></tr>
+          <tr class="tot"><td colspan="2">Planning total · materials, DIY labor</td><td class="mono">≈ $21,200</td></tr>
+        </tbody>
+      </table>
+      <p class="sheet-note" style="margin-top:12px">
+        These packages are now itemized line-by-line with three-vendor pricing in the <a href="materials-takeoff-revB.html" style="color:var(--seam)">M1 takeoff</a> — this table stays as the quick summary. Worth folding the garage lumber into the same vendor package bids as the house — 300 SF more
+        commodity lumber strengthens your negotiating position, and the steel roof cuts from the same
+        Menards/Midwest Mfg order as the house's three planes.
+      </p>
+    </div>
+  </section>
+
+</div>
+<footer>
+  <span>TM-RES-01 · G-SET · STANDALONE GARAGE 12' × 25'</span>
+  <span>SCHEMATIC — NOT FOR CONSTRUCTION</span>
+</footer>
+</body>
+</html>
