@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TM-RES-01 · H-Set · Mechanical · No-Attic HVAC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0EFE9; --paper2:#E7E5DB; --ink:#232620; --line:#4A4D45; --faint:#9A9C92;
+    --seam:#B23A24; --modA:#5E7263; --modB:#B07A4A; --modC:#5A6E7F;
+    --sup:#2E5A78; --erv:#3E6B44;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;font-size:15px;line-height:1.55;padding:28px 20px 80px}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .set{max-width:1060px;margin:0 auto}
+  nav.setnav{display:flex;border:2px solid var(--ink);margin-bottom:14px;background:var(--paper)}
+  nav.setnav a{flex:1;text-align:center;padding:10px 5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-right:1.5px solid var(--ink)}
+  nav.setnav a:last-child{border-right:none}
+  nav.setnav a:hover{background:var(--paper2)}
+  nav.setnav a.here{background:var(--ink);color:var(--paper)}
+  nav.setnav a span{display:block;font-size:9px;color:var(--faint)}
+  nav.setnav a.here span{color:var(--paper);opacity:.65}
+  header.tblock{border:2px solid var(--ink);margin-bottom:26px;background:var(--paper)}
+  .tblock-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;padding:26px 26px 18px;border-bottom:1.5px solid var(--ink)}
+  .tblock h1{font-weight:800;font-size:clamp(26px,4.4vw,44px);letter-spacing:-0.02em;line-height:1.04;text-transform:uppercase}
+  .tblock h1 span{color:var(--seam)}
+  .tblock .sub{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--line);margin-top:10px}
+  .tblock-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+  .tblock-meta div{padding:10px 14px;border-right:1px solid var(--ink);font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+  .tblock-meta div:last-child{border-right:none}
+  .tblock-meta b{display:block;font-size:10px;color:var(--faint);letter-spacing:.16em;text-transform:uppercase;margin-bottom:2px;font-weight:500}
+  .sheet{border:1.5px solid var(--ink);margin-bottom:26px;background:var(--paper)}
+  .sheet-tag{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;border-bottom:1.5px solid var(--ink);padding:10px 18px}
+  .sheet-tag .no{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;background:var(--ink);color:var(--paper);padding:2px 9px}
+  .sheet-tag h2{font-size:15px;font-weight:700;letter-spacing:.10em;text-transform:uppercase}
+  .sheet-tag .scale{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--line)}
+  .sheet-body{padding:22px 18px}
+  .sheet-note{font-size:13.5px;color:var(--line);max-width:74ch;margin:0 0 16px}
+  .sheet-note em{color:var(--ink);font-style:normal;font-weight:600}
+  svg{display:block;width:100%;height:auto}
+  svg text{font-family:'IBM Plex Mono',monospace;fill:var(--ink)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--line);font-weight:600;border-bottom:1.5px solid var(--ink);padding:8px 10px}
+  td{border-bottom:1px solid var(--paper2);padding:9px 10px;vertical-align:top}
+  td.mono{font-size:12.5px}
+  tr:last-child td{border-bottom:none}
+  tr.tot td{border-top:1.5px solid var(--ink);font-weight:700;background:var(--paper2)}
+  .rule{border:1.5px solid var(--seam);background:#F5E9E4;padding:14px 16px;font-size:13.5px;margin-bottom:24px}
+  .rule b{color:var(--seam)}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.twocol{grid-template-columns:1fr}}
+  footer{max-width:1060px;margin:10px auto 0;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--faint);letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<div class="set">
+
+  <nav class="setnav">
+    <a href="stepped-shed-house-revB.html"><span>01</span>DESIGN</a>
+    <a href="blueprint-set-revB.html"><span>02</span>BLUEPRINTS</a>
+    <a href="materials-takeoff-revB.html"><span>03</span>TAKEOFF</a>
+    <a href="garage-revB.html"><span>04</span>GARAGE</a>
+    <a href="rendering-revB.html"><span>05</span>RENDERING</a>
+    <a class="here" href="mechanical-revB.html"><span>06</span>HVAC</a>
+  </nav>
+
+  <header class="tblock">
+    <div class="tblock-top">
+      <div>
+        <h1>Mechanical <span>/ H-SET</span></h1>
+        <div class="sub">No-attic HVAC · zone-per-unit heat pump · conditioned crawl · ERV</div>
+      </div>
+      <div class="mono" style="font-size:11.5px;text-align:right;line-height:1.7;color:var(--line)">
+        NO DUCT EVER CROSSES A ZONE LINE<br>
+        NO DUCT EVER TOUCHES A SLOPED CEILING<br>
+        THE CRAWL IS THE ATTIC
+      </div>
+    </div>
+    <div class="tblock-meta">
+      <div><b>Project No.</b>TM-RES-01</div>
+      <div><b>Sheets</b>H1–H3</div>
+      <div><b>System</b>3-zone cold-climate HP + ERV</div>
+      <div><b>Crawl</b>Sealed + conditioned</div>
+      <div><b>Status</b>Schematic — size w/ Manual J</div>
+    </div>
+  </header>
+
+  <div class="rule">
+    <b>The rule that makes it work:</b> the panelization discipline extends to air. Each zone heats
+    and cools itself with its own slim ducted unit; the only things crossing zone lines are ⅜"/⅝"
+    refrigerant linesets and 4–6" ERV duct, and those run in a <b>sealed, conditioned crawl</b> —
+    skirt panels off the same jig table close the pier perimeter, so the whole underfloor becomes
+    the service chase this no-attic house doesn't otherwise have. The exposed glulams and sloped
+    T&amp;G ceilings are never touched.
+  </div>
+
+  <!-- ============ H1 : SECTION ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">H1</span><h2>System Section · Through Zone B</h2><span class="scale">CONDITIONED CRAWL = SERVICE CHASE</span></div>
+    <div class="sheet-body">
+      <p class="sheet-note">
+        Zone B is the proof case: its unit hangs horizontally in the crawl under the kitchen, feeding
+        <em>floor supplies at the base of the 15' glass wall</em> — heat exactly where the biggest
+        heat loss lives, washing the glazing — with a floor return near the island. Zones A and C use
+        the same unit mounted in a 7'-6" dropped ceiling over their rear service bands (bath/WIC in A,
+        pantry/laundry in C), so every unit is a filter-change away and no finished ceiling drops
+        anywhere you'd notice.
+      </p>
+      <svg viewBox="0 0 760 350" role="img" aria-label="Building section showing conditioned crawl with ducts">
+        <!-- 12px/ft: front x=60, rear x=444, FF y=222, grade y=270 -->
+        <line x1="20" y1="270" x2="520" y2="270" stroke="var(--ink)" stroke-width="2.5"/>
+        <g stroke="var(--faint)" stroke-width="1"><line x1="34" y1="276" x2="24" y2="284"/><line x1="54" y1="276" x2="44" y2="284"/><line x1="494" y1="276" x2="484" y2="284"/></g>
+        <!-- crawl ground vapor barrier -->
+        <line x1="62" y1="266" x2="442" y2="266" stroke="var(--sup)" stroke-width="1.6" stroke-dasharray="6 3"/>
+        <!-- piers -->
+        <g fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.5">
+          <rect x="54" y="234" width="12" height="36"/><rect x="246" y="234" width="12" height="36"/><rect x="438" y="234" width="12" height="36"/>
+        </g>
+        <!-- skirt panels front + rear -->
+        <g fill="#DCD7C6" stroke="var(--ink)" stroke-width="1.5">
+          <rect x="50" y="234" width="8" height="36"/>
+          <rect x="446" y="234" width="8" height="36"/>
+        </g>
+        <g stroke="var(--line)" stroke-width="0.8">
+          <line x1="50" y1="242" x2="58" y2="248"/><line x1="50" y1="252" x2="58" y2="258"/>
+          <line x1="446" y1="242" x2="454" y2="248"/><line x1="446" y1="252" x2="454" y2="258"/>
+        </g>
+        <!-- floor cassette -->
+        <rect x="54" y="222" width="396" height="12" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.5"/>
+        <!-- walls -->
+        <g stroke="var(--ink)" stroke-width="2" fill="var(--paper2)">
+          <rect x="54" y="42" width="7" height="180"/>
+          <rect x="443" y="106" width="7" height="116"/>
+        </g>
+        <!-- roof + beam -->
+        <polygon points="30,25 462,96 462,109 30,38" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.8"/>
+        <line x1="61" y1="42" x2="443" y2="105.7" stroke="var(--ink)" stroke-width="1.2"/>
+        <rect x="248" y="74" width="8" height="16.5" fill="var(--seam)" stroke="var(--ink)" stroke-width="1.2"/>
+        <!-- glazing -->
+        <line x1="57.5" y1="66" x2="57.5" y2="222" stroke="var(--ink)" stroke-width="1" stroke-dasharray="2 3"/>
+        <!-- island -->
+        <g fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.4">
+          <rect x="330" y="186" width="42" height="36"/><rect x="324" y="183" width="52" height="3"/>
+        </g>
+
+        <!-- ===== CRAWL MECHANICALS ===== -->
+        <!-- DU-B unit in crawl -->
+        <rect x="316" y="238" width="60" height="20" fill="var(--paper)" stroke="var(--sup)" stroke-width="2"/>
+        <text x="346" y="251" font-size="8" fill="var(--sup)" text-anchor="middle" font-weight="600">DU-B</text>
+        <!-- supply trunk to front -->
+        <rect x="90" y="242" width="226" height="10" fill="none" stroke="var(--sup)" stroke-width="1.8"/>
+        <!-- floor register boots at glass wall + mid -->
+        <g stroke="var(--sup)" stroke-width="1.8" fill="none">
+          <path d="M92,242 L92,232 M86,226 L98,226"/>
+          <path d="M180,242 L180,232 M174,226 L186,226"/>
+        </g>
+        <g fill="var(--sup)">
+          <path d="M92,220 l-4,7 h8 z"/><path d="M180,220 l-4,7 h8 z"/>
+        </g>
+        <!-- floor return near island -->
+        <path d="M356,232 L356,238" stroke="var(--ink)" stroke-width="1.8"/>
+        <rect x="349" y="227" width="14" height="5" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+        <!-- lineset from unit to rear/ODU -->
+        <path d="M376,248 L500,248 L500,244" fill="none" stroke="var(--seam)" stroke-width="1.6" stroke-dasharray="5 3"/>
+        <!-- ODU outside rear -->
+        <rect x="486" y="238" width="30" height="32" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.8"/>
+        <g stroke="var(--ink)" stroke-width="1"><circle cx="501" cy="252" r="9" fill="none"/><line x1="501" y1="245" x2="501" y2="259"/><line x1="494" y1="252" x2="508" y2="252"/></g>
+        <text x="501" y="284" font-size="8" text-anchor="middle">ODU · MULTI-ZONE</text>
+        <!-- ERV duct hint in crawl -->
+        <line x1="120" y1="260" x2="430" y2="260" stroke="var(--erv)" stroke-width="1.6" stroke-dasharray="2 4"/>
+
+        <!-- callouts -->
+        <g font-size="8.5" fill="var(--line)">
+          <text x="92" y="208" text-anchor="middle" fill="var(--sup)">FLOOR SUPPLIES WASH THE GLASS WALL</text>
+          <line x1="52" y1="300" x2="52" y2="272" stroke="var(--line)" stroke-width="0.8"/>
+          <text x="52" y="312" text-anchor="middle">SKIRT PANELS · 7'-0" GRID · R-10</text>
+          <text x="250" y="300" text-anchor="middle" fill="var(--sup)">GROUND VAPOR BARRIER, TAPED + TURNED UP PIERS</text>
+          <text x="275" y="330" text-anchor="middle" fill="var(--erv)">ERV TRUNK (4–6") RUNS THE CRAWL · ERV UNIT IN ZONE C MECH ROOM</text>
+          <line x1="346" y1="258" x2="346" y2="286" stroke="var(--sup)" stroke-width="0.8"/>
+          <text x="346" y="298" text-anchor="middle" fill="var(--sup)">DU-B · HORIZONTAL, LOW-STATIC · SERVICE VIA REAR CRAWL HATCH</text>
+          <line x1="252" y1="90.5" x2="252" y2="130" stroke="var(--line)" stroke-width="0.8"/>
+          <text x="252" y="142" text-anchor="middle">DESTRAT FAN ON GLULAM — 15' VOLUME WILL STRATIFY</text>
+        </g>
+        <g font-size="9" fill="var(--ink)">
+          <text x="256" y="18" text-anchor="middle" letter-spacing="1.5">CEILINGS UNTOUCHED — EVERYTHING LIVES BELOW THE FLOOR</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ H2 : ROUTING PLAN ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">H2</span><h2>Routing Plan · Units, Ducts, Linesets, ERV</h2><span class="scale">NOTHING CROSSES A ZONE LINE BUT TUBES</span></div>
+    <div class="sheet-body">
+      <svg viewBox="0 0 720 500" role="img" aria-label="HVAC routing plan">
+        <!-- zone fills 11px/ft ox80 oy60 -->
+        <g opacity="0.10">
+          <rect x="80"  y="60" width="154" height="308" fill="var(--modA)"/>
+          <rect x="234" y="60" width="154" height="352" fill="var(--modB)"/>
+          <rect x="388" y="60" width="154" height="308" fill="var(--modC)"/>
+        </g>
+        <!-- walls simplified -->
+        <g stroke="var(--ink)" stroke-width="4" fill="none">
+          <rect x="80" y="60" width="154" height="308"/>
+          <rect x="388" y="60" width="154" height="308"/>
+          <rect x="234" y="60" width="154" height="352"/>
+        </g>
+        <g stroke="var(--ink)" stroke-width="2">
+          <line x1="80" y1="159" x2="234" y2="159"/>
+          <line x1="388" y1="126" x2="542" y2="126"/>
+          <line x1="388" y1="203" x2="542" y2="203"/>
+        </g>
+        <g font-size="9" fill="var(--faint)" text-anchor="middle">
+          <text x="157" y="270">PRIMARY</text><text x="157" y="112">BATH 1 / WIC BAND</text>
+          <text x="311" y="290">LIVING</text><text x="311" y="100">KITCHEN</text>
+          <text x="465" y="290">BEDROOM 2</text><text x="465" y="96">SERVICE BAND</text>
+        </g>
+
+        <!-- ODU + linesets -->
+        <rect x="500" y="34" width="34" height="20" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.8"/>
+        <text x="517" y="28" font-size="8.5" text-anchor="middle">ODU</text>
+        <g stroke="var(--seam)" stroke-width="1.6" stroke-dasharray="5 3" fill="none">
+          <path d="M510,54 L510,72 L150,72 L150,96"/>
+          <path d="M517,54 L517,150 L340,150 L340,120"/>
+          <path d="M524,54 L524,96 L470,96"/>
+        </g>
+
+        <!-- DU-A in band (dropped clg) -->
+        <rect x="130" y="88" width="40" height="16" fill="var(--paper)" stroke="var(--sup)" stroke-width="2"/>
+        <text x="150" y="99" font-size="8" fill="var(--sup)" text-anchor="middle" font-weight="600">DU-A</text>
+        <g stroke="var(--sup)" stroke-width="1.8" fill="none">
+          <path d="M150,104 L150,168"/>
+          <path d="M130,96 L104,96"/>
+          <path d="M170,96 L206,96 L206,130"/>
+        </g>
+        <g fill="var(--sup)">
+          <rect x="144" y="168" width="12" height="6"/>
+          <rect x="98" y="92" width="6" height="8"/>
+          <rect x="203" y="130" width="6" height="8"/>
+        </g>
+        <text x="150" y="186" font-size="7.5" fill="var(--sup)" text-anchor="middle">HIGH-WALL SUPPLY</text>
+
+        <!-- DU-C in band -->
+        <rect x="450" y="88" width="40" height="16" fill="var(--paper)" stroke="var(--sup)" stroke-width="2"/>
+        <text x="470" y="99" font-size="8" fill="var(--sup)" text-anchor="middle" font-weight="600">DU-C</text>
+        <g stroke="var(--sup)" stroke-width="1.8" fill="none">
+          <path d="M470,104 L470,140"/>
+          <path d="M470,140 L470,216"/>
+          <path d="M450,96 L424,96"/>
+          <path d="M490,96 L516,96 L516,150"/>
+        </g>
+        <g fill="var(--sup)">
+          <rect x="464" y="216" width="12" height="6"/>
+          <rect x="418" y="92" width="6" height="8"/>
+          <rect x="513" y="150" width="6" height="8"/>
+        </g>
+
+        <!-- DU-B in crawl -->
+        <rect x="320" y="100" width="44" height="18" fill="none" stroke="var(--sup)" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="342" y="112" font-size="8" fill="var(--sup)" text-anchor="middle" font-weight="600">DU-B</text>
+        <text x="342" y="130" font-size="7" fill="var(--sup)" text-anchor="middle">(IN CRAWL)</text>
+        <g stroke="var(--sup)" stroke-width="1.8" stroke-dasharray="4 3" fill="none">
+          <path d="M320,109 L262,109 L262,388"/>
+          <path d="M262,340 L340,340"/>
+        </g>
+        <g fill="var(--sup)">
+          <rect x="256" y="388" width="12" height="6"/>
+          <rect x="300" y="388" width="12" height="6"/>
+          <rect x="344" y="388" width="12" height="6"/>
+          <rect x="334" y="336" width="12" height="6"/>
+        </g>
+        <g stroke="var(--sup)" stroke-width="1.4" stroke-dasharray="4 3" fill="none">
+          <path d="M262,391 L306,391 L350,391"/>
+        </g>
+        <text x="306" y="404" font-size="7.5" fill="var(--sup)" text-anchor="middle">FLOOR SUPPLIES AT GLASS WALL</text>
+        <!-- B floor return -->
+        <rect x="332" y="200" width="14" height="7" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+        <text x="358" y="207" font-size="7.5" fill="var(--line)">RTN</text>
+
+        <!-- returns A/C: transfer grilles -->
+        <rect x="176" y="156" width="14" height="6" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+        <rect x="430" y="200" width="14" height="6" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+
+        <!-- ERV -->
+        <rect x="508" y="86" width="24" height="20" fill="var(--paper)" stroke="var(--erv)" stroke-width="2"/>
+        <text x="520" y="80" font-size="8" fill="var(--erv)" text-anchor="middle" font-weight="600">ERV</text>
+        <g stroke="var(--erv)" stroke-width="1.5" stroke-dasharray="2 4" fill="none">
+          <path d="M508,100 L120,100 L120,120"/>
+          <path d="M508,104 L448,104 L448,150"/>
+          <path d="M508,108 L300,108 L300,80"/>
+          <path d="M520,106 L520,240 L470,240"/>
+          <path d="M520,240 L520,330 L500,330"/>
+          <path d="M300,108 L300,300 L280,300"/>
+          <path d="M120,100 L120,250 L140,250"/>
+        </g>
+        <g font-size="7" fill="var(--erv)">
+          <text x="112" y="132" text-anchor="middle">EXH B1</text>
+          <text x="448" y="160" text-anchor="middle">EXH B2/LNDY</text>
+          <text x="300" y="74" text-anchor="middle">EXH KIT</text>
+          <text x="152" y="253">FRESH · PRIMARY</text>
+          <text x="266" y="312">FRESH · LIVING</text>
+          <text x="486" y="342">FRESH · BR2</text>
+        </g>
+
+        <!-- destrat fan -->
+        <circle cx="311" cy="250" r="8" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+        <path d="M305,250 q6,-6 12,0 M305,250 q6,6 12,0" stroke="var(--ink)" stroke-width="1" fill="none"/>
+        <text x="311" y="270" font-size="7.5" fill="var(--line)" text-anchor="middle">DESTRAT FAN @ GLULAM</text>
+
+        <!-- legend -->
+        <g transform="translate(80,432)">
+          <rect x="-6" y="-14" width="566" height="56" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+          <line x1="4" y1="0" x2="34" y2="0" stroke="var(--sup)" stroke-width="2"/><text x="40" y="3" font-size="8.5">SUPPLY DUCT (DASHED = IN CRAWL)</text>
+          <line x1="4" y1="18" x2="34" y2="18" stroke="var(--seam)" stroke-width="1.6" stroke-dasharray="5 3"/><text x="40" y="21" font-size="8.5">REFRIGERANT LINESET (CRAWL)</text>
+          <line x1="300" y1="0" x2="330" y2="0" stroke="var(--erv)" stroke-width="1.5" stroke-dasharray="2 4"/><text x="336" y="3" font-size="8.5">ERV DUCT (CRAWL)</text>
+          <rect x="300" y="12" width="14" height="7" fill="none" stroke="var(--ink)" stroke-width="1.6"/><text x="322" y="21" font-size="8.5">RETURN / TRANSFER GRILLE</text>
+        </g>
+      </svg>
+      <p class="sheet-note" style="margin-top:14px">
+        <em>Returns:</em> bedrooms breathe back to their zone's unit through wall transfer grilles
+        with acoustic baffles (no panned joist bays — code and common sense agree). <em>Kitchen:</em>
+        recirculating hood or a short ducted run out the rear wall — never up. <em>ERV:</em> pulls
+        from both baths, laundry, and kitchen; supplies fresh to both bedrooms and living — one
+        machine replaces every bath fan in the house.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ H3 : SKIRT PANEL + SCHEDULE + COST ============ -->
+  <section class="sheet">
+    <div class="sheet-tag"><span class="no">H3</span><h2>Skirt Panel · Equipment · Cost</h2><span class="scale">P11 JOINS THE PANEL FAMILY</span></div>
+    <div class="sheet-body">
+      <div class="twocol">
+        <div>
+          <svg viewBox="0 0 460 240" role="img" aria-label="Crawl skirt panel detail">
+            <text x="18" y="22" font-size="10.5" font-weight="600" letter-spacing="1.5">P11 · SKIRT PANEL (TYP. ~24 PANELS)</text>
+            <g transform="translate(60,50)">
+              <!-- 7' panel between piers, ~30" tall, 3px/in: 252 x 90 -->
+              <rect x="-20" y="-20" width="20" height="130" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.6"/>
+              <rect x="252" y="-20" width="20" height="130" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.6"/>
+              <text x="-10" y="-28" font-size="8" text-anchor="middle">PIER</text>
+              <text x="262" y="-28" font-size="8" text-anchor="middle">PIER</text>
+              <!-- cassette above -->
+              <rect x="-30" y="-46" width="322" height="26" fill="var(--paper2)" stroke="var(--ink)" stroke-width="1.5"/>
+              <text x="126" y="-30" font-size="8" text-anchor="middle" fill="var(--line)">FLOOR CASSETTE</text>
+              <!-- panel: 2x4 frame + 2" foam -->
+              <rect x="0" y="-20" width="252" height="110" fill="#DCD7C6" stroke="var(--ink)" stroke-width="2"/>
+              <g stroke="var(--line)" stroke-width="0.8"><line x1="20" y1="-10" x2="60" y2="30"/><line x1="20" y1="30" x2="60" y2="70"/><line x1="120" y1="-10" x2="160" y2="30"/><line x1="120" y1="30" x2="160" y2="70"/><line x1="200" y1="-6" x2="236" y2="30"/></g>
+              <line x1="0" y1="-20" x2="252" y2="-20" stroke="var(--ink)" stroke-width="3"/>
+              <!-- grade + embed -->
+              <line x1="-60" y1="90" x2="312" y2="90" stroke="var(--ink)" stroke-width="2.4"/>
+              <rect x="0" y="90" width="252" height="14" fill="none" stroke="var(--line)" stroke-width="1.2" stroke-dasharray="4 3"/>
+              <!-- vapor barrier -->
+              <path d="M252,104 L252,116 L340,116" fill="none" stroke="var(--sup)" stroke-width="1.6" stroke-dasharray="6 3"/>
+              <text x="300" y="130" font-size="7.5" fill="var(--sup)" text-anchor="middle">GROUND VB, TAPED TO PANEL</text>
+              <g font-size="8" fill="var(--line)">
+                <text x="126" y="52" text-anchor="middle">2×4 FRAME + 2" XPS/POLYISO (R-10) · PT BOTTOM PLATE</text>
+                <text x="126" y="118" text-anchor="middle">HEM BELOW GRADE 4" · GRAVEL DRIP</text>
+                <line x1="0" y1="150" x2="252" y2="150" stroke="var(--line)" stroke-width="0.8"/>
+                <text x="126" y="164" text-anchor="middle" fill="var(--ink)">7'-0" GRID — SAME JIG TABLE · ONE PANEL = REMOVABLE ACCESS</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div>
+          <table>
+            <thead><tr><th colspan="2">Equipment Schedule (size w/ Manual J)</th></tr></thead>
+            <tbody>
+              <tr><td class="mono">ODU</td><td>Cold-climate multi-zone heat pump, ~30–36k BTU, 3-port, pad at rear wall by mech room</td></tr>
+              <tr><td class="mono">DU-A</td><td>Slim ducted, ~9k · dropped clg over Bath 1/WIC @ 7'-6" · high-wall supply to primary, clg registers to bath/WIC</td></tr>
+              <tr><td class="mono">DU-B</td><td>Slim ducted, ~12–15k · horizontal in crawl under kitchen · 3 floor supplies at glass wall + kitchen · floor return · rear crawl-hatch service</td></tr>
+              <tr><td class="mono">DU-C</td><td>Slim ducted, ~9k · dropped clg over pantry/laundry · supplies to BR2, bath 2, hall</td></tr>
+              <tr><td class="mono">ERV</td><td>~120 CFM in mech room · exhaust: bath 1, bath 2, laundry, kitchen · fresh: primary, BR2, living · all duct in crawl</td></tr>
+              <tr><td class="mono">FAN</td><td>Destratification fan on Zone B glulam — the 15' volume needs it in winter</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style="margin-top:18px">
+        <table>
+          <thead><tr><th>Package</th><th>Contents</th><th>Est.</th></tr></thead>
+          <tbody>
+            <tr><td><b>Heat pump system</b></td><td>Multi-zone ODU + 3 slim ducted units, pads, hangers</td><td class="mono">$5,100</td></tr>
+            <tr><td><b>Ductwork</b></td><td>Trunks, boots, floor/ceiling registers, transfer grilles, mastic</td><td class="mono">$1,400</td></tr>
+            <tr><td><b>Linesets + electrical</b></td><td>3 linesets, condensate, disconnects, whips</td><td class="mono">$700</td></tr>
+            <tr><td><b>ERV package</b></td><td>Unit + 4–6" insulated duct + terminations</td><td class="mono">$1,900</td></tr>
+            <tr><td><b>Conditioned crawl</b></td><td>~24 skirt panels (R-10), ground vapor barrier + tape, access hatch, crawl supply/relief</td><td class="mono">$2,600</td></tr>
+            <tr><td><b>Destrat fan</b></td><td>On glulam, speed control</td><td class="mono">$400</td></tr>
+            <tr class="tot"><td colspan="2">HVAC + crawl package · materials, DIY labor</td><td class="mono">≈ $12,100</td></tr>
+          </tbody>
+        </table>
+        <p class="sheet-note" style="margin-top:12px">
+          These lines are now itemized with three-vendor pricing in the
+          <a href="materials-takeoff-revB.html" style="color:var(--seam)">M1 takeoff</a>, which also
+          splits the old combined MEP placeholder into electrical + plumbing only. One flag for the
+          pro: a multi-zone heat pump wants a licensed tech for the lineset braze, pressure test, and
+          commissioning even on an owner-build — budget a day of that labor separately.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div>
+<footer>
+  <span>TM-RES-01 · H-SET · MECHANICAL · NO-ATTIC HVAC</span>
+  <span>SCHEMATIC — MANUAL J/S/D BY DESIGNER · NOT FOR CONSTRUCTION</span>
+</footer>
+</body>
+</html>

@@ -82,6 +82,7 @@
     <a class="here" href="materials-takeoff-revB.html"><span>03</span>TAKEOFF · M1</a>
     <a href="garage-revB.html"><span>04</span>GARAGE · G-SET</a>
     <a href="rendering-revB.html"><span>05</span>RENDERING</a>
+    <a href="mechanical-revB.html"><span>06</span>HVAC</a>
   </nav>
 
   <header class="tblock">
@@ -258,10 +259,19 @@ const DATA = [
   {n:"Walk steel roof + gutter + DS", d:"~200 SF, slopes to house side", q:1, u:"LOT", p:[1050,900,1000], a:1},
   {n:"Walk slab 5' × 35', broom finish", d:"~2.2 yd³, doweled to garage apron", q:1, u:"LOT", p:[620,620,620]},
   {n:"Soffit LED lighting, 3-way switched", d:"fed from garage subpanel", q:1, u:"LOT", p:[340,310,330]},
+  {sect:"HVAC + conditioned crawl · per H-Set (no-attic system)"},
+  {n:"Cold-climate multi-zone heat pump kit", d:"ODU ~30-36k + 3 slim ducted units, pads, hangers — size w/ Manual J", q:1, u:"LOT", p:[5300,5100,5000], a:1},
+  {n:"Ductwork + registers + transfer grilles", d:"trunks, boots, floor + ceiling registers, mastic", q:1, u:"LOT", p:[1450,1300,1400]},
+  {n:"Linesets, condensate, disconnects", d:"3 runs through the crawl", q:1, u:"LOT", p:[720,650,690]},
+  {n:"ERV + insulated ducting", d:"~120 CFM · replaces all bath fans", q:1, u:"LOT", p:[1950,1800,1850], a:1},
+  {n:"Crawl skirt panels, ~24 on the 7-ft grid", d:"2×4 + 2\" foam R-10, PT plates — same jig table", q:1, u:"LOT", p:[1750,1550,1650]},
+  {n:"Ground vapor barrier + seam tape", d:"~1,300 SF, turned up piers", q:1, u:"LOT", p:[480,430,460]},
+  {n:"Crawl access hatch + supply/relief grilles", d:"", q:1, u:"LOT", p:[300,270,290]},
+  {n:"Destratification fan @ Zone B glulam", d:"w/ speed control", q:1, u:"EA", p:[420,380,400]},
   {sect:"Beyond the shell · placeholders only"},
   {n:"Siding pkg (board & batten over rainscreen)", d:"~1,770 SF", q:1, u:"LOT", p:[7400,6700,7100], a:1},
   {n:"Drywall + finish pkg", d:"~130 sheets + mud/tape/corner", q:1, u:"LOT", p:[2500,2300,2250], a:1},
-  {n:"MEP rough packages (elec / plumb / HVAC-ERV)", d:"tub adds plumbing scope", q:1, u:"LOT", p:[15500,15000,15200], a:1},
+  {n:"Electrical + plumbing rough packages", d:"HVAC now itemized above (H-Set) · tub adds plumbing scope", q:1, u:"LOT", p:[10800,10300,10500], a:1},
 ];
 
 const fmt = n => '$' + n.toLocaleString('en-US',{maximumFractionDigits:0});
