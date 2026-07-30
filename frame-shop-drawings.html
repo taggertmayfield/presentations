@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frame Shop Drawings — Elkheart Creations</title>
+<style>
+  :root{
+    --paper:#EDF0EE; --panel:#F8F6EE; --ink:#22303A; --dim:#1D5FAF;
+    --muted:#607283; --note:#44525E; --wood:#8A5A24; --rule:#8FA3B8;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink);
+       font-family:'Courier New', Courier, monospace; font-size:14px; line-height:1.55;}
+  .sheet{max-width:880px; margin:16px auto; border:2px solid var(--ink); padding:24px 28px; background:var(--paper);}
+  h1{font-family:Georgia, 'Times New Roman', serif; font-size:26px; margin:0 0 6px;}
+  .sub{color:var(--note); font-size:13px; border-bottom:1px solid var(--ink); padding-bottom:12px; margin-bottom:8px;}
+  h2{font-size:15px; margin:34px 0 10px; letter-spacing:.02em;}
+  p{margin:8px 0;}
+  .note{color:var(--note); font-size:13px;}
+  .dim{color:var(--dim);}
+  .wood{color:var(--wood);}
+  svg{display:block; max-width:100%; height:auto;}
+  .railrow{margin:14px 0 20px;}
+  .raillabel{font-size:13px; margin-bottom:4px;}
+  .raillabel b{font-weight:bold;}
+  table{border-collapse:collapse; width:100%; font-size:13px; background:var(--panel); margin:10px 0;}
+  th,td{border:1px solid var(--rule); padding:6px 8px; text-align:left; vertical-align:top;}
+  th{background:#E2E7E4; font-size:12px;}
+  .box{background:var(--panel); border:1px solid var(--ink); padding:14px 16px; margin:12px 0;}
+  .caption{font-size:12px; color:var(--note); margin:4px 0 0;}
+  .formula{font-size:15px; font-weight:bold; color:var(--dim); margin:6px 0;}
+  @media (max-width:600px){ .sheet{padding:14px;} body{font-size:13px;} }
+</style>
+</head>
+<body>
+
+<!-- shared hatch pattern -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <pattern id="hatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#8FA3B8" stroke-width="1"/>
+    </pattern>
+  </defs>
+</svg>
+
+<div class="sheet">
+  <h1>FRAME SHOP DRAWINGS — ALL SIZES</h1>
+  <div class="sub">Box-style profile: 3/4" face to the front, 1-3/4" deep sides &middot; panel captured in through-dado &middot; 45&deg; miters &middot; sizes 7&times;7, 8&times;10, 16&times;20, 24&times;30 &middot; planned at 1,500 frames per size</div>
+
+  <!-- ============ 1: PROFILE ============ -->
+  <h2>1 — ONE PROFILE FITS ALL (end view of strip)</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start;">
+    <svg viewBox="0 0 250 150" style="width:250px; flex:0 0 auto;">
+      <path d="M40,20 L82,20 L82,64 L61,64 L61,74 L82,74 L82,118 L40,118 Z" fill="#F8F6EE" stroke="#22303A" stroke-width="1.5"/>
+      <rect x="61" y="64" width="21" height="10" fill="url(#hatch)"/>
+      <rect x="61" y="64.5" width="120" height="9" fill="none" stroke="#8A5A24" stroke-width="1.2" stroke-dasharray="5,4"/>
+      <text x="98" y="92" font-size="10" fill="#8A5A24" font-family="Courier New">backing board</text>
+      <text x="10" y="14" font-size="10" fill="#44525E" font-family="Courier New">FRONT &#9660;</text>
+      <line x1="40" y1="132" x2="82" y2="132" stroke="#1D5FAF" stroke-width="1"/>
+      <text x="48" y="146" font-size="10" fill="#1D5FAF" font-family="Courier New">3/4"</text>
+      <line x1="26" y1="20" x2="26" y2="118" stroke="#1D5FAF" stroke-width="1"/>
+      <text x="2" y="72" font-size="10" fill="#1D5FAF" font-family="Courier New">1-3/4</text>
+      <line x1="94" y1="20" x2="94" y2="69" stroke="#1D5FAF" stroke-width="1"/>
+      <text x="98" y="40" font-size="10" fill="#1D5FAF" font-family="Courier New">7/8" to dado &#8963;</text>
+    </svg>
+    <div style="flex:1 1 300px;">
+      <p>Rip: three 1-3/4" strips per 1&times;6 (two 1/8" kerfs — no width waste). Dado: 3/8" deep, centered in the 1-3/4" inside face, width matched to the backing. One rip setting and one dado setup serve every frame size.</p>
+      <p>Every rail, any panel size, follows one rule:</p>
+      <p class="formula">LONG POINT&nbsp; = panel dimension + 3/4"</p>
+      <p class="formula">SHORT POINT = panel dimension &minus; 3/4"</p>
+      <p class="note">(panel + two 3/4" faces &minus; two 3/8" dado seats). Because the dado is centered, the strip is symmetric front-to-back, so flip-nested chain cutting works for every size.</p>
+    </div>
+  </div>
+
+  <!-- ============ 2: RAIL CUTTING LIST ============ -->
+  <h2>2 — RAIL CUTTING LIST (drawings share one scale)</h2>
+
+  <div class="railrow">
+    <div class="raillabel"><b>7&times;7 rail</b> — cut 4 per frame, all identical: 6,000 pcs &middot; <span class="dim">LP 7-3/4" / SP 6-1/4"</span></div>
+    <svg viewBox="0 0 680 20"><polygon points="0,1 170.5,1 154,17.5 16.5,17.5" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/></svg>
+  </div>
+  <div class="railrow">
+    <div class="raillabel"><b>8&times;10 short rail</b> — 2 per frame: 3,000 pcs &middot; <span class="dim">LP 8-3/4" / SP 7-1/4"</span></div>
+    <svg viewBox="0 0 680 20"><polygon points="0,1 192.5,1 176,17.5 16.5,17.5" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/></svg>
+  </div>
+  <div class="railrow">
+    <div class="raillabel"><b>8&times;10 long rail</b> — 2 per frame: 3,000 pcs &middot; <span class="dim">LP 10-3/4" / SP 9-1/4"</span></div>
+    <svg viewBox="0 0 680 20"><polygon points="0,1 236.5,1 220,17.5 16.5,17.5" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/></svg>
+  </div>
+  <div class="railrow">
+    <div class="raillabel"><b>16&times;20 short rail</b> — 2 per frame: 3,000 pcs &middot; <span class="dim">LP 16-3/4" / SP 15-1/4"</span></div>
+    <svg viewBox="0 0 680 20"><polygon points="0,1 368.5,1 352,17.5 16.5,17.5" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/></svg>
+  </div>
+  <div class="railrow">
+    <div class="raillabel"><b>16&times;20 long rail</b> — 2 per frame: 3,000 pcs &middot; <span class="dim">LP 20-3/4" / SP 19-1/4"</span></div>
+    <svg viewBox="0 0 680 20"><polygon points="0,1 456.5,1 440,17.5 16.5,17.5" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/></svg>
+  </div>
+  <div class="railrow">
+    <div class="raillabel"><b>24&times;30 short rail</b> — 2 per frame: 3,000 pcs &middot; <span class="dim">LP 24-3/4" / SP 23-1/4"</span></div>
+    <svg viewBox="0 0 680 20"><polygon points="0,1 544.5,1 528,17.5 16.5,17.5" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/></svg>
+  </div>
+  <div class="railrow">
+    <div class="raillabel"><b>24&times;30 long rail</b> — 2 per frame: 3,000 pcs &middot; <span class="dim">LP 30-3/4" / SP 29-1/4"</span></div>
+    <svg viewBox="0 0 680 20"><polygon points="0,1 676.5,1 660,17.5 16.5,17.5" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/></svg>
+  </div>
+  <p class="note">All miters 45&deg;, both ends, cut across the 3/4" face. Dado runs the full length and exits at the miter faces, where it lines up with the mating rail and disappears.</p>
+
+  <!-- ============ 3: ASSEMBLED FRAMES ============ -->
+  <h2>3 — ASSEMBLED FRAMES (front views, common scale)</h2>
+  <svg viewBox="0 0 700 310">
+    <!-- 7x7 -->
+    <rect x="10" y="220" width="70" height="70" fill="#F8F6EE" stroke="#22303A" stroke-width="1.5"/>
+    <rect x="17" y="227" width="56" height="56" fill="#E2E7E4" stroke="#22303A" stroke-width="1"/>
+    <line x1="10" y1="220" x2="17" y2="227" stroke="#22303A" stroke-width="0.8"/><line x1="80" y1="220" x2="73" y2="227" stroke="#22303A" stroke-width="0.8"/>
+    <line x1="10" y1="290" x2="17" y2="283" stroke="#22303A" stroke-width="0.8"/><line x1="80" y1="290" x2="73" y2="283" stroke="#22303A" stroke-width="0.8"/>
+    <text x="10" y="305" font-size="12" fill="#22303A" font-family="Courier New" font-weight="bold">7&#215;7</text>
+    <!-- 8x10 -->
+    <rect x="110" y="193" width="79" height="97" fill="#F8F6EE" stroke="#22303A" stroke-width="1.5"/>
+    <rect x="117" y="200" width="65" height="83" fill="#E2E7E4" stroke="#22303A" stroke-width="1"/>
+    <line x1="110" y1="193" x2="117" y2="200" stroke="#22303A" stroke-width="0.8"/><line x1="189" y1="193" x2="182" y2="200" stroke="#22303A" stroke-width="0.8"/>
+    <line x1="110" y1="290" x2="117" y2="283" stroke="#22303A" stroke-width="0.8"/><line x1="189" y1="290" x2="182" y2="283" stroke="#22303A" stroke-width="0.8"/>
+    <text x="110" y="305" font-size="12" fill="#22303A" font-family="Courier New" font-weight="bold">8&#215;10</text>
+    <!-- 16x20 -->
+    <rect x="220" y="103" width="151" height="187" fill="#F8F6EE" stroke="#22303A" stroke-width="1.5"/>
+    <rect x="227" y="110" width="137" height="173" fill="#E2E7E4" stroke="#22303A" stroke-width="1"/>
+    <line x1="220" y1="103" x2="227" y2="110" stroke="#22303A" stroke-width="0.8"/><line x1="371" y1="103" x2="364" y2="110" stroke="#22303A" stroke-width="0.8"/>
+    <line x1="220" y1="290" x2="227" y2="283" stroke="#22303A" stroke-width="0.8"/><line x1="371" y1="290" x2="364" y2="283" stroke="#22303A" stroke-width="0.8"/>
+    <text x="220" y="305" font-size="12" fill="#22303A" font-family="Courier New" font-weight="bold">16&#215;20</text>
+    <!-- 24x30 -->
+    <rect x="400" y="13" width="223" height="277" fill="#F8F6EE" stroke="#22303A" stroke-width="1.5"/>
+    <rect x="407" y="20" width="209" height="263" fill="#E2E7E4" stroke="#22303A" stroke-width="1"/>
+    <line x1="400" y1="13" x2="407" y2="20" stroke="#22303A" stroke-width="0.8"/><line x1="623" y1="13" x2="616" y2="20" stroke="#22303A" stroke-width="0.8"/>
+    <line x1="400" y1="290" x2="407" y2="283" stroke="#22303A" stroke-width="0.8"/><line x1="623" y1="290" x2="616" y2="283" stroke="#22303A" stroke-width="0.8"/>
+    <text x="400" y="305" font-size="12" fill="#22303A" font-family="Courier New" font-weight="bold">24&#215;30</text>
+  </svg>
+  <table>
+    <tr><th>Size</th><th>Outside dims</th><th>Opening</th><th>Panel seat</th></tr>
+    <tr><td>7&times;7</td><td>7-3/4" square</td><td>6-1/4" square</td><td rowspan="4">3/8" into all four rails; panel floats 7/8" back from the front face</td></tr>
+    <tr><td>8&times;10</td><td>8-3/4" &times; 10-3/4"</td><td>7-1/4" &times; 9-1/4"</td></tr>
+    <tr><td>16&times;20</td><td>16-3/4" &times; 20-3/4"</td><td>15-1/4" &times; 19-1/4"</td></tr>
+    <tr><td>24&times;30</td><td>24-3/4" &times; 30-3/4"</td><td>23-1/4" &times; 29-1/4"</td></tr>
+  </table>
+  <p class="note">Frames glue up around the panel (through-dado captures it — nothing slides in later). Cut panels 1/16" scant so miters close tight. On the 24&times;30, add corner splines or v-nails: a 3/4" glue face is slim for a frame that big.</p>
+
+  <!-- ============ 4: STRIP PATTERNS ============ -->
+  <h2>4 — STRIP PATTERNS (nested chain cuts — flip the strip front-for-back after every cut)</h2>
+
+  <p><b>7&times;7 — 8-ft strip: 13 rails</b> <span class="note">(~2" scrap; one stop block for the entire size)</span></p>
+  <svg viewBox="0 0 720 30">
+    <rect x="0" y="0" width="720" height="30" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/>
+    <line x1="54" y1="0" x2="54" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="108" y1="0" x2="108" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="162" y1="0" x2="162" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="216" y1="0" x2="216" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="270" y1="0" x2="270" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="324" y1="0" x2="324" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="378" y1="0" x2="378" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="432" y1="0" x2="432" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="486" y1="0" x2="486" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="540" y1="0" x2="540" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="594" y1="0" x2="594" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="648" y1="0" x2="648" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="702" y1="0" x2="702" y2="30" stroke="#22303A" stroke-width="0.8"/>
+    <rect x="702" y="0" width="18" height="30" fill="url(#hatch)"/>
+  </svg>
+
+  <p style="margin-top:18px;"><b>8&times;10 — 8-ft strips</b> <span class="note">(long rails: 9/strip, ~3.8" scrap &middot; short rails: 11/strip, ~5.5" scrap)</span></p>
+  <svg viewBox="0 0 720 30">
+    <rect x="0" y="0" width="720" height="30" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/>
+    <line x1="77" y1="0" x2="77" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="154" y1="0" x2="154" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="231" y1="0" x2="231" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="308" y1="0" x2="308" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="385" y1="0" x2="385" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="462" y1="0" x2="462" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="539" y1="0" x2="539" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="616" y1="0" x2="616" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="692" y1="0" x2="692" y2="30" stroke="#22303A" stroke-width="0.8"/>
+    <rect x="692" y="0" width="28" height="30" fill="url(#hatch)"/>
+    <text x="330" y="20" font-size="11" fill="#44525E" font-family="Courier New">9 long rails</text>
+  </svg>
+  <div style="height:8px;"></div>
+  <svg viewBox="0 0 720 30">
+    <rect x="0" y="0" width="720" height="30" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/>
+    <line x1="62" y1="0" x2="62" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="124" y1="0" x2="124" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="186" y1="0" x2="186" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="248" y1="0" x2="248" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="310" y1="0" x2="310" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="372" y1="0" x2="372" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="434" y1="0" x2="434" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="496" y1="0" x2="496" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="558" y1="0" x2="558" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="620" y1="0" x2="620" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="679" y1="0" x2="679" y2="30" stroke="#22303A" stroke-width="0.8"/>
+    <rect x="679" y="0" width="41" height="30" fill="url(#hatch)"/>
+    <text x="320" y="20" font-size="11" fill="#44525E" font-family="Courier New">11 short rails</text>
+  </svg>
+
+  <p style="margin-top:18px;"><b>16&times;20 — 8-ft strips, two alternating patterns</b> <span class="note">(keeps shorts and longs 1:1)</span></p>
+  <svg viewBox="0 0 720 30">
+    <rect x="0" y="0" width="720" height="30" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/>
+    <line x1="121" y1="0" x2="121" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="272" y1="0" x2="272" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="393" y1="0" x2="393" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="544" y1="0" x2="544" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="670" y1="0" x2="670" y2="30" stroke="#22303A" stroke-width="0.8"/>
+    <rect x="670" y="0" width="50" height="30" fill="url(#hatch)"/>
+    <text x="55" y="20" font-size="12" fill="#44525E" font-family="Courier New">S</text><text x="190" y="20" font-size="12" fill="#44525E" font-family="Courier New">L</text><text x="326" y="20" font-size="12" fill="#44525E" font-family="Courier New">S</text><text x="462" y="20" font-size="12" fill="#44525E" font-family="Courier New">L</text><text x="600" y="20" font-size="12" fill="#44525E" font-family="Courier New">S</text>
+  </svg>
+  <div style="height:8px;"></div>
+  <svg viewBox="0 0 720 30">
+    <rect x="0" y="0" width="720" height="30" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/>
+    <line x1="151" y1="0" x2="151" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="272" y1="0" x2="272" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="423" y1="0" x2="423" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="544" y1="0" x2="544" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="700" y1="0" x2="700" y2="30" stroke="#22303A" stroke-width="0.8"/>
+    <rect x="700" y="0" width="20" height="30" fill="url(#hatch)"/>
+    <text x="70" y="20" font-size="12" fill="#44525E" font-family="Courier New">L</text><text x="206" y="20" font-size="12" fill="#44525E" font-family="Courier New">S</text><text x="342" y="20" font-size="12" fill="#44525E" font-family="Courier New">L</text><text x="478" y="20" font-size="12" fill="#44525E" font-family="Courier New">S</text><text x="616" y="20" font-size="12" fill="#44525E" font-family="Courier New">L</text>
+  </svg>
+  <p class="caption">Pattern A: S-L-S-L-S (3 shorts, 2 longs, ~6.5" scrap) &middot; Pattern B: L-S-L-S-L (2 shorts, 3 longs, ~2.5" scrap)</p>
+
+  <p style="margin-top:18px;"><b>24&times;30 — 12-ft strips, two alternating patterns</b></p>
+  <svg viewBox="0 0 720 30">
+    <rect x="0" y="0" width="720" height="30" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/>
+    <line x1="151" y1="0" x2="151" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="272" y1="0" x2="272" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="423" y1="0" x2="423" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="544" y1="0" x2="544" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="698" y1="0" x2="698" y2="30" stroke="#22303A" stroke-width="0.8"/>
+    <rect x="698" y="0" width="22" height="30" fill="url(#hatch)"/>
+    <text x="70" y="20" font-size="12" fill="#44525E" font-family="Courier New">L</text><text x="206" y="20" font-size="12" fill="#44525E" font-family="Courier New">S</text><text x="342" y="20" font-size="12" fill="#44525E" font-family="Courier New">L</text><text x="478" y="20" font-size="12" fill="#44525E" font-family="Courier New">S</text><text x="616" y="20" font-size="12" fill="#44525E" font-family="Courier New">L</text>
+  </svg>
+  <div style="height:8px;"></div>
+  <svg viewBox="0 0 720 30">
+    <rect x="0" y="0" width="720" height="30" fill="#F8F6EE" stroke="#22303A" stroke-width="1.2"/>
+    <line x1="121" y1="0" x2="121" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="272" y1="0" x2="272" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="393" y1="0" x2="393" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="544" y1="0" x2="544" y2="30" stroke="#22303A" stroke-width="0.8"/><line x1="668" y1="0" x2="668" y2="30" stroke="#22303A" stroke-width="0.8"/>
+    <rect x="668" y="0" width="52" height="30" fill="url(#hatch)"/>
+    <text x="55" y="20" font-size="12" fill="#44525E" font-family="Courier New">S</text><text x="190" y="20" font-size="12" fill="#44525E" font-family="Courier New">L</text><text x="326" y="20" font-size="12" fill="#44525E" font-family="Courier New">S</text><text x="462" y="20" font-size="12" fill="#44525E" font-family="Courier New">L</text><text x="600" y="20" font-size="12" fill="#44525E" font-family="Courier New">S</text>
+  </svg>
+  <p class="caption">Pattern A: L-S-L-S-L (3 longs, 2 shorts, ~4.5" scrap) &middot; Pattern B: S-L-S-L-S (3 shorts, 2 longs, ~10.5" scrap)</p>
+  <p class="note">If your yard carries 14-footers: 3 shorts + 3 longs fit one strip with ~4.4" scrap — one pattern, 1:1 built in.</p>
+
+  <!-- ============ 5: CUT PLAN ============ -->
+  <h2>5 — CUT PLAN SUMMARY (1,500 frames of each size)</h2>
+  <table>
+    <tr><th>Size</th><th>Board</th><th>Strips</th><th>Boards net</th><th>Buy</th><th>Bd ft</th><th>Length waste</th></tr>
+    <tr><td>7&times;7</td><td>1&times;6 &times; 8'</td><td>462 (13 rails ea.)</td><td>154</td><td>~165</td><td>616</td><td>~2.2%</td></tr>
+    <tr><td>8&times;10</td><td>1&times;6 &times; 8'</td><td>334 long + 273 short = 607</td><td>203</td><td>~215</td><td>812</td><td>~4.7%</td></tr>
+    <tr><td>16&times;20</td><td>1&times;6 &times; 8'</td><td>600 Pattern A + 600 Pattern B = 1,200</td><td>400</td><td>~425</td><td>1,600</td><td>~4.7%</td></tr>
+    <tr><td>24&times;30</td><td>1&times;6 &times; 12'</td><td>600 Pattern A + 600 Pattern B = 1,200</td><td>400</td><td>~425</td><td>2,400</td><td>~5.2%</td></tr>
+  </table>
+  <p class="note">24&times;30 alternative with 14-ft stock: 1,000 strips (3S+3L each) &rarr; 334 boards (2,338 bd ft), waste ~2.6%.</p>
+
+  <div class="box">
+    <p><b>Offcut harvest:</b> the ~10-1/2" tails from the 24&times;30 Pattern B strips each yield one 7&times;7 rail — about 600 free rails, or roughly 15 fewer 7&times;7 boards. Chop small rails from every tail before it hits the scrap bin.</p>
+    <p class="note">All sizes share the same rip (three 1-3/4" strips per board) and the same dado setup. Panels cut 1/16" scant for tight miters. Board counts are linear — for a different quantity, multiply by (qty &divide; 1,500).</p>
+  </div>
+</div>
+
+</body>
+</html>
